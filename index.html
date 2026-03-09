@@ -582,11 +582,7 @@ function escHtml(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').
 function scrollToBottom(){document.getElementById('chat-messages').scrollTop=9999999}
 function autoResize(el){el.style.height='auto';el.style.height=Math.min(el.scrollHeight,120)+'px'}
 
-// 初期化
-setThemeIcon('sea');
-const overlay=document.getElementById('fade-overlay');
-showScreen('clock-screen');checkUnread();loadTheme();
-setTimeout(()=>{overlay.style.opacity='0';setTimeout(()=>overlay.style.display='none',400)},300);
+// 初期化はスクリプト末尾へ移動
 
 // ========== 新機能 ==========
 
@@ -746,6 +742,13 @@ function checkAnim(text){
 }
 
 
+
+// 初期化
+setThemeIcon('sea');
+const overlay=document.getElementById('fade-overlay');
+showScreen('clock-screen');checkUnread();loadTheme();
+setTimeout(()=>{overlay.style.opacity='0';setTimeout(()=>overlay.style.display='none',400)},300);
+updateChatBg();
 </script>
 
 <div id="msg-anim-overlay"></div>
