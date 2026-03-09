@@ -460,8 +460,10 @@ async function showChatScreen(){
   const code=currentUser.invite_code;const info=USERS[code]||{name:'ユーザー',partner:'相手'};
   document.getElementById('chat-partner-name').textContent=info.partner;
   document.getElementById('chat-my-name').textContent='自分：'+info.name;
-  document.getElementById('chat-avatar').textContent=info.partner.charAt(0);
-  showScreen('chat-screen');await loadMessages();
+  document.getElementById('chat-avatar').textContent=info.partner.slice(0,2);
+  showScreen('chat-screen');
+  if(typeof updateChatBg==='function')updateChatBg();
+  if(typeof resetInactTimer==='function')resetInactTimer();await loadMessages();
   localStorage.setItem('last_read_time',new Date().toISOString());
   document.getElementById('unread-badge').textContent='';
   connectRealtime();setTimeout(()=>scrollToBottom(),100);
@@ -510,6 +512,7 @@ async function loadMessages(){
 async function sendMsg(){
   const input=document.getElementById('chat-input');const text=input.value.trim();if(!text)return;
   input.value='';input.style.height='';
+  if(text&&typeof checkAnim==='function')setTimeout(function(){checkAnim(text);},300);
   try{
     const result=await sbFetch('messages',{method:'POST',body:JSON.stringify({user_id:currentUser.invite_code,content:text})});
     if(result&&result[0]){document.querySelector('#chat-messages .loading-msg')?.remove();appendMessage(result[0]);lastPollTime=new Date();localStorage.setItem('last_read_time',new Date().toISOString());}
@@ -646,21 +649,7 @@ window.addEventListener('devicemotion',function(e){
   }}
 },{passive:true});
 
-// showChatScreen に機能追加
-var _origShowChatScreen=showChatScreen;
-async function showChatScreen(){
-  await _origShowChatScreen();
-  updateChatBg();
-  resetInactTimer();
-}
 
-// sendMsg にアニメ追加
-var _origSendMsg=sendMsg;
-async function sendMsg(){
-  var txt=document.getElementById('chat-input').value.trim();
-  await _origSendMsg();
-  if(txt)setTimeout(function(){checkAnim(txt);},300);
-}
 
 // 初期化
 setThemeIcon('sea');
