@@ -493,7 +493,7 @@ function handleClockTap(){
 }
 
 function showScreen(id){document.querySelectorAll('.screen').forEach(s=>s.style.display='none');document.getElementById(id).style.display='flex'}
-function showClock(){disconnectRealtime();pinEntry='';updatePinDots();showScreen('clock-screen');checkUnread();stopThemeAnimation();setTimeout(()=>startThemeAnimation(currentTheme),100);}
+function showClock(){disconnectRealtime();pinEntry='';updatePinDots();showScreen('clock-screen');checkUnread();if(typeof stopThemeAnimation==='function')stopThemeAnimation();setTimeout(()=>{if(typeof startThemeAnimation==='function')startThemeAnimation(currentTheme);},100);}
 function showInvite(){document.getElementById('invite-input').value='';document.getElementById('invite-error').textContent='';showScreen('invite-screen');setTimeout(()=>document.getElementById('invite-input').focus(),300)}
 function showPin(){pinEntry='';updatePinDots();showScreen('pin-screen')}
 
@@ -522,7 +522,8 @@ async function showChatScreen(){
   const code=currentUser.invite_code;const info=USERS[code]||{name:'ユーザー',partner:'相手'};
   document.getElementById('chat-partner-name').textContent=info.partner;
   document.getElementById('chat-my-name').textContent='自分：'+info.name;
-  updateChatTimeBackground();resetInactivityTimer();
+  if(typeof updateChatTimeBackground==='function')updateChatTimeBackground();
+  if(typeof resetInactivityTimer==='function')resetInactivityTimer();
   document.getElementById('chat-avatar').textContent=info.partner.charAt(0);
   showScreen('chat-screen');await loadMessages();
   localStorage.setItem('last_read_time',new Date().toISOString());
