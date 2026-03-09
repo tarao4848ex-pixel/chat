@@ -403,7 +403,7 @@ function setThemeIcon(themeId){
   document.getElementById('lifebuoy-btn').innerHTML=`<svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg"><g transform="translate(22,22)"><path d="M0,-16 C3,-9 9,-3 16,0 C9,3 3,9 0,16 C-3,9 -9,3 -16,0 C-9,-3 -3,-9 0,-16Z" fill="rgba(255,140,160,0.9)" stroke="rgba(255,255,255,0.8)" stroke-width="1.5"/><circle cx="0" cy="0" r="5" fill="rgba(255,220,100,0.95)" stroke="rgba(255,255,255,0.9)" stroke-width="1.5"/><circle cx="0" cy="-10" r="2.5" fill="rgba(255,200,210,0.9)"/><circle cx="9.5" cy="3" r="2.5" fill="rgba(255,200,210,0.9)"/><circle cx="5.9" cy="-8" r="2.5" fill="rgba(255,200,210,0.9)"/><circle cx="-9.5" cy="3" r="2.5" fill="rgba(255,200,210,0.9)"/><circle cx="-5.9" cy="-8" r="2.5" fill="rgba(255,200,210,0.9)"/></g></svg>`;
 }
 
-async function applyTheme(themeId,save){
+async async function applyTheme(themeId,save){
   currentTheme=themeId;
   const cs=document.getElementById('clock-screen');
   THEMES.forEach(t=>cs.classList.remove('theme-'+t.id));
@@ -414,6 +414,7 @@ async function applyTheme(themeId,save){
   if(active)active.classList.add('active');
   updateDecorations(themeId);
   updateClock();
+  if(typeof startThemeAnimation==='function')startThemeAnimation(themeId);
   if(save){
     localStorage.setItem('theme',themeId);
     try{await sbFetch('theme_settings?user_id=eq.global',{method:'DELETE',headers:{'Prefer':'return=minimal'}});}catch(e){}
@@ -844,14 +845,7 @@ function stopThemeAnimation(){
   document.getElementById('clock-screen').querySelectorAll('.theme-anim-particle').forEach(e=>e.remove());
 }
 
-// Hook into applyTheme to start animation
-const _origApplyTheme=applyTheme;
-async function applyTheme(themeId,save){
-  await _origApplyTheme(themeId,save);
-  if(document.getElementById('clock-screen').style.display!=='none'){
-    startThemeAnimation(themeId);
-  }
-}
+// テーマ変更時アニメーション開始はapplyTheme内で直接処理
 
 // Start animation on load
 setTimeout(()=>startThemeAnimation(currentTheme),500);
