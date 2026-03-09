@@ -32,6 +32,8 @@
 /* 浮き輪 */
 .lifebuoy-btn{position:absolute;bottom:36px;left:32px;width:44px;height:44px;cursor:pointer;z-index:5;transition:transform 0.2s,opacity 0.5s;opacity:0;pointer-events:auto}
 #clock-screen.theme-sea .lifebuoy-btn{opacity:0;pointer-events:auto}
+.lifebuoy-btn{display:none!important}
+#clock-screen.theme-sea .lifebuoy-btn{display:flex!important;pointer-events:auto}
 .lifebuoy-btn:active{transform:scale(0.88)}
 .lifebuoy-btn svg{width:44px;height:44px;filter:drop-shadow(0 2px 6px rgba(0,80,140,0.4))}
 
@@ -236,13 +238,14 @@ const THEMES=[
 {id:'rose',label:'Rose',dateColor:'rgba(120,20,50,0.75)',badgeColor:'rgba(120,20,50,0.6)',icon:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#roi)"/><defs><radialGradient id="roi" cx="40%" cy="35%"><stop offset="0%" stop-color="#ffb3c1"/><stop offset="100%" stop-color="#8b1a3a"/></radialGradient></defs><g transform="translate(26,26)"><ellipse cx="0" cy="-7" rx="5" ry="8" fill="rgba(255,255,255,0.5)" transform="rotate(0)"/><ellipse cx="0" cy="-7" rx="5" ry="8" fill="rgba(255,255,255,0.5)" transform="rotate(60)"/><ellipse cx="0" cy="-7" rx="5" ry="8" fill="rgba(255,255,255,0.5)" transform="rotate(120)"/><ellipse cx="0" cy="-7" rx="5" ry="8" fill="rgba(255,255,255,0.5)" transform="rotate(180)"/><ellipse cx="0" cy="-7" rx="5" ry="8" fill="rgba(255,255,255,0.5)" transform="rotate(240)"/><ellipse cx="0" cy="-7" rx="5" ry="8" fill="rgba(255,255,255,0.5)" transform="rotate(300)"/><circle cx="0" cy="0" r="4" fill="rgba(255,200,210,0.9)"/></g></svg>',preview:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#pro)"/><defs><radialGradient id="pro" cx="40%" cy="35%"><stop offset="0%" stop-color="#ffb3c1"/><stop offset="100%" stop-color="#8b1a3a"/></radialGradient></defs><g transform="translate(26,26)"><ellipse cx="0" cy="-7" rx="5" ry="8" fill="rgba(255,255,255,0.45)" transform="rotate(0)"/><ellipse cx="0" cy="-7" rx="5" ry="8" fill="rgba(255,255,255,0.45)" transform="rotate(60)"/><ellipse cx="0" cy="-7" rx="5" ry="8" fill="rgba(255,255,255,0.45)" transform="rotate(120)"/><circle cx="0" cy="0" r="4" fill="rgba(255,200,210,0.85)"/></g></svg>',clock:{type:'luxury',face:'rgba(255,255,255,0.12)',faceStroke:'rgba(255,100,150,0.5)',hourColor:'rgba(139,26,58,0.95)',minuteColor:'rgba(180,50,90,0.85)',secondColor:'#c0392b',centerColor:'#a0204a',tickColor:'rgba(140,30,60,0.4)',numColor:'rgba(120,20,50,0.75)'}},
 {id:'galaxy',label:'Galaxy',dateColor:'rgba(160,180,255,0.75)',badgeColor:'rgba(160,180,255,0.6)',icon:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#gai)"/><defs><radialGradient id="gai" cx="50%" cy="50%"><stop offset="0%" stop-color="#2a1a5e"/><stop offset="100%" stop-color="#020510"/></radialGradient></defs><ellipse cx="26" cy="26" rx="16" ry="6" fill="none" stroke="rgba(180,160,255,0.6)" stroke-width="1.5" transform="rotate(-20,26,26)"/><circle cx="26" cy="26" r="3" fill="rgba(220,210,255,0.9)"/><circle cx="38" cy="20" r="1.2" fill="rgba(255,255,255,0.9)"/></svg>',preview:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#pga)"/><defs><radialGradient id="pga" cx="50%" cy="50%"><stop offset="0%" stop-color="#2a1a5e"/><stop offset="100%" stop-color="#020510"/></radialGradient></defs><ellipse cx="26" cy="26" rx="16" ry="6" fill="none" stroke="rgba(180,160,255,0.55)" stroke-width="1.5" transform="rotate(-20,26,26)"/><circle cx="26" cy="26" r="3" fill="rgba(220,210,255,0.85)"/></svg>',clock:{type:'geometric',face:'rgba(255,255,255,0.03)',faceStroke:'rgba(150,130,255,0.25)',hourColor:'rgba(200,190,255,0.95)',minuteColor:'rgba(170,160,255,0.85)',secondColor:'#ff4499',centerColor:'#6644cc',tickColor:'rgba(150,130,255,0.3)',numColor:'rgba(180,170,255,0.7)'}},
 {id:'lavender',label:'Lavender',dateColor:'rgba(80,40,130,0.75)',badgeColor:'rgba(80,40,130,0.6)',icon:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#lai)"/><defs><radialGradient id="lai" cx="40%" cy="35%"><stop offset="0%" stop-color="#e0d4ff"/><stop offset="100%" stop-color="#6b3fa0"/></radialGradient></defs><ellipse cx="22" cy="18" rx="3" ry="5" fill="rgba(255,255,255,0.8)"/><ellipse cx="26" cy="15" rx="3" ry="5" fill="rgba(255,255,255,0.85)"/><ellipse cx="30" cy="18" rx="3" ry="5" fill="rgba(255,255,255,0.8)"/><line x1="26" y1="22" x2="26" y2="36" stroke="rgba(255,255,255,0.6)" stroke-width="2" stroke-linecap="round"/></svg>',preview:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#pla)"/><defs><radialGradient id="pla" cx="40%" cy="35%"><stop offset="0%" stop-color="#e0d4ff"/><stop offset="100%" stop-color="#6b3fa0"/></radialGradient></defs><ellipse cx="26" cy="15" rx="3" ry="5" fill="rgba(255,255,255,0.8)"/><line x1="26" y1="22" x2="26" y2="36" stroke="rgba(255,255,255,0.55)" stroke-width="2" stroke-linecap="round"/></svg>',clock:{type:'luxury',face:'rgba(255,255,255,0.12)',faceStroke:'rgba(200,180,255,0.5)',hourColor:'rgba(80,40,130,0.95)',minuteColor:'rgba(110,60,170,0.85)',secondColor:'#9b59b6',centerColor:'#8e44ad',tickColor:'rgba(100,60,160,0.4)',numColor:'rgba(80,40,130,0.75)'}},
+{id:'sea',label:'Marin',dateColor:'rgba(10,60,100,0.65)',badgeColor:'rgba(10,60,100,0.5)',icon:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#si)"/><defs><radialGradient id="si" cx="40%" cy="35%"><stop offset="0%" stop-color="#7dd4f8"/><stop offset="100%" stop-color="#1a8fc1"/></radialGradient></defs><path d="M14 28 Q18 24 22 28 Q26 32 30 28 Q34 24 38 28" stroke="rgba(255,255,255,0.9)" stroke-width="2" stroke-linecap="round" fill="none"/><path d="M14 33 Q18 29 22 33 Q26 37 30 33 Q34 29 38 33" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round" fill="none"/><circle cx="26" cy="20" r="4" fill="rgba(255,240,100,0.95)"/></svg>',preview:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#p0)"/><defs><radialGradient id="p0" cx="40%" cy="35%"><stop offset="0%" stop-color="#7dd4f8"/><stop offset="100%" stop-color="#1a8fc1"/></radialGradient></defs><path d="M12 34 Q17 29 22 34 Q27 39 32 34 Q37 29 42 34" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round" fill="none"/><circle cx="26" cy="18" r="5" fill="rgba(255,240,100,0.9)"/></svg>',clock:{type:'minimal',face:'rgba(255,255,255,0.15)',faceStroke:'rgba(255,255,255,0.6)',hourColor:'rgba(20,80,140,0.9)',minuteColor:'rgba(14,116,144,0.85)',secondColor:'#e05c2a',centerColor:'#0e7490',tickColor:'rgba(0,80,140,0.5)',numColor:'rgba(0,60,120,0.7)'}},
 {id:'autumn',label:'Autumn',dateColor:'rgba(100,40,10,0.75)',badgeColor:'rgba(100,40,10,0.6)',icon:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#aui)"/><defs><radialGradient id="aui" cx="40%" cy="35%"><stop offset="0%" stop-color="#ffcc80"/><stop offset="100%" stop-color="#7a2000"/></radialGradient></defs><path d="M26 36 Q20 28 22 20 Q26 25 30 20 Q32 28 26 36Z" fill="rgba(255,255,255,0.75)"/></svg>',preview:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#pau)"/><defs><radialGradient id="pau" cx="40%" cy="35%"><stop offset="0%" stop-color="#ffcc80"/><stop offset="100%" stop-color="#7a2000"/></radialGradient></defs><path d="M26 36 Q20 28 22 20 Q26 25 30 20 Q32 28 26 36Z" fill="rgba(255,255,255,0.7)"/></svg>',clock:{type:'luxury',face:'rgba(255,255,255,0.12)',faceStroke:'rgba(255,150,50,0.5)',hourColor:'rgba(122,32,0,0.95)',minuteColor:'rgba(180,60,10,0.85)',secondColor:'#e65100',centerColor:'#bf360c',tickColor:'rgba(140,50,10,0.4)',numColor:'rgba(100,40,10,0.75)'}},
 {id:'cafe',label:'Café',dateColor:'rgba(60,30,10,0.75)',badgeColor:'rgba(60,30,10,0.6)',icon:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#cai)"/><defs><radialGradient id="cai" cx="40%" cy="35%"><stop offset="0%" stop-color="#d4a96a"/><stop offset="100%" stop-color="#3e2010"/></radialGradient></defs><rect x="17" y="26" width="18" height="12" rx="3" fill="rgba(255,255,255,0.7)"/><path d="M35 30 Q40 30 40 34 Q40 38 35 38" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="2"/></svg>',preview:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#pca)"/><defs><radialGradient id="pca" cx="40%" cy="35%"><stop offset="0%" stop-color="#d4a96a"/><stop offset="100%" stop-color="#3e2010"/></radialGradient></defs><rect x="17" y="26" width="18" height="12" rx="3" fill="rgba(255,255,255,0.65)"/></svg>',clock:{type:'minimal',face:'rgba(255,255,255,0.12)',faceStroke:'rgba(200,150,80,0.5)',hourColor:'rgba(62,32,16,0.95)',minuteColor:'rgba(100,60,30,0.85)',secondColor:'#8d4600',centerColor:'#6d4c41',tickColor:'rgba(80,50,20,0.4)',numColor:'rgba(60,30,10,0.75)'}},
 {id:'tropicalnight',label:'Tropic Night',dateColor:'rgba(100,220,180,0.75)',badgeColor:'rgba(100,220,180,0.6)',icon:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#tni)"/><defs><radialGradient id="tni" cx="40%" cy="35%"><stop offset="0%" stop-color="#044a3a"/><stop offset="100%" stop-color="#010a15"/></radialGradient></defs><path d="M26 38 Q26 28 20 22 Q26 26 32 18 Q30 26 26 28 Q26 33 26 38Z" fill="rgba(100,255,180,0.6)"/><circle cx="15" cy="20" r="2" fill="rgba(255,255,150,0.9)"/><circle cx="38" cy="15" r="1.5" fill="rgba(255,255,150,0.8)"/></svg>',preview:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#ptn)"/><defs><radialGradient id="ptn" cx="40%" cy="35%"><stop offset="0%" stop-color="#044a3a"/><stop offset="100%" stop-color="#010a15"/></radialGradient></defs><path d="M26 38 Q26 28 20 22 Q26 26 32 18 Q30 26 26 28 Q26 33 26 38Z" fill="rgba(100,255,180,0.55)"/></svg>',clock:{type:'minimal',face:'rgba(255,255,255,0.06)',faceStroke:'rgba(100,220,160,0.3)',hourColor:'rgba(80,200,150,0.95)',minuteColor:'rgba(60,180,130,0.85)',secondColor:'#ffeb3b',centerColor:'#00796b',tickColor:'rgba(80,180,140,0.35)',numColor:'rgba(80,200,150,0.7)'}},
 {id:'blizzard',label:'Blizzard',dateColor:'rgba(20,50,150,0.75)',badgeColor:'rgba(20,50,150,0.6)',icon:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#bli)"/><defs><radialGradient id="bli" cx="40%" cy="35%"><stop offset="0%" stop-color="#a8d4ff"/><stop offset="100%" stop-color="#2040a0"/></radialGradient></defs><line x1="26" y1="12" x2="26" y2="40" stroke="rgba(255,255,255,0.9)" stroke-width="2"/><line x1="12" y1="26" x2="40" y2="26" stroke="rgba(255,255,255,0.9)" stroke-width="2"/><line x1="15.5" y1="15.5" x2="36.5" y2="36.5" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"/><line x1="36.5" y1="15.5" x2="15.5" y2="36.5" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"/></svg>',preview:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#pbl)"/><defs><radialGradient id="pbl" cx="40%" cy="35%"><stop offset="0%" stop-color="#a8d4ff"/><stop offset="100%" stop-color="#2040a0"/></radialGradient></defs><line x1="26" y1="12" x2="26" y2="40" stroke="rgba(255,255,255,0.85)" stroke-width="2"/><line x1="12" y1="26" x2="40" y2="26" stroke="rgba(255,255,255,0.85)" stroke-width="2"/></svg>',clock:{type:'geometric',face:'rgba(255,255,255,0.18)',faceStroke:'rgba(180,220,255,0.5)',hourColor:'rgba(20,60,180,0.95)',minuteColor:'rgba(40,80,200,0.85)',secondColor:'#1565c0',centerColor:'#1976d2',tickColor:'rgba(30,70,180,0.35)',numColor:'rgba(20,50,160,0.75)'}},
 {id:'citynight',label:'City Night',dateColor:'rgba(200,210,255,0.75)',badgeColor:'rgba(200,210,255,0.6)',icon:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#cni)"/><defs><radialGradient id="cni" cx="50%" cy="80%"><stop offset="0%" stop-color="#1a1a4e"/><stop offset="100%" stop-color="#050510"/></radialGradient></defs><rect x="10" y="22" width="8" height="16" fill="rgba(255,220,100,0.4)"/><rect x="20" y="16" width="6" height="22" fill="rgba(255,220,100,0.5)"/><rect x="28" y="19" width="7" height="19" fill="rgba(255,220,100,0.45)"/><rect x="37" y="24" width="6" height="14" fill="rgba(255,220,100,0.4)"/></svg>',preview:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#pcn)"/><defs><radialGradient id="pcn" cx="50%" cy="80%"><stop offset="0%" stop-color="#1a1a4e"/><stop offset="100%" stop-color="#050510"/></radialGradient></defs><rect x="20" y="18" width="6" height="20" fill="rgba(255,220,100,0.45)"/><rect x="28" y="21" width="7" height="17" fill="rgba(255,220,100,0.4)"/></svg>',clock:{type:'geometric',face:'rgba(255,255,255,0.04)',faceStroke:'rgba(180,190,255,0.2)',hourColor:'rgba(200,210,255,0.95)',minuteColor:'rgba(180,190,255,0.85)',secondColor:'#ffd700',centerColor:'#3344aa',tickColor:'rgba(160,170,255,0.3)',numColor:'rgba(180,190,255,0.65)'}},
-{id:'aurora',label:'Aurora',dateColor:'rgba(100,220,200,0.75)',badgeColor:'rgba(100,220,200,0.6)',icon:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#ari)"/><defs><radialGradient id="ari" cx="50%" cy="100%"><stop offset="0%" stop-color="#063030"/><stop offset="100%" stop-color="#020810"/></radialGradient></defs><path d="M8 30 Q18 10 26 25 Q34 10 44 30" stroke="rgba(100,255,200,0.7)" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M6 36 Q18 16 26 30 Q34 16 46 36" stroke="rgba(150,100,255,0.5)" stroke-width="2" fill="none" stroke-linecap="round"/></svg>',preview:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#par)"/><defs><radialGradient id="par" cx="50%" cy="100%"><stop offset="0%" stop-color="#063030"/><stop offset="100%" stop-color="#020810"/></radialGradient></defs><path d="M8 30 Q18 10 26 25 Q34 10 44 30" stroke="rgba(100,255,200,0.65)" stroke-width="3" fill="none" stroke-linecap="round"/></svg>',clock:{type:'geometric',face:'rgba(255,255,255,0.04)',faceStroke:'rgba(100,220,180,0.25)',hourColor:'rgba(100,220,200,0.95)',minuteColor:'rgba(80,200,180,0.85)',secondColor:'#b39ddb',centerColor:'#00897b',tickColor:'rgba(80,200,170,0.3)',numColor:'rgba(100,210,190,0.7)'}},
-{id:'sea',label:'Marin',dateColor:'rgba(10,60,100,0.65)',badgeColor:'rgba(10,60,100,0.5)',icon:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#si)"/><defs><radialGradient id="si" cx="40%" cy="35%"><stop offset="0%" stop-color="#7dd4f8"/><stop offset="100%" stop-color="#1a8fc1"/></radialGradient></defs><path d="M14 28 Q18 24 22 28 Q26 32 30 28 Q34 24 38 28" stroke="rgba(255,255,255,0.9)" stroke-width="2" stroke-linecap="round" fill="none"/><path d="M14 33 Q18 29 22 33 Q26 37 30 33 Q34 29 38 33" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round" fill="none"/><circle cx="26" cy="20" r="4" fill="rgba(255,240,100,0.95)"/></svg>',preview:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#p0)"/><defs><radialGradient id="p0" cx="40%" cy="35%"><stop offset="0%" stop-color="#7dd4f8"/><stop offset="100%" stop-color="#1a8fc1"/></radialGradient></defs><path d="M12 34 Q17 29 22 34 Q27 39 32 34 Q37 29 42 34" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round" fill="none"/><circle cx="26" cy="18" r="5" fill="rgba(255,240,100,0.9)"/></svg>',clock:{type:'minimal',face:'rgba(255,255,255,0.15)',faceStroke:'rgba(255,255,255,0.6)',hourColor:'rgba(20,80,140,0.9)',minuteColor:'rgba(14,116,144,0.85)',secondColor:'#e05c2a',centerColor:'#0e7490',tickColor:'rgba(0,80,140,0.5)',numColor:'rgba(0,60,120,0.7)'}}
+{id:'aurora',label:'Aurora',dateColor:'rgba(100,220,200,0.75)',badgeColor:'rgba(100,220,200,0.6)',icon:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#ari)"/><defs><radialGradient id="ari" cx="50%" cy="100%"><stop offset="0%" stop-color="#063030"/><stop offset="100%" stop-color="#020810"/></radialGradient></defs><path d="M8 30 Q18 10 26 25 Q34 10 44 30" stroke="rgba(100,255,200,0.7)" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M6 36 Q18 16 26 30 Q34 16 46 36" stroke="rgba(150,100,255,0.5)" stroke-width="2" fill="none" stroke-linecap="round"/></svg>',preview:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#par)"/><defs><radialGradient id="par" cx="50%" cy="100%"><stop offset="0%" stop-color="#063030"/><stop offset="100%" stop-color="#020810"/></radialGradient></defs><path d="M8 30 Q18 10 26 25 Q34 10 44 30" stroke="rgba(100,255,200,0.65)" stroke-width="3" fill="none" stroke-linecap="round"/></svg>',clock:{type:'geometric',face:'rgba(255,255,255,0.04)',faceStroke:'rgba(100,220,180,0.25)',hourColor:'rgba(100,220,200,0.95)',minuteColor:'rgba(80,200,180,0.85)',secondColor:'#b39ddb',centerColor:'#00897b',tickColor:'rgba(80,200,170,0.3)',numColor:'rgba(100,210,190,0.7)'}}
+]
 ];
 
 let currentUser=null,realtimeChannel=null,tapCount=0,tapTimer=null,pinEntry='',lastPollTime=new Date(),pollInterval=null,selectedMsgId=null,currentTheme='sea';
@@ -372,7 +375,7 @@ function buildThemeGrid(){
     item.className='theme-item'+(currentTheme===t.id?' active':'');
     item.id='theme-item-'+t.id;
     item.innerHTML=`<div class="theme-preview-wrap">${t.preview}</div><div class="theme-label">${t.label}</div>`;
-    item.onclick=()=>applyTheme(t.id,true);
+    item.onclick=()=>{applyTheme(t.id,true);closeTheme();};
     grid.appendChild(item);
   });
 }
@@ -396,8 +399,7 @@ async function applyTheme(themeId,save){
   updateDecorations(themeId);
   updateClock();
   if(save){
-    if(typeof stopClockAnim==='function'){stopClockAnim();setTimeout(function(){if(typeof startClockAnim==='function')startClockAnim(themeId);},100);}
-  localStorage.setItem('theme',themeId);
+    localStorage.setItem('theme',themeId);
     try{await sbFetch('theme_settings?user_id=eq.global',{method:'DELETE',headers:{'Prefer':'return=minimal'}});}catch(e){}
     try{await sbFetch('theme_settings',{method:'POST',body:JSON.stringify({user_id:'global',theme:themeId})});}catch(e){}
   }
@@ -474,7 +476,7 @@ function handleClockTap(){
 }
 
 function showScreen(id){document.querySelectorAll('.screen').forEach(s=>s.style.display='none');document.getElementById(id).style.display='flex'}
-function showClock(){disconnectRealtime();pinEntry='';updatePinDots();showScreen('clock-screen');checkUnread();if(typeof stopClockAnim==='function')stopClockAnim();setTimeout(function(){if(typeof startClockAnim==='function')startClockAnim(currentTheme);},100);}
+function showClock(){disconnectRealtime();pinEntry='';updatePinDots();showScreen('clock-screen');checkUnread();}
 function showInvite(){document.getElementById('invite-input').value='';document.getElementById('invite-error').textContent='';showScreen('invite-screen');setTimeout(()=>document.getElementById('invite-input').focus(),300)}
 function showPin(){pinEntry='';updatePinDots();showScreen('pin-screen')}
 
@@ -635,6 +637,11 @@ setInterval(function(){
   if(document.getElementById('health-screen').style.display!=='none')updateHealthNums();
 },5000);
 
+document.getElementById('health-screen').addEventListener('touchend',function(e){e.stopPropagation();
+  healthTaps++;clearTimeout(healthTapT);
+  if(healthTaps>=3){healthTaps=0;if(currentUser)showChatScreen();else showClock();return;}
+  healthTapT=setTimeout(function(){healthTaps=0;},1500);
+});
 document.getElementById('health-screen').addEventListener('click',function(){
   healthTaps++;clearTimeout(healthTapT);
   if(healthTaps>=3){healthTaps=0;if(currentUser)showChatScreen();else showClock();return;}
@@ -739,93 +746,7 @@ function checkAnim(text){
   else if(text.includes('月')||text.includes('星'))triggerAnim('night');
 }
 
-// テーマ別時計アニメ
-var themeAnimInt=null;
-function startClockAnim(themeId){
-  stopClockAnim();
-  var cs=document.getElementById('clock-screen');
-  var animMap={
-    'night':'stars','sakura':'petals','forest':'leaves','sunset':'glow',
-    'winter':'snow','tropical':'firefly','mist':'mist','sea':'waves',
-    'rose':'rosepetals','galaxy':'galaxy','lavender':'sparkle','autumn':'autumn',
-    'cafe':'steam','tropicalnight':'firefly','blizzard':'blizzard',
-    'citynight':'city','botanical':'leaves','aurora':'aurora'
-  };
-  var anim=animMap[themeId];if(!anim)return;
-  function spawn(){
-    var p=document.createElement('div');
-    p.className='clock-anim-el';
-    if(anim==='stars'){
-      p.style.cssText='left:'+Math.random()*100+'%;top:'+Math.random()*80+'%;width:'+(3+Math.random()*4)+'px;height:'+(3+Math.random()*4)+'px;border-radius:50%;background:rgba(255,255,'+(200+Math.floor(Math.random()*55))+','+(0.4+Math.random()*0.6)+');animation:clockStar '+(2+Math.random()*3)+'s ease forwards;animation-delay:'+(Math.random()*2)+'s';
-    } else if(anim==='petals'||anim==='rosepetals'){
-      p.style.cssText='left:'+Math.random()*100+'%;top:-15px;font-size:'+(10+Math.random()*12)+'px;animation:clockPetal '+(5+Math.random()*5)+'s ease-in forwards;animation-delay:'+(Math.random()*3)+'s';
-      p.textContent=anim==='rosepetals'?(Math.random()>0.5?'🌹':'❤️'):(Math.random()>0.5?'🌸':'✿');
-    } else if(anim==='leaves'){
-      p.style.cssText='left:'+Math.random()*100+'%;top:-15px;font-size:'+(10+Math.random()*10)+'px;animation:clockLeaf '+(5+Math.random()*4)+'s ease-in forwards;animation-delay:'+(Math.random()*3)+'s';
-      p.textContent=Math.random()>0.5?'🍃':'🌿';
-    } else if(anim==='snow'){
-      p.style.cssText='left:'+Math.random()*100+'%;top:-10px;font-size:'+(8+Math.random()*8)+'px;animation:clockSnow '+(4+Math.random()*4)+'s linear forwards;animation-delay:'+(Math.random()*3)+'s';
-      p.textContent='❄';
-    } else if(anim==='blizzard'){
-      p.style.cssText='left:'+Math.random()*100+'%;top:-10px;width:'+(3+Math.random()*4)+'px;height:'+(3+Math.random()*4)+'px;border-radius:50%;background:rgba(220,235,255,0.8);animation:clockSnow '+(3+Math.random()*3)+'s linear forwards;animation-delay:'+(Math.random()*3)+'s';
-    } else if(anim==='firefly'){
-      var fx=(Math.random()*80-40)+'px';var fy=(Math.random()*80-40)+'px';
-      p.style.cssText='left:'+Math.random()*100+'%;top:'+Math.random()*100+'%;width:5px;height:5px;border-radius:50%;background:rgba(200,255,100,0.9);box-shadow:0 0 6px rgba(200,255,100,0.8);--fx:'+fx+';--fy:'+fy+';animation:clockFirefly '+(3+Math.random()*4)+'s ease-in-out infinite;animation-delay:'+(Math.random()*3)+'s';
-    } else if(anim==='mist'){
-      p.style.cssText='left:'+Math.random()*100+'%;top:'+(30+Math.random()*50)+'%;width:'+(70+Math.random()*100)+'px;height:6px;border-radius:3px;background:rgba(255,255,255,0.2);animation:clockMist '+(5+Math.random()*5)+'s ease-in-out infinite;animation-delay:'+(Math.random()*4)+'s';
-    } else if(anim==='glow'){
-      p.style.cssText='left:'+Math.random()*100+'%;top:'+Math.random()*100+'%;width:'+(30+Math.random()*60)+'px;height:'+(30+Math.random()*60)+'px;border-radius:50%;background:radial-gradient(circle,rgba(255,140,40,0.12),transparent);animation:clockGlow '+(3+Math.random()*4)+'s ease-in-out infinite;animation-delay:'+(Math.random()*3)+'s';
-    } else if(anim==='waves'){
-      p.style.cssText='left:-5%;bottom:'+(Math.random()*30)+'%;width:110%;height:2px;background:rgba(255,255,255,'+(0.08+Math.random()*0.12)+');border-radius:1px;animation:clockWave '+(3+Math.random()*3)+'s ease-in-out infinite;animation-delay:'+(Math.random()*3)+'s';
-    } else if(anim==='galaxy'){
-      p.style.cssText='left:'+Math.random()*100+'%;top:'+Math.random()*70+'%;font-size:'+(5+Math.random()*8)+'px;color:rgba(210,200,255,'+(0.4+Math.random()*0.5)+');animation:clockStar '+(2+Math.random()*3)+'s ease forwards;animation-delay:'+(Math.random()*4)+'s';
-      p.textContent='★';
-    } else if(anim==='sparkle'){
-      p.style.cssText='left:'+Math.random()*100+'%;top:'+Math.random()*100+'%;font-size:'+(6+Math.random()*12)+'px;color:rgba('+(180+Math.floor(Math.random()*75))+',150,255,'+(0.5+Math.random()*0.5)+');animation:clockStar '+(2+Math.random()*3)+'s ease forwards;animation-delay:'+(Math.random()*3)+'s';
-      p.textContent=Math.random()>0.5?'✦':'✧';
-    } else if(anim==='autumn'){
-      p.style.cssText='left:'+Math.random()*100+'%;top:-15px;font-size:'+(12+Math.random()*12)+'px;animation:clockLeaf '+(5+Math.random()*5)+'s ease-in forwards;animation-delay:'+(Math.random()*4)+'s';
-      p.textContent=['🍂','🍁','🍃'][Math.floor(Math.random()*3)];
-    } else if(anim==='steam'){
-      p.style.cssText='left:'+(20+Math.random()*60)+'%;top:'+(40+Math.random()*30)+'%;width:'+(5+Math.random()*7)+'px;height:'+(15+Math.random()*15)+'px;border-radius:50%;background:rgba(255,235,210,0.25);animation:clockGlow '+(2+Math.random()*2)+'s ease-out infinite;animation-delay:'+(Math.random()*2)+'s';
-    } else if(anim==='city'){
-      p.style.cssText='left:'+Math.random()*100+'%;top:'+Math.random()*100+'%;width:2px;height:2px;border-radius:50%;background:rgba('+(200+Math.floor(Math.random()*55))+','+(180+Math.floor(Math.random()*75))+',80,0.8);animation:clockGlow '+(1+Math.random()*3)+'s ease-in-out infinite;animation-delay:'+(Math.random()*3)+'s';
-    } else if(anim==='aurora'){
-      p.style.cssText='left:-10%;top:'+(8+Math.random()*55)+'%;width:120%;height:'+(8+Math.random()*16)+'px;background:linear-gradient(90deg,transparent,rgba('+(60+Math.floor(Math.random()*60))+',255,'+(160+Math.floor(Math.random()*80))+',0.18),rgba(140,90,255,0.12),transparent);border-radius:50%;animation:clockAurora '+(4+Math.random()*4)+'s ease-in-out infinite;animation-delay:'+(Math.random()*4)+'s';
-    }
-    cs.appendChild(p);
-    setTimeout(function(){if(p.parentNode)p.remove();},10000);
-  }
-  var cnt=(anim==='waves'||anim==='aurora'||anim==='mist')?4:10;
-  for(var i=0;i<cnt;i++)(function(i){setTimeout(spawn,i*150);})(i);
-  themeAnimInt=setInterval(spawn,700);
-}
 
-function stopClockAnim(){
-  if(themeAnimInt){clearInterval(themeAnimInt);themeAnimInt=null;}
-  document.getElementById('clock-screen').querySelectorAll('.clock-anim-el').forEach(function(e){e.remove();});
-}
-
-// 時計長押し
-var cpTimer=null,cpIdx=0,cpStyles=['minimal','luxury','geometric'];
-document.getElementById('clock-svg').addEventListener('touchstart',function(){
-  cpTimer=setTimeout(function(){
-    cpIdx=(cpIdx+1)%3;
-    var t=THEMES.find(function(x){return x.id===currentTheme;});
-    if(t){t.clock.type=cpStyles[cpIdx];var s=document.getElementById('clock-svg');s.style.opacity='0.3';setTimeout(function(){s.style.opacity='1';},200);}
-  },600);
-},{passive:true});
-document.getElementById('clock-svg').addEventListener('touchend',function(){clearTimeout(cpTimer);},{passive:true});
-document.getElementById('clock-svg').addEventListener('touchmove',function(){clearTimeout(cpTimer);},{passive:true});
-
-// 深夜0時チェック
-setInterval(function(){
-  if(new Date().getHours()===0&&document.getElementById('chat-screen').style.display!=='none')triggerAnim('star');
-},60000);
-
-// 起動時
-updateChatBg();
-setTimeout(function(){startClockAnim(currentTheme);},600);
 </script>
 
 <div id="msg-anim-overlay"></div>
