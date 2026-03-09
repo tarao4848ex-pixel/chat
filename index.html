@@ -1,5 +1,4 @@
-<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>時計</title><meta name="apple-mobile-web-app-title" content="メモ">
-<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' rx='40' fill='%23b3e5fc'/%3E%3Crect x='0' y='0' width='180' height='48' rx='40' fill='%2381d4fa'/%3E%3Crect x='0' y='24' width='180' height='24' fill='%2381d4fa'/%3E%3Ccircle cx='30' cy='24' r='4' fill='%23e1f5fe' opacity='0.6'/%3E%3Ccircle cx='50' cy='24' r='4' fill='%23e1f5fe' opacity='0.6'/%3E%3Ccircle cx='70' cy='24' r='4' fill='%23e1f5fe' opacity='0.6'/%3E%3Ccircle cx='90' cy='24' r='4' fill='%23e1f5fe' opacity='0.6'/%3E%3Ccircle cx='110' cy='24' r='4' fill='%23e1f5fe' opacity='0.6'/%3E%3Ccircle cx='130' cy='24' r='4' fill='%23e1f5fe' opacity='0.6'/%3E%3Ccircle cx='150' cy='24' r='4' fill='%23e1f5fe' opacity='0.6'/%3E%3Crect x='24' y='72' width='132' height='8' rx='4' fill='%23b0bec5' opacity='0.5'/%3E%3Crect x='24' y='96' width='132' height='8' rx='4' fill='%23b0bec5' opacity='0.4'/%3E%3Crect x='24' y='120' width='100' height='8' rx='4' fill='%23b0bec5' opacity='0.3'/%3E%3C/svg%3E"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><style>*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none;-webkit-user-select:none;user-select:none}body{font-family:-apple-system,'Helvetica Neue',sans-serif;height:100dvh;overflow:hidden}.screen{position:absolute;top:0;left:0;width:100%;height:100dvh;display:none;flex-direction:column;align-items:center;justify-content:center}#clock-screen{position:relative;overflow:hidden}
+<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>時計</title><meta name="apple-mobile-web-app-title" content="メモ"><link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' rx='40' fill='%23b3e5fc'/%3E%3Crect x='0' y='0' width='180' height='50' rx='40' fill='%2381d4fa'/%3E%3Crect x='0' y='25' width='180' height='25' fill='%2381d4fa'/%3E%3Ccircle cx='30' cy='25' r='4' fill='rgba(255,255,255,0.5)'/%3E%3Ccircle cx='50' cy='25' r='4' fill='rgba(255,255,255,0.5)'/%3E%3Ccircle cx='70' cy='25' r='4' fill='rgba(255,255,255,0.5)'/%3E%3Ccircle cx='90' cy='25' r='4' fill='rgba(255,255,255,0.5)'/%3E%3Ccircle cx='110' cy='25' r='4' fill='rgba(255,255,255,0.5)'/%3E%3Ccircle cx='130' cy='25' r='4' fill='rgba(255,255,255,0.5)'/%3E%3Crect x='24' y='75' width='132' height='8' rx='4' fill='%23b0bec5' opacity='0.6'/%3E%3Crect x='24' y='100' width='132' height='8' rx='4' fill='%23b0bec5' opacity='0.5'/%3E%3Crect x='24' y='125' width='90' height='8' rx='4' fill='%23b0bec5' opacity='0.4'/%3E%3C/svg%3E"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><style>*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none;-webkit-user-select:none;user-select:none}body{font-family:-apple-system,'Helvetica Neue',sans-serif;height:100dvh;overflow:hidden}.screen{position:absolute;top:0;left:0;width:100%;height:100dvh;display:none;flex-direction:column;align-items:center;justify-content:center}#clock-screen{position:relative;overflow:hidden}
 .theme-sea{background:linear-gradient(160deg,#e0f4ff 0%,#b8e8ff 25%,#7dd4f8 50%,#3ab5e6 75%,#1a8fc1 100%)}
 .theme-night{background:linear-gradient(160deg,#0a0a2e 0%,#0d1b4b 30%,#1a1a5e 60%,#0d0d3b 100%)}
 .theme-sakura{background:linear-gradient(160deg,#fff0f5 0%,#ffd6e7 25%,#ffb3d1 50%,#ff85b3 75%,#e0609a 100%)}
@@ -118,7 +117,7 @@
 .chat-messages::-webkit-scrollbar{display:none}
 .msg-row{display:flex;align-items:flex-end;gap:8px}
 .msg-row.mine{flex-direction:row-reverse}
-.msg-avatar-sm{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#7dd4f8,#22d3ee);flex-shrink:0;font-size:8px;font-weight:700;color:#fff;display:flex;align-items:center;justify-content:center;line-height:1;text-align:center;overflow:hidden;word-break:break-all;padding:2px}
+.msg-avatar-sm{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#7dd4f8,#22d3ee);flex-shrink:0;font-size:9px;font-weight:700;color:#fff;display:flex;align-items:center;justify-content:center;line-height:1;text-align:center}
 .msg-wrap{display:flex;flex-direction:column;max-width:72%}
 .msg-row.mine .msg-wrap{align-items:flex-end}
 .msg-bubble{padding:10px 14px;border-radius:18px;font-size:15px;line-height:1.45;word-break:break-word;max-width:100%;animation:msgIn .22s ease}
@@ -138,7 +137,6 @@
 /* ヘルスケア画面 */
 #health-screen{background:#f2f2f7;justify-content:flex-start;overflow-y:auto}
 .health-header{width:100%;background:#fff;padding:16px 20px 12px;border-bottom:1px solid rgba(0,0,0,0.1);position:sticky;top:0;z-index:10}
-.health-header-top{display:flex;align-items:center;justify-content:space-between}
 .health-title{font-size:17px;font-weight:600;color:#000}
 .health-subtitle{font-size:13px;color:#8e8e93;margin-top:2px}
 .health-body{width:100%;padding:16px;display:flex;flex-direction:column;gap:12px}
@@ -146,7 +144,7 @@
 .health-card-title{font-size:12px;font-weight:600;color:#8e8e93;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px}
 .health-card-value{font-size:36px;font-weight:300;color:#000;line-height:1}
 .health-card-unit{font-size:14px;color:#8e8e93;margin-top:4px}
-.health-card-icon{font-size:24px;float:right;margin-top:-4px}
+.health-card-icon{font-size:22px;float:right;margin-top:-4px}
 .health-graph{width:100%;height:60px;margin-top:8px}
 .health-ring-wrap{display:flex;align-items:center;gap:16px}
 .health-ring-labels{display:flex;flex-direction:column;gap:6px}
@@ -154,31 +152,34 @@
 .health-ring-dot{width:8px;height:8px;border-radius:50%}
 .health-summary{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .health-tap-hint{text-align:center;color:#c7c7cc;font-size:12px;padding:20px 0 40px}
-
-/* チャット時間帯背景 */
-#chat-screen.time-morning{background:linear-gradient(160deg,#fff8f0 0%,#ffe0cc 40%,#ffcba4 100%)}
+.health-btn{position:absolute;top:14px;right:14px;width:30px;height:30px;background:rgba(255,255,255,0.2);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:20}
+.health-btn svg{width:16px;height:16px}
+/* 時間帯背景 */
+#chat-screen.time-morning{background:linear-gradient(160deg,#fff5ee 0%,#ffe4cc 40%,#ffd0a8 100%)}
 #chat-screen.time-afternoon{background:linear-gradient(160deg,#f0f8ff 0%,#ddeeff 40%,#c4e0ff 100%)}
-#chat-screen.time-evening{background:linear-gradient(160deg,#1a0533 0%,#4a1560 40%,#8b2a8a 70%,#ff6b35 100%)}
+#chat-screen.time-evening{background:linear-gradient(160deg,#1a0533 0%,#4a1560 40%,#8b2a8a 70%,#e05520 100%)}
 #chat-screen.time-night{background:linear-gradient(160deg,#020818 0%,#0a1628 40%,#0d2040 100%)}
-#chat-screen.time-midnight{background:linear-gradient(160deg,#000510 0%,#020d20 50%,#050a18 100%)}
-
-/* メッセージアニメーション オーバーレイ */
+/* アニメーションオーバーレイ */
 #msg-anim-overlay{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1000;overflow:hidden;display:none}
 #msg-anim-overlay.active{display:block}
+@keyframes heartFloat{0%{transform:translateY(0) scale(1);opacity:1}100%{transform:translateY(-110vh) scale(0.5);opacity:0}}
+@keyframes petalDrift{0%{transform:translateY(-20px) rotate(0deg);opacity:1}100%{transform:translateY(110vh) rotate(720deg);opacity:0}}
+@keyframes starFall{0%{transform:translateY(-20px);opacity:1}100%{transform:translateY(110vh);opacity:0}}
+@keyframes rainDrop{0%{transform:translateY(-20px);opacity:0.7}100%{transform:translateY(110vh);opacity:0}}
+@keyframes rainbowShow{0%{opacity:0}30%{opacity:0.8}70%{opacity:0.8}100%{opacity:0}}
+@keyframes nightShow{0%{opacity:0}30%{opacity:1}70%{opacity:1}100%{opacity:0}}
+/* テーマアニメ */
+@keyframes clockPetal{0%{transform:translateY(-10px) rotate(0deg);opacity:1}100%{transform:translateY(110vh) rotate(540deg);opacity:0}}
+@keyframes clockStar{0%{opacity:0;transform:scale(0)}50%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(0)}}
+@keyframes clockSnow{0%{transform:translateY(-10px) rotate(0deg);opacity:0.8}100%{transform:translateY(110vh) rotate(360deg);opacity:0}}
+@keyframes clockLeaf{0%{transform:translateY(-10px) rotate(0deg);opacity:1}100%{transform:translateY(110vh) rotate(480deg);opacity:0}}
+@keyframes clockGlow{0%,100%{opacity:0.2}50%{opacity:0.6}}
+@keyframes clockFirefly{0%{opacity:0;transform:translate(0,0)}40%{opacity:1}100%{opacity:0;transform:translate(var(--fx),var(--fy))}}
+@keyframes clockMist{0%{transform:translateX(0);opacity:0.3}50%{opacity:0.6}100%{transform:translateX(40px);opacity:0.1}}
+@keyframes clockAurora{0%,100%{opacity:0.2;transform:scaleX(0.95)}50%{opacity:0.6;transform:scaleX(1.05)}}
+@keyframes clockWave{0%,100%{transform:translateX(0)}50%{transform:translateX(-15px)}}
+.clock-anim-el{position:absolute;pointer-events:none;z-index:2}
 
-/* ヘルスケアボタン（右上） */
-.health-btn{position:absolute;top:16px;right:16px;width:32px;height:32px;background:rgba(255,255,255,0.25);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:20;backdrop-filter:blur(4px)}
-.health-btn svg{width:18px;height:18px}
-
-/* 3分タイマー・シェイク */
-@keyframes heartFloat{0%{transform:translateY(0) scale(1);opacity:1}100%{transform:translateY(-100vh) scale(0.5);opacity:0}}
-@keyframes petalDrift{0%{transform:translateY(-20px) rotate(0deg);opacity:1}100%{transform:translateY(100vh) rotate(720deg);opacity:0}}
-@keyframes starFall{0%{transform:translateY(-20px) scale(1);opacity:1}100%{transform:translateY(100vh) scale(0.3);opacity:0}}
-@keyframes rainDrop{0%{transform:translateY(-20px);opacity:0.7}100%{transform:translateY(100vh);opacity:0}}
-@keyframes rainbowArc{0%{opacity:0;transform:scaleX(0)}50%{opacity:0.8}100%{opacity:0;transform:scaleX(1)}}
-@keyframes nightSky{0%{opacity:0}30%{opacity:1}70%{opacity:1}100%{opacity:0}}
-
-/* 追加テーマ */
 .theme-rose{background:linear-gradient(160deg,#fff0f0 0%,#ffd0d8 25%,#ff9aaa 50%,#e05070 75%,#8b1a3a 100%)}
 .theme-galaxy{background:linear-gradient(160deg,#020510 0%,#050d28 30%,#0a1545 60%,#050d28 100%)}
 .theme-lavender{background:linear-gradient(160deg,#f3f0ff 0%,#e0d4ff 25%,#c4a8ff 50%,#9b6dff 75%,#6b3fa0 100%)}
@@ -189,25 +190,6 @@
 .theme-citynight{background:linear-gradient(160deg,#050510 0%,#0a0a25 30%,#15153a 60%,#0a0a25 100%)}
 .theme-botanical{background:linear-gradient(160deg,#f0fff0 0%,#d0f0d0 25%,#80c880 50%,#2d8a2d 75%,#0a3a0a 100%)}
 .theme-aurora{background:linear-gradient(160deg,#020810 0%,#041a20 30%,#063030 60%,#041a20 100%)}
-
-/* 各テーマアニメーション装飾 */
-.theme-anim-particle{position:absolute;pointer-events:none;z-index:2}
-
-/* テーマ別時計画面アニメーション */
-@keyframes leafSway{0%,100%{transform:translateX(0) rotate(0deg);opacity:0.8}50%{transform:translateX(8px) rotate(5deg);opacity:1}}
-@keyframes glowPulse{0%,100%{opacity:0.3;transform:scale(1)}50%{opacity:0.7;transform:scale(1.05)}}
-@keyframes fireflyFloat{0%{transform:translate(0,0);opacity:0}25%{opacity:1}75%{opacity:0.8}100%{transform:translate(var(--fx),var(--fy));opacity:0}}
-@keyframes mistDrift{0%{transform:translateX(0);opacity:0.4}50%{opacity:0.7}100%{transform:translateX(30px);opacity:0.2}}
-@keyframes rosePetal{0%{transform:translateY(-20px) rotate(var(--rot));opacity:1}100%{transform:translateY(110vh) rotate(calc(var(--rot)+540deg));opacity:0}}
-@keyframes shootingStar{0%{transform:translate(0,0);opacity:1}100%{transform:translate(-200px,200px);opacity:0}}
-@keyframes sparkleFloat{0%{opacity:0;transform:scale(0)}30%{opacity:1;transform:scale(1)}70%{opacity:1}100%{opacity:0;transform:scale(0)}}
-@keyframes autumnLeaf{0%{transform:translateY(-20px) rotate(0deg);opacity:1}100%{transform:translateY(110vh) rotate(var(--rot));opacity:0}}
-@keyframes steamRise{0%{transform:translateY(0) scaleX(1);opacity:0.5}50%{transform:translateY(-20px) scaleX(1.3);opacity:0.3}100%{transform:translateY(-40px) scaleX(0.8);opacity:0}}
-@keyframes cityLight{0%,100%{opacity:0.3}50%{opacity:0.9}}
-@keyframes botanicalSway{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}}
-@keyframes auroraWave{0%{opacity:0.3;transform:scaleX(0.9) translateY(0)}50%{opacity:0.7;transform:scaleX(1.1) translateY(-10px)}100%{opacity:0.3;transform:scaleX(0.9) translateY(0)}}
-@keyframes waveAnim{0%,100%{transform:translateX(0)}50%{transform:translateX(-20px)}}
-@keyframes blizzardFlake{0%{transform:translateY(-20px) rotate(0deg) translateX(0);opacity:0.8}100%{transform:translateY(110vh) rotate(720deg) translateX(var(--bx));opacity:0}}
 </style></head><body>
 <div id="fade-overlay"></div>
 
@@ -244,24 +226,23 @@ const USERS={'1989':{name:'Marin🌊',partner:'天才おざわさん'},'1989B':{
 
 // テーマ定義
 const THEMES=[
-{id:'night',label:'Night',dateColor:'rgba(150,170,255,0.7)',badgeColor:'rgba(180,200,255,0.7)',icon:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#ni)"/><defs><radialGradient id="ni" cx="40%" cy="35%"><stop offset="0%" stop-color="#1a1a6e"/><stop offset="100%" stop-color="#060620"/></radialGradient></defs><path d="M30 14 A10 10 0 1 0 20 30 A8 8 0 1 1 30 14Z" fill="rgba(200,220,255,0.9)"/><circle cx="37" cy="18" r="1.2" fill="rgba(255,255,255,0.9)"/><circle cx="34" cy="26" r="0.8" fill="rgba(255,255,255,0.7)"/><circle cx="40" cy="24" r="1" fill="rgba(255,255,255,0.8)"/></svg>',preview:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#p1)"/><defs><radialGradient id="p1" cx="40%" cy="35%"><stop offset="0%" stop-color="#1a1a6e"/><stop offset="100%" stop-color="#060620"/></radialGradient></defs><path d="M28 14 A9 9 0 1 0 20 29 A7 7 0 1 1 28 14Z" fill="rgba(200,220,255,0.85)"/><circle cx="36" cy="17" r="1.2" fill="rgba(255,255,255,0.8)"/></svg>',clock:{type:'geometric',face:'rgba(255,255,255,0.04)',faceStroke:'rgba(100,120,255,0.3)',hourColor:'rgba(170,190,255,0.95)',minuteColor:'rgba(130,160,255,0.85)',secondColor:'#ff6699',centerColor:'#8899ff',tickColor:'rgba(130,150,255,0.4)',numColor:'rgba(180,200,255,0.75)'},anim:'stars'},
-{id:'sakura',label:'Sakura',dateColor:'rgba(160,40,90,0.7)',badgeColor:'rgba(160,40,90,0.55)',icon:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#ski)"/><defs><radialGradient id="ski" cx="40%" cy="35%"><stop offset="0%" stop-color="#ffb3d1"/><stop offset="100%" stop-color="#e0609a"/></radialGradient></defs><g transform="translate(26,26)"><ellipse cx="0" cy="-8" rx="4" ry="7" fill="rgba(255,255,255,0.85)" transform="rotate(0)"/><ellipse cx="0" cy="-8" rx="4" ry="7" fill="rgba(255,255,255,0.85)" transform="rotate(72)"/><ellipse cx="0" cy="-8" rx="4" ry="7" fill="rgba(255,255,255,0.85)" transform="rotate(144)"/><ellipse cx="0" cy="-8" rx="4" ry="7" fill="rgba(255,255,255,0.85)" transform="rotate(216)"/><ellipse cx="0" cy="-8" rx="4" ry="7" fill="rgba(255,255,255,0.85)" transform="rotate(288)"/><circle cx="0" cy="0" r="3" fill="rgba(255,200,210,0.95)"/></g></svg>',preview:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#p2)"/><defs><radialGradient id="p2" cx="40%" cy="35%"><stop offset="0%" stop-color="#ffb3d1"/><stop offset="100%" stop-color="#e0609a"/></radialGradient></defs><g transform="translate(26,26)"><ellipse cx="0" cy="-8" rx="4" ry="7" fill="rgba(255,255,255,0.8)" transform="rotate(0)"/><ellipse cx="0" cy="-8" rx="4" ry="7" fill="rgba(255,255,255,0.8)" transform="rotate(72)"/><ellipse cx="0" cy="-8" rx="4" ry="7" fill="rgba(255,255,255,0.8)" transform="rotate(144)"/><ellipse cx="0" cy="-8" rx="4" ry="7" fill="rgba(255,255,255,0.8)" transform="rotate(216)"/><ellipse cx="0" cy="-8" rx="4" ry="7" fill="rgba(255,255,255,0.8)" transform="rotate(288)"/><circle cx="0" cy="0" r="3" fill="rgba(255,200,210,0.9)"/></g></svg>',clock:{type:'luxury',face:'rgba(255,255,255,0.18)',faceStroke:'rgba(255,160,200,0.6)',hourColor:'rgba(180,50,100,0.9)',minuteColor:'rgba(220,100,140,0.85)',secondColor:'#a0204a',centerColor:'#e8729a',tickColor:'rgba(180,60,110,0.45)',numColor:'rgba(150,40,80,0.75)'},anim:'petals'},
-{id:'forest',label:'Forest',dateColor:'rgba(20,80,20,0.7)',badgeColor:'rgba(20,80,20,0.55)',icon:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#fi)"/><defs><radialGradient id="fi" cx="40%" cy="35%"><stop offset="0%" stop-color="#81c784"/><stop offset="100%" stop-color="#1b5e20"/></radialGradient></defs><polygon points="26,12 34,26 18,26" fill="rgba(255,255,255,0.85)"/><polygon points="26,19 35,33 17,33" fill="rgba(255,255,255,0.7)"/><rect x="23" y="33" width="6" height="6" rx="1" fill="rgba(255,255,255,0.6)"/></svg>',preview:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#p3)"/><defs><radialGradient id="p3" cx="40%" cy="35%"><stop offset="0%" stop-color="#81c784"/><stop offset="100%" stop-color="#1b5e20"/></radialGradient></defs><polygon points="26,12 34,26 18,26" fill="rgba(255,255,255,0.8)"/><polygon points="26,19 35,33 17,33" fill="rgba(255,255,255,0.65)"/><rect x="23" y="33" width="6" height="6" rx="1" fill="rgba(255,255,255,0.55)"/></svg>',clock:{type:'minimal',face:'rgba(255,255,255,0.15)',faceStroke:'rgba(100,200,100,0.5)',hourColor:'rgba(27,94,32,0.95)',minuteColor:'rgba(56,142,60,0.85)',secondColor:'#e65100',centerColor:'#388e3c',tickColor:'rgba(30,100,30,0.4)',numColor:'rgba(20,80,20,0.7)'},anim:'leaves'},
-{id:'sunset',label:'Sunset',dateColor:'rgba(120,40,10,0.75)',badgeColor:'rgba(120,40,10,0.6)',icon:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#ssi)"/><defs><linearGradient id="ssi" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ff8a50"/><stop offset="100%" stop-color="#7b1fa2"/></linearGradient></defs><path d="M14 32 A12 12 0 0 1 38 32" fill="rgba(255,200,80,0.85)"/><line x1="10" y1="35" x2="42" y2="35" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/></svg>',preview:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#p4)"/><defs><linearGradient id="p4" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ff8a50"/><stop offset="100%" stop-color="#7b1fa2"/></linearGradient></defs><path d="M14 32 A12 12 0 0 1 38 32" fill="rgba(255,200,80,0.8)"/><line x1="10" y1="35" x2="42" y2="35" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/></svg>',clock:{type:'luxury',face:'rgba(255,255,255,0.12)',faceStroke:'rgba(255,160,80,0.5)',hourColor:'rgba(180,54,12,0.95)',minuteColor:'rgba(230,74,25,0.85)',secondColor:'#4a148c',centerColor:'#e64a19',tickColor:'rgba(180,80,10,0.4)',numColor:'rgba(140,50,10,0.8)'},anim:'glow'},
-{id:'winter',label:'Winter',dateColor:'rgba(20,60,120,0.7)',badgeColor:'rgba(20,60,120,0.55)',icon:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#wi)"/><defs><radialGradient id="wi" cx="40%" cy="35%"><stop offset="0%" stop-color="#e3f2fd"/><stop offset="100%" stop-color="#1565c0"/></radialGradient></defs><line x1="26" y1="12" x2="26" y2="40" stroke="rgba(255,255,255,0.85)" stroke-width="2" stroke-linecap="round"/><line x1="12" y1="26" x2="40" y2="26" stroke="rgba(255,255,255,0.85)" stroke-width="2" stroke-linecap="round"/><line x1="15.5" y1="15.5" x2="36.5" y2="36.5" stroke="rgba(255,255,255,0.6)" stroke-width="1.5" stroke-linecap="round"/><line x1="36.5" y1="15.5" x2="15.5" y2="36.5" stroke="rgba(255,255,255,0.6)" stroke-width="1.5" stroke-linecap="round"/><circle cx="26" cy="26" r="3" fill="rgba(255,255,255,0.9)"/></svg>',preview:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#p5)"/><defs><radialGradient id="p5" cx="40%" cy="35%"><stop offset="0%" stop-color="#e3f2fd"/><stop offset="100%" stop-color="#1565c0"/></radialGradient></defs><line x1="26" y1="12" x2="26" y2="40" stroke="rgba(255,255,255,0.8)" stroke-width="2" stroke-linecap="round"/><line x1="12" y1="26" x2="40" y2="26" stroke="rgba(255,255,255,0.8)" stroke-width="2" stroke-linecap="round"/><line x1="15.5" y1="15.5" x2="36.5" y2="36.5" stroke="rgba(255,255,255,0.55)" stroke-width="1.5" stroke-linecap="round"/><line x1="36.5" y1="15.5" x2="15.5" y2="36.5" stroke="rgba(255,255,255,0.55)" stroke-width="1.5" stroke-linecap="round"/><circle cx="26" cy="26" r="3" fill="rgba(255,255,255,0.85)"/></svg>',clock:{type:'geometric',face:'rgba(255,255,255,0.2)',faceStroke:'rgba(150,200,255,0.5)',hourColor:'rgba(21,101,192,0.95)',minuteColor:'rgba(25,118,210,0.85)',secondColor:'#c62828',centerColor:'#1976d2',tickColor:'rgba(20,80,180,0.35)',numColor:'rgba(20,60,140,0.75)'},anim:'snow'},
-{id:'tropical',label:'Tropical',dateColor:'rgba(0,80,70,0.75)',badgeColor:'rgba(0,80,70,0.6)',icon:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#ti)"/><defs><radialGradient id="ti" cx="40%" cy="35%"><stop offset="0%" stop-color="#4dd0e1"/><stop offset="100%" stop-color="#006064"/></radialGradient></defs><path d="M26 38 Q26 28 20 22 Q26 26 32 18 Q30 26 26 28 Q26 33 26 38Z" fill="rgba(255,255,255,0.85)"/><path d="M26 38 Q28 30 36 26 Q32 30 30 36Z" fill="rgba(255,255,255,0.6)"/><circle cx="26" cy="38" r="2" fill="rgba(255,220,100,0.9)"/></svg>',preview:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#p6)"/><defs><radialGradient id="p6" cx="40%" cy="35%"><stop offset="0%" stop-color="#4dd0e1"/><stop offset="100%" stop-color="#006064"/></radialGradient></defs><path d="M26 40 Q26 28 18 20 Q26 26 34 16 Q30 26 26 28 Q26 34 26 40Z" fill="rgba(255,255,255,0.8)"/></svg>',clock:{type:'minimal',face:'rgba(255,255,255,0.15)',faceStroke:'rgba(100,220,210,0.5)',hourColor:'rgba(0,105,92,0.95)',minuteColor:'rgba(0,137,123,0.85)',secondColor:'#f57f17',centerColor:'#00897b',tickColor:'rgba(0,100,90,0.4)',numColor:'rgba(0,80,70,0.75)'},anim:'fireflies'},
-{id:'mist',label:'Mist',dateColor:'rgba(50,70,80,0.7)',badgeColor:'rgba(50,70,80,0.55)',icon:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#mi)"/><defs><radialGradient id="mi" cx="40%" cy="35%"><stop offset="0%" stop-color="#cfd8dc"/><stop offset="100%" stop-color="#37474f"/></radialGradient></defs><line x1="14" y1="22" x2="38" y2="22" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round"/><line x1="11" y1="28" x2="41" y2="28" stroke="rgba(255,255,255,0.5)" stroke-width="2" stroke-linecap="round"/><line x1="16" y1="34" x2="36" y2="34" stroke="rgba(255,255,255,0.35)" stroke-width="2" stroke-linecap="round"/></svg>',preview:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#p7)"/><defs><radialGradient id="p7" cx="40%" cy="35%"><stop offset="0%" stop-color="#cfd8dc"/><stop offset="100%" stop-color="#37474f"/></radialGradient></defs><line x1="14" y1="22" x2="38" y2="22" stroke="rgba(255,255,255,0.65)" stroke-width="2" stroke-linecap="round"/><line x1="11" y1="28" x2="41" y2="28" stroke="rgba(255,255,255,0.45)" stroke-width="2" stroke-linecap="round"/><line x1="16" y1="34" x2="36" y2="34" stroke="rgba(255,255,255,0.3)" stroke-width="2" stroke-linecap="round"/></svg>',clock:{type:'geometric',face:'rgba(255,255,255,0.15)',faceStroke:'rgba(150,170,180,0.4)',hourColor:'rgba(55,71,79,0.95)',minuteColor:'rgba(69,90,100,0.85)',secondColor:'#bf360c',centerColor:'#455a64',tickColor:'rgba(60,80,90,0.35)',numColor:'rgba(50,70,80,0.7)'},anim:'mist'},
-{id:'rose',label:'Rose',dateColor:'rgba(120,20,50,0.75)',badgeColor:'rgba(120,20,50,0.6)',icon:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#ri)"/><defs><radialGradient id="ri" cx="40%" cy="35%"><stop offset="0%" stop-color="#ffb3c1"/><stop offset="100%" stop-color="#8b1a3a"/></radialGradient></defs><g transform="translate(26,26)"><ellipse cx="0" cy="-7" rx="5" ry="8" fill="rgba(255,255,255,0.5)" transform="rotate(0)"/><ellipse cx="0" cy="-7" rx="5" ry="8" fill="rgba(255,255,255,0.5)" transform="rotate(60)"/><ellipse cx="0" cy="-7" rx="5" ry="8" fill="rgba(255,255,255,0.5)" transform="rotate(120)"/><ellipse cx="0" cy="-7" rx="5" ry="8" fill="rgba(255,255,255,0.5)" transform="rotate(180)"/><ellipse cx="0" cy="-7" rx="5" ry="8" fill="rgba(255,255,255,0.5)" transform="rotate(240)"/><ellipse cx="0" cy="-7" rx="5" ry="8" fill="rgba(255,255,255,0.5)" transform="rotate(300)"/><circle cx="0" cy="0" r="4" fill="rgba(255,200,210,0.9)"/></g></svg>',preview:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#pr)"/><defs><radialGradient id="pr" cx="40%" cy="35%"><stop offset="0%" stop-color="#ffb3c1"/><stop offset="100%" stop-color="#8b1a3a"/></radialGradient></defs><g transform="translate(26,26)"><ellipse cx="0" cy="-7" rx="5" ry="8" fill="rgba(255,255,255,0.45)" transform="rotate(0)"/><ellipse cx="0" cy="-7" rx="5" ry="8" fill="rgba(255,255,255,0.45)" transform="rotate(60)"/><ellipse cx="0" cy="-7" rx="5" ry="8" fill="rgba(255,255,255,0.45)" transform="rotate(120)"/><ellipse cx="0" cy="-7" rx="5" ry="8" fill="rgba(255,255,255,0.45)" transform="rotate(180)"/><ellipse cx="0" cy="-7" rx="5" ry="8" fill="rgba(255,255,255,0.45)" transform="rotate(240)"/><ellipse cx="0" cy="-7" rx="5" ry="8" fill="rgba(255,255,255,0.45)" transform="rotate(300)"/><circle cx="0" cy="0" r="4" fill="rgba(255,200,210,0.85)"/></g></svg>',clock:{type:'luxury',face:'rgba(255,255,255,0.12)',faceStroke:'rgba(255,100,150,0.5)',hourColor:'rgba(139,26,58,0.95)',minuteColor:'rgba(180,50,90,0.85)',secondColor:'#c0392b',centerColor:'#a0204a',tickColor:'rgba(140,30,60,0.4)',numColor:'rgba(120,20,50,0.75)'},anim:'rose'},
-{id:'galaxy',label:'Galaxy',dateColor:'rgba(160,180,255,0.75)',badgeColor:'rgba(160,180,255,0.6)',icon:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#gi)"/><defs><radialGradient id="gi" cx="50%" cy="50%"><stop offset="0%" stop-color="#2a1a5e"/><stop offset="100%" stop-color="#020510"/></radialGradient></defs><ellipse cx="26" cy="26" rx="16" ry="6" fill="none" stroke="rgba(180,160,255,0.6)" stroke-width="1.5" transform="rotate(-20,26,26)"/><circle cx="26" cy="26" r="3" fill="rgba(220,210,255,0.9)"/><circle cx="18" cy="18" r="1" fill="rgba(255,255,255,0.8)"/><circle cx="35" cy="32" r="0.8" fill="rgba(255,255,255,0.7)"/><circle cx="38" cy="20" r="1.2" fill="rgba(255,255,255,0.9)"/></svg>',preview:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#pg)"/><defs><radialGradient id="pg" cx="50%" cy="50%"><stop offset="0%" stop-color="#2a1a5e"/><stop offset="100%" stop-color="#020510"/></radialGradient></defs><ellipse cx="26" cy="26" rx="16" ry="6" fill="none" stroke="rgba(180,160,255,0.55)" stroke-width="1.5" transform="rotate(-20,26,26)"/><circle cx="26" cy="26" r="3" fill="rgba(220,210,255,0.85)"/></svg>',clock:{type:'geometric',face:'rgba(255,255,255,0.03)',faceStroke:'rgba(150,130,255,0.25)',hourColor:'rgba(200,190,255,0.95)',minuteColor:'rgba(170,160,255,0.85)',secondColor:'#ff4499',centerColor:'#6644cc',tickColor:'rgba(150,130,255,0.3)',numColor:'rgba(180,170,255,0.7)'},anim:'galaxy'},
-{id:'lavender',label:'Lavender',dateColor:'rgba(80,40,130,0.75)',badgeColor:'rgba(80,40,130,0.6)',icon:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#li)"/><defs><radialGradient id="li" cx="40%" cy="35%"><stop offset="0%" stop-color="#e0d4ff"/><stop offset="100%" stop-color="#6b3fa0"/></radialGradient></defs><g><ellipse cx="22" cy="18" rx="3" ry="5" fill="rgba(255,255,255,0.8)"/><ellipse cx="26" cy="15" rx="3" ry="5" fill="rgba(255,255,255,0.85)"/><ellipse cx="30" cy="18" rx="3" ry="5" fill="rgba(255,255,255,0.8)"/><line x1="26" y1="22" x2="26" y2="36" stroke="rgba(255,255,255,0.6)" stroke-width="2" stroke-linecap="round"/></g></svg>',preview:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#pl)"/><defs><radialGradient id="pl" cx="40%" cy="35%"><stop offset="0%" stop-color="#e0d4ff"/><stop offset="100%" stop-color="#6b3fa0"/></radialGradient></defs><ellipse cx="22" cy="18" rx="3" ry="5" fill="rgba(255,255,255,0.75)"/><ellipse cx="26" cy="15" rx="3" ry="5" fill="rgba(255,255,255,0.8)"/><ellipse cx="30" cy="18" rx="3" ry="5" fill="rgba(255,255,255,0.75)"/><line x1="26" y1="22" x2="26" y2="36" stroke="rgba(255,255,255,0.55)" stroke-width="2" stroke-linecap="round"/></svg>',clock:{type:'luxury',face:'rgba(255,255,255,0.12)',faceStroke:'rgba(200,180,255,0.5)',hourColor:'rgba(80,40,130,0.95)',minuteColor:'rgba(110,60,170,0.85)',secondColor:'#9b59b6',centerColor:'#8e44ad',tickColor:'rgba(100,60,160,0.4)',numColor:'rgba(80,40,130,0.75)'},anim:'sparkle'},
-{id:'autumn',label:'Autumn',dateColor:'rgba(100,40,10,0.75)',badgeColor:'rgba(100,40,10,0.6)',icon:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#ai)"/><defs><radialGradient id="ai" cx="40%" cy="35%"><stop offset="0%" stop-color="#ffcc80"/><stop offset="100%" stop-color="#7a2000"/></radialGradient></defs><path d="M26 36 Q20 28 22 20 Q26 25 30 20 Q32 28 26 36Z" fill="rgba(255,255,255,0.75)"/><path d="M20 30 Q14 24 18 16 Q22 22 26 36Z" fill="rgba(255,255,255,0.5)"/></svg>',preview:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#pa)"/><defs><radialGradient id="pa" cx="40%" cy="35%"><stop offset="0%" stop-color="#ffcc80"/><stop offset="100%" stop-color="#7a2000"/></radialGradient></defs><path d="M26 36 Q20 28 22 20 Q26 25 30 20 Q32 28 26 36Z" fill="rgba(255,255,255,0.7)"/></svg>',clock:{type:'luxury',face:'rgba(255,255,255,0.12)',faceStroke:'rgba(255,150,50,0.5)',hourColor:'rgba(122,32,0,0.95)',minuteColor:'rgba(180,60,10,0.85)',secondColor:'#e65100',centerColor:'#bf360c',tickColor:'rgba(140,50,10,0.4)',numColor:'rgba(100,40,10,0.75)'},anim:'autumn'},
-{id:'cafe',label:'Café',dateColor:'rgba(60,30,10,0.75)',badgeColor:'rgba(60,30,10,0.6)',icon:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#ci)"/><defs><radialGradient id="ci" cx="40%" cy="35%"><stop offset="0%" stop-color="#d4a96a"/><stop offset="100%" stop-color="#3e2010"/></radialGradient></defs><rect x="17" y="26" width="18" height="12" rx="3" fill="rgba(255,255,255,0.7)"/><path d="M35 30 Q40 30 40 34 Q40 38 35 38" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="2"/><path d="M21 26 Q21 18 26 16" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round" fill="none"/><path d="M26 26 Q26 18 31 16" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>',preview:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#pc)"/><defs><radialGradient id="pc" cx="40%" cy="35%"><stop offset="0%" stop-color="#d4a96a"/><stop offset="100%" stop-color="#3e2010"/></radialGradient></defs><rect x="17" y="26" width="18" height="12" rx="3" fill="rgba(255,255,255,0.65)"/><path d="M35 30 Q40 30 40 34 Q40 38 35 38" fill="none" stroke="rgba(255,255,255,0.55)" stroke-width="2"/></svg>',clock:{type:'minimal',face:'rgba(255,255,255,0.12)',faceStroke:'rgba(200,150,80,0.5)',hourColor:'rgba(62,32,16,0.95)',minuteColor:'rgba(100,60,30,0.85)',secondColor:'#8d4600',centerColor:'#6d4c41',tickColor:'rgba(80,50,20,0.4)',numColor:'rgba(60,30,10,0.75)'},anim:'steam'},
-{id:'tropicalnight',label:'Tropic Night',dateColor:'rgba(100,220,180,0.75)',badgeColor:'rgba(100,220,180,0.6)',icon:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#tni)"/><defs><radialGradient id="tni" cx="40%" cy="35%"><stop offset="0%" stop-color="#044a3a"/><stop offset="100%" stop-color="#010a15"/></radialGradient></defs><path d="M26 38 Q26 28 20 22 Q26 26 32 18 Q30 26 26 28 Q26 33 26 38Z" fill="rgba(100,255,180,0.6)"/><circle cx="15" cy="20" r="2" fill="rgba(255,255,150,0.9)"/><circle cx="38" cy="15" r="1.5" fill="rgba(255,255,150,0.8)"/><circle cx="35" cy="32" r="1.8" fill="rgba(200,255,150,0.85)"/></svg>',preview:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#ptn)"/><defs><radialGradient id="ptn" cx="40%" cy="35%"><stop offset="0%" stop-color="#044a3a"/><stop offset="100%" stop-color="#010a15"/></radialGradient></defs><path d="M26 38 Q26 28 20 22 Q26 26 32 18 Q30 26 26 28 Q26 33 26 38Z" fill="rgba(100,255,180,0.55)"/></svg>',clock:{type:'minimal',face:'rgba(255,255,255,0.06)',faceStroke:'rgba(100,220,160,0.3)',hourColor:'rgba(80,200,150,0.95)',minuteColor:'rgba(60,180,130,0.85)',secondColor:'#ffeb3b',centerColor:'#00796b',tickColor:'rgba(80,180,140,0.35)',numColor:'rgba(80,200,150,0.7)'},anim:'fireflies'},
-{id:'blizzard',label:'Blizzard',dateColor:'rgba(20,50,150,0.75)',badgeColor:'rgba(20,50,150,0.6)',icon:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#bi)"/><defs><radialGradient id="bi" cx="40%" cy="35%"><stop offset="0%" stop-color="#a8d4ff"/><stop offset="100%" stop-color="#2040a0"/></radialGradient></defs><line x1="26" y1="12" x2="26" y2="40" stroke="rgba(255,255,255,0.9)" stroke-width="2"/><line x1="12" y1="26" x2="40" y2="26" stroke="rgba(255,255,255,0.9)" stroke-width="2"/><line x1="15.5" y1="15.5" x2="36.5" y2="36.5" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"/><line x1="36.5" y1="15.5" x2="15.5" y2="36.5" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"/><circle cx="26" cy="12" r="2" fill="rgba(255,255,255,0.85)"/><circle cx="26" cy="40" r="2" fill="rgba(255,255,255,0.85)"/><circle cx="12" cy="26" r="2" fill="rgba(255,255,255,0.85)"/><circle cx="40" cy="26" r="2" fill="rgba(255,255,255,0.85)"/></svg>',preview:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#pb)"/><defs><radialGradient id="pb" cx="40%" cy="35%"><stop offset="0%" stop-color="#a8d4ff"/><stop offset="100%" stop-color="#2040a0"/></radialGradient></defs><line x1="26" y1="12" x2="26" y2="40" stroke="rgba(255,255,255,0.85)" stroke-width="2"/><line x1="12" y1="26" x2="40" y2="26" stroke="rgba(255,255,255,0.85)" stroke-width="2"/><line x1="15.5" y1="15.5" x2="36.5" y2="36.5" stroke="rgba(255,255,255,0.65)" stroke-width="1.5"/><line x1="36.5" y1="15.5" x2="15.5" y2="36.5" stroke="rgba(255,255,255,0.65)" stroke-width="1.5"/></svg>',clock:{type:'geometric',face:'rgba(255,255,255,0.18)',faceStroke:'rgba(180,220,255,0.5)',hourColor:'rgba(20,60,180,0.95)',minuteColor:'rgba(40,80,200,0.85)',secondColor:'#1565c0',centerColor:'#1976d2',tickColor:'rgba(30,70,180,0.35)',numColor:'rgba(20,50,160,0.75)'},anim:'blizzard'},
-{id:'citynight',label:'City Night',dateColor:'rgba(200,210,255,0.75)',badgeColor:'rgba(200,210,255,0.6)',icon:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#cni)"/><defs><radialGradient id="cni" cx="50%" cy="80%"><stop offset="0%" stop-color="#1a1a4e"/><stop offset="100%" stop-color="#050510"/></radialGradient></defs><rect x="10" y="22" width="8" height="16" fill="rgba(255,220,100,0.4)"/><rect x="20" y="16" width="6" height="22" fill="rgba(255,220,100,0.5)"/><rect x="28" y="19" width="7" height="19" fill="rgba(255,220,100,0.45)"/><rect x="37" y="24" width="6" height="14" fill="rgba(255,220,100,0.4)"/><circle cx="15" cy="12" r="2" fill="rgba(255,255,100,0.7)"/><circle cx="38" cy="10" r="1.5" fill="rgba(255,255,150,0.6)"/></svg>',preview:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#pcn)"/><defs><radialGradient id="pcn" cx="50%" cy="80%"><stop offset="0%" stop-color="#1a1a4e"/><stop offset="100%" stop-color="#050510"/></radialGradient></defs><rect x="10" y="24" width="8" height="14" fill="rgba(255,220,100,0.35)"/><rect x="20" y="18" width="6" height="20" fill="rgba(255,220,100,0.45)"/><rect x="28" y="21" width="7" height="17" fill="rgba(255,220,100,0.4)"/></svg>',clock:{type:'geometric',face:'rgba(255,255,255,0.04)',faceStroke:'rgba(180,190,255,0.2)',hourColor:'rgba(200,210,255,0.95)',minuteColor:'rgba(180,190,255,0.85)',secondColor:'#ffd700',centerColor:'#3344aa',tickColor:'rgba(160,170,255,0.3)',numColor:'rgba(180,190,255,0.65)'},anim:'city'},
-{id:'botanical',label:'Botanical',dateColor:'rgba(20,60,20,0.75)',badgeColor:'rgba(20,60,20,0.6)',icon:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#boi)"/><defs><radialGradient id="boi" cx="40%" cy="35%"><stop offset="0%" stop-color="#c8f0c8"/><stop offset="100%" stop-color="#0a3a0a"/></radialGradient></defs><path d="M26 36 Q20 24 14 20 Q22 22 26 30 Q30 22 38 20 Q32 24 26 36Z" fill="rgba(255,255,255,0.75)"/><path d="M26 36 L26 22" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round"/></svg>',preview:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#pbo)"/><defs><radialGradient id="pbo" cx="40%" cy="35%"><stop offset="0%" stop-color="#c8f0c8"/><stop offset="100%" stop-color="#0a3a0a"/></radialGradient></defs><path d="M26 36 Q20 24 14 20 Q22 22 26 30 Q30 22 38 20 Q32 24 26 36Z" fill="rgba(255,255,255,0.7)"/></svg>',clock:{type:'minimal',face:'rgba(255,255,255,0.14)',faceStroke:'rgba(120,200,120,0.45)',hourColor:'rgba(20,80,20,0.95)',minuteColor:'rgba(40,110,40,0.85)',secondColor:'#558b2f',centerColor:'#33691e',tickColor:'rgba(30,90,30,0.38)',numColor:'rgba(20,60,20,0.72)'},anim:'botanical'},
-{id:'aurora',label:'Aurora',dateColor:'rgba(100,220,200,0.75)',badgeColor:'rgba(100,220,200,0.6)',icon:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#aui)"/><defs><radialGradient id="aui" cx="50%" cy="100%"><stop offset="0%" stop-color="#063030"/><stop offset="100%" stop-color="#020810"/></radialGradient></defs><path d="M8 30 Q18 10 26 25 Q34 10 44 30" stroke="rgba(100,255,200,0.7)" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M6 36 Q18 16 26 30 Q34 16 46 36" stroke="rgba(150,100,255,0.5)" stroke-width="2" fill="none" stroke-linecap="round"/></svg>',preview:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#pau)"/><defs><radialGradient id="pau" cx="50%" cy="100%"><stop offset="0%" stop-color="#063030"/><stop offset="100%" stop-color="#020810"/></radialGradient></defs><path d="M8 30 Q18 10 26 25 Q34 10 44 30" stroke="rgba(100,255,200,0.65)" stroke-width="3" fill="none" stroke-linecap="round"/></svg>',clock:{type:'geometric',face:'rgba(255,255,255,0.04)',faceStroke:'rgba(100,220,180,0.25)',hourColor:'rgba(100,220,200,0.95)',minuteColor:'rgba(80,200,180,0.85)',secondColor:'#b39ddb',centerColor:'#00897b',tickColor:'rgba(80,200,170,0.3)',numColor:'rgba(100,210,190,0.7)'},anim:'aurora'},
-{id:'sea',label:'Marin',dateColor:'rgba(10,60,100,0.65)',badgeColor:'rgba(10,60,100,0.5)',icon:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#si)"/><defs><radialGradient id="si" cx="40%" cy="35%"><stop offset="0%" stop-color="#7dd4f8"/><stop offset="100%" stop-color="#1a8fc1"/></radialGradient></defs><path d="M14 28 Q18 24 22 28 Q26 32 30 28 Q34 24 38 28" stroke="rgba(255,255,255,0.9)" stroke-width="2" stroke-linecap="round" fill="none"/><path d="M14 33 Q18 29 22 33 Q26 37 30 33 Q34 29 38 33" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round" fill="none"/><circle cx="26" cy="20" r="4" fill="rgba(255,240,100,0.95)"/></svg>',preview:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#p0)"/><defs><radialGradient id="p0" cx="40%" cy="35%"><stop offset="0%" stop-color="#7dd4f8"/><stop offset="100%" stop-color="#1a8fc1"/></radialGradient></defs><path d="M12 34 Q17 29 22 34 Q27 39 32 34 Q37 29 42 34" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round" fill="none"/><circle cx="26" cy="18" r="5" fill="rgba(255,240,100,0.9)"/></svg>',clock:{type:'minimal',face:'rgba(255,255,255,0.15)',faceStroke:'rgba(255,255,255,0.6)',hourColor:'rgba(20,80,140,0.9)',minuteColor:'rgba(14,116,144,0.85)',secondColor:'#e05c2a',centerColor:'#0e7490',tickColor:'rgba(0,80,140,0.5)',numColor:'rgba(0,60,120,0.7)'},anim:'waves'}
+{id:'night',label:'Night',dateColor:'rgba(150,170,255,0.7)',badgeColor:'rgba(180,200,255,0.7)',icon:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#ni)"/><defs><radialGradient id="ni" cx="40%" cy="35%"><stop offset="0%" stop-color="#1a1a6e"/><stop offset="100%" stop-color="#060620"/></radialGradient></defs><path d="M30 14 A10 10 0 1 0 20 30 A8 8 0 1 1 30 14Z" fill="rgba(200,220,255,0.9)"/><circle cx="37" cy="18" r="1.2" fill="rgba(255,255,255,0.9)"/><circle cx="34" cy="26" r="0.8" fill="rgba(255,255,255,0.7)"/><circle cx="40" cy="24" r="1" fill="rgba(255,255,255,0.8)"/></svg>',preview:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#p1)"/><defs><radialGradient id="p1" cx="40%" cy="35%"><stop offset="0%" stop-color="#1a1a6e"/><stop offset="100%" stop-color="#060620"/></radialGradient></defs><path d="M28 14 A9 9 0 1 0 20 29 A7 7 0 1 1 28 14Z" fill="rgba(200,220,255,0.85)"/></svg>',clock:{type:'geometric',face:'rgba(255,255,255,0.04)',faceStroke:'rgba(100,120,255,0.3)',hourColor:'rgba(170,190,255,0.95)',minuteColor:'rgba(130,160,255,0.85)',secondColor:'#ff6699',centerColor:'#8899ff',tickColor:'rgba(130,150,255,0.4)',numColor:'rgba(180,200,255,0.75)'}},
+{id:'sakura',label:'Sakura',dateColor:'rgba(160,40,90,0.7)',badgeColor:'rgba(160,40,90,0.55)',icon:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#ski)"/><defs><radialGradient id="ski" cx="40%" cy="35%"><stop offset="0%" stop-color="#ffb3d1"/><stop offset="100%" stop-color="#e0609a"/></radialGradient></defs><g transform="translate(26,26)"><ellipse cx="0" cy="-8" rx="4" ry="7" fill="rgba(255,255,255,0.85)" transform="rotate(0)"/><ellipse cx="0" cy="-8" rx="4" ry="7" fill="rgba(255,255,255,0.85)" transform="rotate(72)"/><ellipse cx="0" cy="-8" rx="4" ry="7" fill="rgba(255,255,255,0.85)" transform="rotate(144)"/><ellipse cx="0" cy="-8" rx="4" ry="7" fill="rgba(255,255,255,0.85)" transform="rotate(216)"/><ellipse cx="0" cy="-8" rx="4" ry="7" fill="rgba(255,255,255,0.85)" transform="rotate(288)"/><circle cx="0" cy="0" r="3" fill="rgba(255,200,210,0.95)"/></g></svg>',preview:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#p2)"/><defs><radialGradient id="p2" cx="40%" cy="35%"><stop offset="0%" stop-color="#ffb3d1"/><stop offset="100%" stop-color="#e0609a"/></radialGradient></defs><g transform="translate(26,26)"><ellipse cx="0" cy="-8" rx="4" ry="7" fill="rgba(255,255,255,0.8)" transform="rotate(0)"/><ellipse cx="0" cy="-8" rx="4" ry="7" fill="rgba(255,255,255,0.8)" transform="rotate(72)"/><ellipse cx="0" cy="-8" rx="4" ry="7" fill="rgba(255,255,255,0.8)" transform="rotate(144)"/><ellipse cx="0" cy="-8" rx="4" ry="7" fill="rgba(255,255,255,0.8)" transform="rotate(216)"/><ellipse cx="0" cy="-8" rx="4" ry="7" fill="rgba(255,255,255,0.8)" transform="rotate(288)"/><circle cx="0" cy="0" r="3" fill="rgba(255,200,210,0.9)"/></g></svg>',clock:{type:'luxury',face:'rgba(255,255,255,0.18)',faceStroke:'rgba(255,160,200,0.6)',hourColor:'rgba(180,50,100,0.9)',minuteColor:'rgba(220,100,140,0.85)',secondColor:'#a0204a',centerColor:'#e8729a',tickColor:'rgba(180,60,110,0.45)',numColor:'rgba(150,40,80,0.75)'}},
+{id:'forest',label:'Forest',dateColor:'rgba(20,80,20,0.7)',badgeColor:'rgba(20,80,20,0.55)',icon:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#fi)"/><defs><radialGradient id="fi" cx="40%" cy="35%"><stop offset="0%" stop-color="#81c784"/><stop offset="100%" stop-color="#1b5e20"/></radialGradient></defs><polygon points="26,12 34,26 18,26" fill="rgba(255,255,255,0.85)"/><polygon points="26,19 35,33 17,33" fill="rgba(255,255,255,0.7)"/><rect x="23" y="33" width="6" height="6" rx="1" fill="rgba(255,255,255,0.6)"/></svg>',preview:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#p3)"/><defs><radialGradient id="p3" cx="40%" cy="35%"><stop offset="0%" stop-color="#81c784"/><stop offset="100%" stop-color="#1b5e20"/></radialGradient></defs><polygon points="26,12 34,26 18,26" fill="rgba(255,255,255,0.8)"/><polygon points="26,19 35,33 17,33" fill="rgba(255,255,255,0.65)"/></svg>',clock:{type:'minimal',face:'rgba(255,255,255,0.15)',faceStroke:'rgba(100,200,100,0.5)',hourColor:'rgba(27,94,32,0.95)',minuteColor:'rgba(56,142,60,0.85)',secondColor:'#e65100',centerColor:'#388e3c',tickColor:'rgba(30,100,30,0.4)',numColor:'rgba(20,80,20,0.7)'}},
+{id:'sunset',label:'Sunset',dateColor:'rgba(120,40,10,0.75)',badgeColor:'rgba(120,40,10,0.6)',icon:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#ssi)"/><defs><linearGradient id="ssi" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ff8a50"/><stop offset="100%" stop-color="#7b1fa2"/></linearGradient></defs><path d="M14 32 A12 12 0 0 1 38 32" fill="rgba(255,200,80,0.85)"/><line x1="10" y1="35" x2="42" y2="35" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/></svg>',preview:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#p4)"/><defs><linearGradient id="p4" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ff8a50"/><stop offset="100%" stop-color="#7b1fa2"/></linearGradient></defs><path d="M14 32 A12 12 0 0 1 38 32" fill="rgba(255,200,80,0.8)"/></svg>',clock:{type:'luxury',face:'rgba(255,255,255,0.12)',faceStroke:'rgba(255,160,80,0.5)',hourColor:'rgba(180,54,12,0.95)',minuteColor:'rgba(230,74,25,0.85)',secondColor:'#4a148c',centerColor:'#e64a19',tickColor:'rgba(180,80,10,0.4)',numColor:'rgba(140,50,10,0.8)'}},
+{id:'winter',label:'Winter',dateColor:'rgba(20,60,120,0.7)',badgeColor:'rgba(20,60,120,0.55)',icon:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#wi)"/><defs><radialGradient id="wi" cx="40%" cy="35%"><stop offset="0%" stop-color="#e3f2fd"/><stop offset="100%" stop-color="#1565c0"/></radialGradient></defs><line x1="26" y1="12" x2="26" y2="40" stroke="rgba(255,255,255,0.85)" stroke-width="2" stroke-linecap="round"/><line x1="12" y1="26" x2="40" y2="26" stroke="rgba(255,255,255,0.85)" stroke-width="2" stroke-linecap="round"/><line x1="15.5" y1="15.5" x2="36.5" y2="36.5" stroke="rgba(255,255,255,0.6)" stroke-width="1.5" stroke-linecap="round"/><line x1="36.5" y1="15.5" x2="15.5" y2="36.5" stroke="rgba(255,255,255,0.6)" stroke-width="1.5" stroke-linecap="round"/><circle cx="26" cy="26" r="3" fill="rgba(255,255,255,0.9)"/></svg>',preview:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#p5)"/><defs><radialGradient id="p5" cx="40%" cy="35%"><stop offset="0%" stop-color="#e3f2fd"/><stop offset="100%" stop-color="#1565c0"/></radialGradient></defs><line x1="26" y1="12" x2="26" y2="40" stroke="rgba(255,255,255,0.8)" stroke-width="2" stroke-linecap="round"/><line x1="12" y1="26" x2="40" y2="26" stroke="rgba(255,255,255,0.8)" stroke-width="2" stroke-linecap="round"/></svg>',clock:{type:'geometric',face:'rgba(255,255,255,0.2)',faceStroke:'rgba(150,200,255,0.5)',hourColor:'rgba(21,101,192,0.95)',minuteColor:'rgba(25,118,210,0.85)',secondColor:'#c62828',centerColor:'#1976d2',tickColor:'rgba(20,80,180,0.35)',numColor:'rgba(20,60,140,0.75)'}},
+{id:'tropical',label:'Tropical',dateColor:'rgba(0,80,70,0.75)',badgeColor:'rgba(0,80,70,0.6)',icon:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#ti)"/><defs><radialGradient id="ti" cx="40%" cy="35%"><stop offset="0%" stop-color="#4dd0e1"/><stop offset="100%" stop-color="#006064"/></radialGradient></defs><path d="M26 38 Q26 28 20 22 Q26 26 32 18 Q30 26 26 28 Q26 33 26 38Z" fill="rgba(255,255,255,0.85)"/><circle cx="26" cy="38" r="2" fill="rgba(255,220,100,0.9)"/></svg>',preview:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#p6)"/><defs><radialGradient id="p6" cx="40%" cy="35%"><stop offset="0%" stop-color="#4dd0e1"/><stop offset="100%" stop-color="#006064"/></radialGradient></defs><path d="M26 40 Q26 28 18 20 Q26 26 34 16 Q30 26 26 28 Q26 34 26 40Z" fill="rgba(255,255,255,0.8)"/></svg>',clock:{type:'minimal',face:'rgba(255,255,255,0.15)',faceStroke:'rgba(100,220,210,0.5)',hourColor:'rgba(0,105,92,0.95)',minuteColor:'rgba(0,137,123,0.85)',secondColor:'#f57f17',centerColor:'#00897b',tickColor:'rgba(0,100,90,0.4)',numColor:'rgba(0,80,70,0.75)'}},
+{id:'mist',label:'Mist',dateColor:'rgba(50,70,80,0.7)',badgeColor:'rgba(50,70,80,0.55)',icon:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#mi)"/><defs><radialGradient id="mi" cx="40%" cy="35%"><stop offset="0%" stop-color="#cfd8dc"/><stop offset="100%" stop-color="#37474f"/></radialGradient></defs><line x1="14" y1="22" x2="38" y2="22" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round"/><line x1="11" y1="28" x2="41" y2="28" stroke="rgba(255,255,255,0.5)" stroke-width="2" stroke-linecap="round"/><line x1="16" y1="34" x2="36" y2="34" stroke="rgba(255,255,255,0.35)" stroke-width="2" stroke-linecap="round"/></svg>',preview:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#p7)"/><defs><radialGradient id="p7" cx="40%" cy="35%"><stop offset="0%" stop-color="#cfd8dc"/><stop offset="100%" stop-color="#37474f"/></radialGradient></defs><line x1="14" y1="22" x2="38" y2="22" stroke="rgba(255,255,255,0.65)" stroke-width="2" stroke-linecap="round"/></svg>',clock:{type:'geometric',face:'rgba(255,255,255,0.15)',faceStroke:'rgba(150,170,180,0.4)',hourColor:'rgba(55,71,79,0.95)',minuteColor:'rgba(69,90,100,0.85)',secondColor:'#bf360c',centerColor:'#455a64',tickColor:'rgba(60,80,90,0.35)',numColor:'rgba(50,70,80,0.7)'}},
+{id:'rose',label:'Rose',dateColor:'rgba(120,20,50,0.75)',badgeColor:'rgba(120,20,50,0.6)',icon:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#roi)"/><defs><radialGradient id="roi" cx="40%" cy="35%"><stop offset="0%" stop-color="#ffb3c1"/><stop offset="100%" stop-color="#8b1a3a"/></radialGradient></defs><g transform="translate(26,26)"><ellipse cx="0" cy="-7" rx="5" ry="8" fill="rgba(255,255,255,0.5)" transform="rotate(0)"/><ellipse cx="0" cy="-7" rx="5" ry="8" fill="rgba(255,255,255,0.5)" transform="rotate(60)"/><ellipse cx="0" cy="-7" rx="5" ry="8" fill="rgba(255,255,255,0.5)" transform="rotate(120)"/><ellipse cx="0" cy="-7" rx="5" ry="8" fill="rgba(255,255,255,0.5)" transform="rotate(180)"/><ellipse cx="0" cy="-7" rx="5" ry="8" fill="rgba(255,255,255,0.5)" transform="rotate(240)"/><ellipse cx="0" cy="-7" rx="5" ry="8" fill="rgba(255,255,255,0.5)" transform="rotate(300)"/><circle cx="0" cy="0" r="4" fill="rgba(255,200,210,0.9)"/></g></svg>',preview:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#pro)"/><defs><radialGradient id="pro" cx="40%" cy="35%"><stop offset="0%" stop-color="#ffb3c1"/><stop offset="100%" stop-color="#8b1a3a"/></radialGradient></defs><g transform="translate(26,26)"><ellipse cx="0" cy="-7" rx="5" ry="8" fill="rgba(255,255,255,0.45)" transform="rotate(0)"/><ellipse cx="0" cy="-7" rx="5" ry="8" fill="rgba(255,255,255,0.45)" transform="rotate(60)"/><ellipse cx="0" cy="-7" rx="5" ry="8" fill="rgba(255,255,255,0.45)" transform="rotate(120)"/><circle cx="0" cy="0" r="4" fill="rgba(255,200,210,0.85)"/></g></svg>',clock:{type:'luxury',face:'rgba(255,255,255,0.12)',faceStroke:'rgba(255,100,150,0.5)',hourColor:'rgba(139,26,58,0.95)',minuteColor:'rgba(180,50,90,0.85)',secondColor:'#c0392b',centerColor:'#a0204a',tickColor:'rgba(140,30,60,0.4)',numColor:'rgba(120,20,50,0.75)'}},
+{id:'galaxy',label:'Galaxy',dateColor:'rgba(160,180,255,0.75)',badgeColor:'rgba(160,180,255,0.6)',icon:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#gai)"/><defs><radialGradient id="gai" cx="50%" cy="50%"><stop offset="0%" stop-color="#2a1a5e"/><stop offset="100%" stop-color="#020510"/></radialGradient></defs><ellipse cx="26" cy="26" rx="16" ry="6" fill="none" stroke="rgba(180,160,255,0.6)" stroke-width="1.5" transform="rotate(-20,26,26)"/><circle cx="26" cy="26" r="3" fill="rgba(220,210,255,0.9)"/><circle cx="38" cy="20" r="1.2" fill="rgba(255,255,255,0.9)"/></svg>',preview:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#pga)"/><defs><radialGradient id="pga" cx="50%" cy="50%"><stop offset="0%" stop-color="#2a1a5e"/><stop offset="100%" stop-color="#020510"/></radialGradient></defs><ellipse cx="26" cy="26" rx="16" ry="6" fill="none" stroke="rgba(180,160,255,0.55)" stroke-width="1.5" transform="rotate(-20,26,26)"/><circle cx="26" cy="26" r="3" fill="rgba(220,210,255,0.85)"/></svg>',clock:{type:'geometric',face:'rgba(255,255,255,0.03)',faceStroke:'rgba(150,130,255,0.25)',hourColor:'rgba(200,190,255,0.95)',minuteColor:'rgba(170,160,255,0.85)',secondColor:'#ff4499',centerColor:'#6644cc',tickColor:'rgba(150,130,255,0.3)',numColor:'rgba(180,170,255,0.7)'}},
+{id:'lavender',label:'Lavender',dateColor:'rgba(80,40,130,0.75)',badgeColor:'rgba(80,40,130,0.6)',icon:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#lai)"/><defs><radialGradient id="lai" cx="40%" cy="35%"><stop offset="0%" stop-color="#e0d4ff"/><stop offset="100%" stop-color="#6b3fa0"/></radialGradient></defs><ellipse cx="22" cy="18" rx="3" ry="5" fill="rgba(255,255,255,0.8)"/><ellipse cx="26" cy="15" rx="3" ry="5" fill="rgba(255,255,255,0.85)"/><ellipse cx="30" cy="18" rx="3" ry="5" fill="rgba(255,255,255,0.8)"/><line x1="26" y1="22" x2="26" y2="36" stroke="rgba(255,255,255,0.6)" stroke-width="2" stroke-linecap="round"/></svg>',preview:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#pla)"/><defs><radialGradient id="pla" cx="40%" cy="35%"><stop offset="0%" stop-color="#e0d4ff"/><stop offset="100%" stop-color="#6b3fa0"/></radialGradient></defs><ellipse cx="26" cy="15" rx="3" ry="5" fill="rgba(255,255,255,0.8)"/><line x1="26" y1="22" x2="26" y2="36" stroke="rgba(255,255,255,0.55)" stroke-width="2" stroke-linecap="round"/></svg>',clock:{type:'luxury',face:'rgba(255,255,255,0.12)',faceStroke:'rgba(200,180,255,0.5)',hourColor:'rgba(80,40,130,0.95)',minuteColor:'rgba(110,60,170,0.85)',secondColor:'#9b59b6',centerColor:'#8e44ad',tickColor:'rgba(100,60,160,0.4)',numColor:'rgba(80,40,130,0.75)'}},
+{id:'autumn',label:'Autumn',dateColor:'rgba(100,40,10,0.75)',badgeColor:'rgba(100,40,10,0.6)',icon:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#aui)"/><defs><radialGradient id="aui" cx="40%" cy="35%"><stop offset="0%" stop-color="#ffcc80"/><stop offset="100%" stop-color="#7a2000"/></radialGradient></defs><path d="M26 36 Q20 28 22 20 Q26 25 30 20 Q32 28 26 36Z" fill="rgba(255,255,255,0.75)"/></svg>',preview:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#pau)"/><defs><radialGradient id="pau" cx="40%" cy="35%"><stop offset="0%" stop-color="#ffcc80"/><stop offset="100%" stop-color="#7a2000"/></radialGradient></defs><path d="M26 36 Q20 28 22 20 Q26 25 30 20 Q32 28 26 36Z" fill="rgba(255,255,255,0.7)"/></svg>',clock:{type:'luxury',face:'rgba(255,255,255,0.12)',faceStroke:'rgba(255,150,50,0.5)',hourColor:'rgba(122,32,0,0.95)',minuteColor:'rgba(180,60,10,0.85)',secondColor:'#e65100',centerColor:'#bf360c',tickColor:'rgba(140,50,10,0.4)',numColor:'rgba(100,40,10,0.75)'}},
+{id:'cafe',label:'Café',dateColor:'rgba(60,30,10,0.75)',badgeColor:'rgba(60,30,10,0.6)',icon:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#cai)"/><defs><radialGradient id="cai" cx="40%" cy="35%"><stop offset="0%" stop-color="#d4a96a"/><stop offset="100%" stop-color="#3e2010"/></radialGradient></defs><rect x="17" y="26" width="18" height="12" rx="3" fill="rgba(255,255,255,0.7)"/><path d="M35 30 Q40 30 40 34 Q40 38 35 38" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="2"/></svg>',preview:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#pca)"/><defs><radialGradient id="pca" cx="40%" cy="35%"><stop offset="0%" stop-color="#d4a96a"/><stop offset="100%" stop-color="#3e2010"/></radialGradient></defs><rect x="17" y="26" width="18" height="12" rx="3" fill="rgba(255,255,255,0.65)"/></svg>',clock:{type:'minimal',face:'rgba(255,255,255,0.12)',faceStroke:'rgba(200,150,80,0.5)',hourColor:'rgba(62,32,16,0.95)',minuteColor:'rgba(100,60,30,0.85)',secondColor:'#8d4600',centerColor:'#6d4c41',tickColor:'rgba(80,50,20,0.4)',numColor:'rgba(60,30,10,0.75)'}},
+{id:'tropicalnight',label:'Tropic Night',dateColor:'rgba(100,220,180,0.75)',badgeColor:'rgba(100,220,180,0.6)',icon:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#tni)"/><defs><radialGradient id="tni" cx="40%" cy="35%"><stop offset="0%" stop-color="#044a3a"/><stop offset="100%" stop-color="#010a15"/></radialGradient></defs><path d="M26 38 Q26 28 20 22 Q26 26 32 18 Q30 26 26 28 Q26 33 26 38Z" fill="rgba(100,255,180,0.6)"/><circle cx="15" cy="20" r="2" fill="rgba(255,255,150,0.9)"/><circle cx="38" cy="15" r="1.5" fill="rgba(255,255,150,0.8)"/></svg>',preview:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#ptn)"/><defs><radialGradient id="ptn" cx="40%" cy="35%"><stop offset="0%" stop-color="#044a3a"/><stop offset="100%" stop-color="#010a15"/></radialGradient></defs><path d="M26 38 Q26 28 20 22 Q26 26 32 18 Q30 26 26 28 Q26 33 26 38Z" fill="rgba(100,255,180,0.55)"/></svg>',clock:{type:'minimal',face:'rgba(255,255,255,0.06)',faceStroke:'rgba(100,220,160,0.3)',hourColor:'rgba(80,200,150,0.95)',minuteColor:'rgba(60,180,130,0.85)',secondColor:'#ffeb3b',centerColor:'#00796b',tickColor:'rgba(80,180,140,0.35)',numColor:'rgba(80,200,150,0.7)'}},
+{id:'blizzard',label:'Blizzard',dateColor:'rgba(20,50,150,0.75)',badgeColor:'rgba(20,50,150,0.6)',icon:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#bli)"/><defs><radialGradient id="bli" cx="40%" cy="35%"><stop offset="0%" stop-color="#a8d4ff"/><stop offset="100%" stop-color="#2040a0"/></radialGradient></defs><line x1="26" y1="12" x2="26" y2="40" stroke="rgba(255,255,255,0.9)" stroke-width="2"/><line x1="12" y1="26" x2="40" y2="26" stroke="rgba(255,255,255,0.9)" stroke-width="2"/><line x1="15.5" y1="15.5" x2="36.5" y2="36.5" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"/><line x1="36.5" y1="15.5" x2="15.5" y2="36.5" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"/></svg>',preview:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#pbl)"/><defs><radialGradient id="pbl" cx="40%" cy="35%"><stop offset="0%" stop-color="#a8d4ff"/><stop offset="100%" stop-color="#2040a0"/></radialGradient></defs><line x1="26" y1="12" x2="26" y2="40" stroke="rgba(255,255,255,0.85)" stroke-width="2"/><line x1="12" y1="26" x2="40" y2="26" stroke="rgba(255,255,255,0.85)" stroke-width="2"/></svg>',clock:{type:'geometric',face:'rgba(255,255,255,0.18)',faceStroke:'rgba(180,220,255,0.5)',hourColor:'rgba(20,60,180,0.95)',minuteColor:'rgba(40,80,200,0.85)',secondColor:'#1565c0',centerColor:'#1976d2',tickColor:'rgba(30,70,180,0.35)',numColor:'rgba(20,50,160,0.75)'}},
+{id:'citynight',label:'City Night',dateColor:'rgba(200,210,255,0.75)',badgeColor:'rgba(200,210,255,0.6)',icon:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#cni)"/><defs><radialGradient id="cni" cx="50%" cy="80%"><stop offset="0%" stop-color="#1a1a4e"/><stop offset="100%" stop-color="#050510"/></radialGradient></defs><rect x="10" y="22" width="8" height="16" fill="rgba(255,220,100,0.4)"/><rect x="20" y="16" width="6" height="22" fill="rgba(255,220,100,0.5)"/><rect x="28" y="19" width="7" height="19" fill="rgba(255,220,100,0.45)"/><rect x="37" y="24" width="6" height="14" fill="rgba(255,220,100,0.4)"/></svg>',preview:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#pcn)"/><defs><radialGradient id="pcn" cx="50%" cy="80%"><stop offset="0%" stop-color="#1a1a4e"/><stop offset="100%" stop-color="#050510"/></radialGradient></defs><rect x="20" y="18" width="6" height="20" fill="rgba(255,220,100,0.45)"/><rect x="28" y="21" width="7" height="17" fill="rgba(255,220,100,0.4)"/></svg>',clock:{type:'geometric',face:'rgba(255,255,255,0.04)',faceStroke:'rgba(180,190,255,0.2)',hourColor:'rgba(200,210,255,0.95)',minuteColor:'rgba(180,190,255,0.85)',secondColor:'#ffd700',centerColor:'#3344aa',tickColor:'rgba(160,170,255,0.3)',numColor:'rgba(180,190,255,0.65)'}},
+{id:'aurora',label:'Aurora',dateColor:'rgba(100,220,200,0.75)',badgeColor:'rgba(100,220,200,0.6)',icon:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#ari)"/><defs><radialGradient id="ari" cx="50%" cy="100%"><stop offset="0%" stop-color="#063030"/><stop offset="100%" stop-color="#020810"/></radialGradient></defs><path d="M8 30 Q18 10 26 25 Q34 10 44 30" stroke="rgba(100,255,200,0.7)" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M6 36 Q18 16 26 30 Q34 16 46 36" stroke="rgba(150,100,255,0.5)" stroke-width="2" fill="none" stroke-linecap="round"/></svg>',preview:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#par)"/><defs><radialGradient id="par" cx="50%" cy="100%"><stop offset="0%" stop-color="#063030"/><stop offset="100%" stop-color="#020810"/></radialGradient></defs><path d="M8 30 Q18 10 26 25 Q34 10 44 30" stroke="rgba(100,255,200,0.65)" stroke-width="3" fill="none" stroke-linecap="round"/></svg>',clock:{type:'geometric',face:'rgba(255,255,255,0.04)',faceStroke:'rgba(100,220,180,0.25)',hourColor:'rgba(100,220,200,0.95)',minuteColor:'rgba(80,200,180,0.85)',secondColor:'#b39ddb',centerColor:'#00897b',tickColor:'rgba(80,200,170,0.3)',numColor:'rgba(100,210,190,0.7)'}},
+{id:'sea',label:'Marin',dateColor:'rgba(10,60,100,0.65)',badgeColor:'rgba(10,60,100,0.5)',icon:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#si)"/><defs><radialGradient id="si" cx="40%" cy="35%"><stop offset="0%" stop-color="#7dd4f8"/><stop offset="100%" stop-color="#1a8fc1"/></radialGradient></defs><path d="M14 28 Q18 24 22 28 Q26 32 30 28 Q34 24 38 28" stroke="rgba(255,255,255,0.9)" stroke-width="2" stroke-linecap="round" fill="none"/><path d="M14 33 Q18 29 22 33 Q26 37 30 33 Q34 29 38 33" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round" fill="none"/><circle cx="26" cy="20" r="4" fill="rgba(255,240,100,0.95)"/></svg>',preview:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#p0)"/><defs><radialGradient id="p0" cx="40%" cy="35%"><stop offset="0%" stop-color="#7dd4f8"/><stop offset="100%" stop-color="#1a8fc1"/></radialGradient></defs><path d="M12 34 Q17 29 22 34 Q27 39 32 34 Q37 29 42 34" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round" fill="none"/><circle cx="26" cy="18" r="5" fill="rgba(255,240,100,0.9)"/></svg>',clock:{type:'minimal',face:'rgba(255,255,255,0.15)',faceStroke:'rgba(255,255,255,0.6)',hourColor:'rgba(20,80,140,0.9)',minuteColor:'rgba(14,116,144,0.85)',secondColor:'#e05c2a',centerColor:'#0e7490',tickColor:'rgba(0,80,140,0.5)',numColor:'rgba(0,60,120,0.7)'}}
 ];
 
 let currentUser=null,realtimeChannel=null,tapCount=0,tapTimer=null,pinEntry='',lastPollTime=new Date(),pollInterval=null,selectedMsgId=null,currentTheme='sea';
@@ -403,7 +384,7 @@ function setThemeIcon(themeId){
   document.getElementById('lifebuoy-btn').innerHTML=`<svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg"><g transform="translate(22,22)"><path d="M0,-16 C3,-9 9,-3 16,0 C9,3 3,9 0,16 C-3,9 -9,3 -16,0 C-9,-3 -3,-9 0,-16Z" fill="rgba(255,140,160,0.9)" stroke="rgba(255,255,255,0.8)" stroke-width="1.5"/><circle cx="0" cy="0" r="5" fill="rgba(255,220,100,0.95)" stroke="rgba(255,255,255,0.9)" stroke-width="1.5"/><circle cx="0" cy="-10" r="2.5" fill="rgba(255,200,210,0.9)"/><circle cx="9.5" cy="3" r="2.5" fill="rgba(255,200,210,0.9)"/><circle cx="5.9" cy="-8" r="2.5" fill="rgba(255,200,210,0.9)"/><circle cx="-9.5" cy="3" r="2.5" fill="rgba(255,200,210,0.9)"/><circle cx="-5.9" cy="-8" r="2.5" fill="rgba(255,200,210,0.9)"/></g></svg>`;
 }
 
-async async function applyTheme(themeId,save){
+async function applyTheme(themeId,save){
   currentTheme=themeId;
   const cs=document.getElementById('clock-screen');
   THEMES.forEach(t=>cs.classList.remove('theme-'+t.id));
@@ -414,9 +395,9 @@ async async function applyTheme(themeId,save){
   if(active)active.classList.add('active');
   updateDecorations(themeId);
   updateClock();
-  if(typeof startThemeAnimation==='function')startThemeAnimation(themeId);
   if(save){
-    localStorage.setItem('theme',themeId);
+    if(typeof stopClockAnim==='function'){stopClockAnim();setTimeout(function(){if(typeof startClockAnim==='function')startClockAnim(themeId);},100);}
+  localStorage.setItem('theme',themeId);
     try{await sbFetch('theme_settings?user_id=eq.global',{method:'DELETE',headers:{'Prefer':'return=minimal'}});}catch(e){}
     try{await sbFetch('theme_settings',{method:'POST',body:JSON.stringify({user_id:'global',theme:themeId})});}catch(e){}
   }
@@ -493,7 +474,7 @@ function handleClockTap(){
 }
 
 function showScreen(id){document.querySelectorAll('.screen').forEach(s=>s.style.display='none');document.getElementById(id).style.display='flex'}
-function showClock(){disconnectRealtime();pinEntry='';updatePinDots();showScreen('clock-screen');checkUnread();if(typeof stopThemeAnimation==='function')stopThemeAnimation();setTimeout(()=>{if(typeof startThemeAnimation==='function')startThemeAnimation(currentTheme);},100);}
+function showClock(){disconnectRealtime();pinEntry='';updatePinDots();showScreen('clock-screen');checkUnread();if(typeof stopClockAnim==='function')stopClockAnim();setTimeout(function(){if(typeof startClockAnim==='function')startClockAnim(currentTheme);},100);}
 function showInvite(){document.getElementById('invite-input').value='';document.getElementById('invite-error').textContent='';showScreen('invite-screen');setTimeout(()=>document.getElementById('invite-input').focus(),300)}
 function showPin(){pinEntry='';updatePinDots();showScreen('pin-screen')}
 
@@ -522,8 +503,6 @@ async function showChatScreen(){
   const code=currentUser.invite_code;const info=USERS[code]||{name:'ユーザー',partner:'相手'};
   document.getElementById('chat-partner-name').textContent=info.partner;
   document.getElementById('chat-my-name').textContent='自分：'+info.name;
-  if(typeof updateChatTimeBackground==='function')updateChatTimeBackground();
-  if(typeof resetInactivityTimer==='function')resetInactivityTimer();
   document.getElementById('chat-avatar').textContent=info.partner.charAt(0);
   showScreen('chat-screen');await loadMessages();
   localStorage.setItem('last_read_time',new Date().toISOString());
@@ -555,7 +534,7 @@ function appendMessage(msg,animate=true){
   if(!animate)bubble.style.animation='none';
   addPressEvents(bubble,msg.id);
   const wrap=document.createElement('div');wrap.className='msg-wrap';wrap.appendChild(bubble);
-  if(!isMine){const av=document.createElement('div');av.className='msg-avatar-sm';av.textContent=info.partner.slice(0,2);row.appendChild(av);}
+  if(!isMine){const av=document.createElement('div');av.className='msg-avatar-sm';if(typeof updateChatBg==='function')updateChatBg();if(typeof resetTimer==='function')resetTimer();av.textContent=info.partner.slice(0,2);row.appendChild(av);}
   row.appendChild(wrap);container.appendChild(row);scrollToBottom();
 }
 
@@ -573,11 +552,10 @@ async function loadMessages(){
 
 async function sendMsg(){
   const input=document.getElementById('chat-input');const text=input.value.trim();if(!text)return;
-  const animText=text;
-  input.value='';input.style.height='';
+  input.value='';input.style.height='';if(typeof checkAnim==='function')setTimeout(function(){checkAnim(text);},300);
   try{
     const result=await sbFetch('messages',{method:'POST',body:JSON.stringify({user_id:currentUser.invite_code,content:text})});
-    if(result&&result[0]){document.querySelector('#chat-messages .loading-msg')?.remove();appendMessage(result[0]);lastPollTime=new Date();localStorage.setItem('last_read_time',new Date().toISOString());setTimeout(()=>checkKeywordAnimation(animText),200);}
+    if(result&&result[0]){document.querySelector('#chat-messages .loading-msg')?.remove();appendMessage(result[0]);lastPollTime=new Date();localStorage.setItem('last_read_time',new Date().toISOString());}
   }catch(e){}
 }
 
@@ -609,283 +587,251 @@ const overlay=document.getElementById('fade-overlay');
 showScreen('clock-screen');checkUnread();loadTheme();
 setTimeout(()=>{overlay.style.opacity='0';setTimeout(()=>overlay.style.display='none',400)},300);
 
-// ===== 新機能JS =====
+// ========== 新機能 ==========
 
 // 時間帯背景
-function updateChatTimeBackground(){
-  const h=new Date().getHours();
-  const cs=document.getElementById('chat-screen');
-  cs.classList.remove('time-morning','time-afternoon','time-evening','time-night','time-midnight');
+function updateChatBg(){
+  var h=new Date().getHours();
+  var cs=document.getElementById('chat-screen');
+  cs.classList.remove('time-morning','time-afternoon','time-evening','time-night');
   if(h>=5&&h<11)cs.classList.add('time-morning');
   else if(h>=11&&h<17)cs.classList.add('time-afternoon');
   else if(h>=17&&h<20)cs.classList.add('time-evening');
-  else if(h>=20)cs.classList.add('time-night');
-  if(h===0)cs.classList.add('time-midnight');
+  else cs.classList.add('time-night');
 }
-setInterval(updateChatTimeBackground,60000);
+setInterval(updateChatBg,60000);
 
-// ヘルスケア画面
-let healthTapCount=0,healthTapTimer=null;
+// ヘルスケア
+var healthTaps=0,healthTapT=null;
 
 function showHealth(){
-  updateHealthData();drawHealthGraphs();
-  const d=new Date();
-  document.getElementById('health-date').textContent=`${d.getMonth()+1}月${d.getDate()}日（${'日月火水木金土'[d.getDay()]}）`;
+  var d=new Date();
+  document.getElementById('health-date').textContent=(d.getMonth()+1)+'月'+d.getDate()+'日（'+'日月火水木金土'[d.getDay()]+'）';
+  updateHealthNums();drawHealthGraphs();
   showScreen('health-screen');
 }
 
-function updateHealthData(){
-  const now=new Date();const h=now.getHours(),m=now.getMinutes();
-  const dayProgress=(h*60+m)/(24*60);
-  const steps=Math.floor((6000+Math.floor(Math.random()*3000))*Math.max(dayProgress,0.1)+Math.random()*30);
+function updateHealthNums(){
+  var now=new Date();
+  var prog=(now.getHours()*60+now.getMinutes())/(24*60);
+  var steps=Math.floor(7500*Math.max(prog,0.05)+Math.random()*20);
   document.getElementById('health-steps').textContent=steps.toLocaleString();
-  const bpm=65+Math.floor(Math.sin(Date.now()/10000)*5+Math.random()*12);
+  var bpm=65+Math.floor(Math.random()*15);
   document.getElementById('health-heart').textContent=bpm;
 }
 
 function drawHealthGraphs(){
-  const sg=document.getElementById('steps-graph');
-  const vals=[20,45,30,60,80,55,70,85,65,90,75,88];
-  let path='M';vals.forEach((v,i)=>{const x=i*(300/11);const y=60-v*0.6;path+=i===0?`${x},${y}`:`L${x},${y}`;});
-  sg.innerHTML=`<defs><linearGradient id="sg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#007aff" stop-opacity="0.3"/><stop offset="100%" stop-color="#007aff" stop-opacity="0"/></linearGradient></defs><path d="${path}L300,60L0,60Z" fill="url(#sg)"/><path d="${path}" fill="none" stroke="#007aff" stroke-width="2" stroke-linecap="round"/>`;
-  const wg=document.getElementById('weight-graph');
-  const wvals=[62,61.5,61.8,61.2,60.8,60.5,60.2,59.8,59.5,59.2,58.8,58.4];
-  let wpath='M';wvals.forEach((v,i)=>{const x=i*(300/11);const y=60-(v-57)*15;wpath+=i===0?`${x},${y}`:`L${x},${y}`;});
-  wg.innerHTML=`<defs><linearGradient id="wg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#30d158" stop-opacity="0.3"/><stop offset="100%" stop-color="#30d158" stop-opacity="0"/></linearGradient></defs><path d="${wpath}L300,60L0,60Z" fill="url(#wg)"/><path d="${wpath}" fill="none" stroke="#30d158" stroke-width="2" stroke-linecap="round"/>`;
+  var sg=document.getElementById('steps-graph');
+  var sv=[15,40,25,55,75,50,65,80,60,85,70,88];
+  var sp='M';sv.forEach(function(v,i){var x=i*(300/11);var y=60-v*0.58;sp+=i===0?(x+','+y):('L'+x+','+y);});
+  sg.innerHTML='<defs><linearGradient id="sg1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#007aff" stop-opacity="0.3"/><stop offset="100%" stop-color="#007aff" stop-opacity="0"/></linearGradient></defs><path d="'+sp+'L300,60L0,60Z" fill="url(#sg1)"/><path d="'+sp+'" fill="none" stroke="#007aff" stroke-width="2" stroke-linecap="round"/>';
+  var wg=document.getElementById('weight-graph');
+  var wv=[62,61.5,61.8,61.2,60.8,60.5,60.2,59.8,59.5,59.2,58.8,58.4];
+  var wp='M';wv.forEach(function(v,i){var x=i*(300/11);var y=60-(v-57)*15;wp+=i===0?(x+','+y):('L'+x+','+y);});
+  wg.innerHTML='<defs><linearGradient id="wg1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#30d158" stop-opacity="0.3"/><stop offset="100%" stop-color="#30d158" stop-opacity="0"/></linearGradient></defs><path d="'+wp+'L300,60L0,60Z" fill="url(#wg1)"/><path d="'+wp+'" fill="none" stroke="#30d158" stroke-width="2" stroke-linecap="round"/>';
 }
 
-setInterval(()=>{if(document.getElementById('health-screen').style.display!=='none')updateHealthData();},5000);
+setInterval(function(){
+  if(document.getElementById('health-screen').style.display!=='none')updateHealthNums();
+},5000);
 
-document.getElementById('health-screen').addEventListener('click',()=>{
-  healthTapCount++;clearTimeout(healthTapTimer);
-  if(healthTapCount>=3){healthTapCount=0;showChatScreen();return;}
-  healthTapTimer=setTimeout(()=>{healthTapCount=0;},1500);
+document.getElementById('health-screen').addEventListener('click',function(){
+  healthTaps++;clearTimeout(healthTapT);
+  if(healthTaps>=3){healthTaps=0;if(currentUser)showChatScreen();else showClock();return;}
+  healthTapT=setTimeout(function(){healthTaps=0;},1500);
 });
 
-// シェイクでヘルスケア
-let lastShake=0;
-window.addEventListener('devicemotion',(e)=>{
-  const a=e.accelerationIncludingGravity;if(!a)return;
-  const force=Math.abs(a.x)+Math.abs(a.y)+Math.abs(a.z);
-  if(force>40){const now=Date.now();if(now-lastShake>2000){lastShake=now;
+// シェイク
+var lastShake=0;
+window.addEventListener('devicemotion',function(e){
+  var a=e.accelerationIncludingGravity;if(!a)return;
+  var f=Math.abs(a.x)+Math.abs(a.y)+Math.abs(a.z);
+  if(f>40){var n=Date.now();if(n-lastShake>2000){lastShake=n;
     if(document.getElementById('chat-screen').style.display!=='none')showHealth();}}
 });
 
 // 3分タイマー
-let inactivityTimer=null;
-function resetInactivityTimer(){
-  clearTimeout(inactivityTimer);
+var inactTimer=null;
+function resetTimer(){
+  clearTimeout(inactTimer);
   if(document.getElementById('chat-screen').style.display!=='none'){
-    inactivityTimer=setTimeout(()=>showClock(),3*60*1000);
+    inactTimer=setTimeout(function(){showClock();},180000);
   }
 }
-document.getElementById('chat-screen').addEventListener('touchstart',resetInactivityTimer,{passive:true});
-document.getElementById('chat-screen').addEventListener('click',resetInactivityTimer);
+document.getElementById('chat-screen').addEventListener('touchstart',resetTimer,{passive:true});
+document.getElementById('chat-screen').addEventListener('click',resetTimer);
 
-// メッセージアニメーション
-function triggerMsgAnimation(type){
-  const overlay=document.getElementById('msg-anim-overlay');
-  overlay.innerHTML='';overlay.classList.add('active');
+// アニメーション
+function triggerAnim(type){
+  var ov=document.getElementById('msg-anim-overlay');
+  ov.innerHTML='';ov.className='active';
   if(type==='heart'){
-    overlay.style.cssText='display:block;background:rgba(255,182,193,0);transition:background 0.5s';
-    setTimeout(()=>overlay.style.background='rgba(255,182,193,0.15)',100);
-    for(let i=0;i<25;i++){const h=document.createElement('div');const sz=14+Math.random()*28;
-      h.style.cssText=`position:absolute;left:${Math.random()*100}%;bottom:-50px;font-size:${sz}px;animation:heartFloat ${2+Math.random()*3}s ease-out forwards;animation-delay:${Math.random()*1.5}s`;
-      h.textContent=Math.random()>0.4?'💕':'🩷';overlay.appendChild(h);}
-    const big=document.createElement('div');
-    big.style.cssText='position:absolute;top:45%;left:50%;transform:translate(-50%,-50%);font-size:70px;animation:heartFloat 2.5s ease-out forwards;';
-    big.textContent='💗';overlay.appendChild(big);
-    setTimeout(()=>{overlay.classList.remove('active');overlay.style.background='';},4000);
+    ov.style.cssText='display:block;background:rgba(255,182,193,0);transition:background 0.5s';
+    setTimeout(function(){ov.style.background='rgba(255,182,193,0.12)';},50);
+    for(var i=0;i<20;i++){(function(i){
+      var h=document.createElement('div');
+      h.style.cssText='position:absolute;left:'+Math.random()*100+'%;bottom:-40px;font-size:'+(14+Math.random()*26)+'px;animation:heartFloat '+(2+Math.random()*3)+'s ease-out forwards;animation-delay:'+(Math.random()*1.5)+'s';
+      h.textContent=Math.random()>0.4?'💕':'🩷';ov.appendChild(h);
+    })(i);}
+    var big=document.createElement('div');
+    big.style.cssText='position:absolute;top:42%;left:50%;transform:translate(-50%,-50%);font-size:65px;animation:heartFloat 2.5s ease-out forwards';
+    big.textContent='💗';ov.appendChild(big);
+    setTimeout(function(){ov.className='';ov.style.background='';},4000);
   } else if(type==='petal'){
-    overlay.style.display='block';
-    for(let i=0;i<22;i++){const p=document.createElement('div');const sz=16+Math.random()*16;
-      p.style.cssText=`position:absolute;left:${Math.random()*100}%;top:-30px;font-size:${sz}px;animation:petalDrift ${3+Math.random()*3}s ease-in forwards;animation-delay:${Math.random()*2}s`;
-      p.textContent=Math.random()>0.5?'🌸':'🌺';overlay.appendChild(p);}
-    setTimeout(()=>overlay.classList.remove('active'),6000);
+    ov.style.display='block';
+    for(var i=0;i<20;i++){(function(){
+      var p=document.createElement('div');
+      p.style.cssText='position:absolute;left:'+Math.random()*100+'%;top:-20px;font-size:'+(14+Math.random()*14)+'px;animation:petalDrift '+(4+Math.random()*4)+'s ease-in forwards;animation-delay:'+(Math.random()*2)+'s';
+      p.textContent=Math.random()>0.5?'🌸':'🌺';ov.appendChild(p);
+    })();}
+    setTimeout(function(){ov.className='';},7000);
   } else if(type==='star'){
-    overlay.style.cssText='display:block;background:rgba(0,0,20,0);transition:background 1s';
-    setTimeout(()=>overlay.style.background='rgba(0,0,20,0.7)',100);
-    for(let i=0;i<35;i++){const s=document.createElement('div');const sz=10+Math.random()*18;
-      s.style.cssText=`position:absolute;left:${Math.random()*100}%;top:-30px;font-size:${sz}px;animation:starFall ${3+Math.random()*4}s ease-in forwards;animation-delay:${Math.random()*2}s`;
-      s.textContent=Math.random()>0.5?'⭐':'✨';overlay.appendChild(s);}
-    const moon=document.createElement('div');
-    moon.style.cssText='position:absolute;top:18%;left:50%;transform:translateX(-50%);font-size:55px;animation:nightSky 4s ease forwards;';
-    moon.textContent='🌙';overlay.appendChild(moon);
-    setTimeout(()=>{overlay.classList.remove('active');overlay.style.background='';},6000);
+    ov.style.cssText='display:block;background:rgba(0,0,20,0);transition:background 1s';
+    setTimeout(function(){ov.style.background='rgba(0,0,20,0.65)';},50);
+    for(var i=0;i<30;i++){(function(){
+      var s=document.createElement('div');
+      s.style.cssText='position:absolute;left:'+Math.random()*100+'%;top:-20px;font-size:'+(10+Math.random()*16)+'px;animation:starFall '+(3+Math.random()*4)+'s ease-in forwards;animation-delay:'+(Math.random()*2)+'s';
+      s.textContent=Math.random()>0.5?'⭐':'✨';ov.appendChild(s);
+    })();}
+    var m=document.createElement('div');
+    m.style.cssText='position:absolute;top:18%;left:50%;transform:translateX(-50%);font-size:50px;animation:nightShow 4s ease forwards';
+    m.textContent='🌙';ov.appendChild(m);
+    setTimeout(function(){ov.className='';ov.style.background='';},6000);
   } else if(type==='rain'){
-    overlay.style.display='block';
-    for(let i=0;i<45;i++){const r=document.createElement('div');
-      r.style.cssText=`position:absolute;left:${Math.random()*100}%;top:-20px;width:1.5px;height:${20+Math.random()*25}px;background:rgba(100,160,255,0.55);animation:rainDrop ${0.5+Math.random()*0.7}s linear infinite;animation-delay:${Math.random()*1}s`;
-      overlay.appendChild(r);}
-    setTimeout(()=>overlay.classList.remove('active'),4000);
+    ov.style.display='block';
+    for(var i=0;i<40;i++){(function(){
+      var r=document.createElement('div');
+      r.style.cssText='position:absolute;left:'+Math.random()*100+'%;top:-15px;width:1.5px;height:'+(18+Math.random()*22)+'px;background:rgba(100,160,255,0.55);animation:rainDrop '+(0.5+Math.random()*0.6)+'s linear infinite;animation-delay:'+(Math.random()*1)+'s';
+      ov.appendChild(r);
+    })();}
+    setTimeout(function(){ov.className='';},4000);
   } else if(type==='rainbow'){
-    overlay.style.display='block';
-    const colors=['rgba(255,80,80,0.5)','rgba(255,165,80,0.45)','rgba(255,230,80,0.4)','rgba(80,200,80,0.4)','rgba(80,80,255,0.4)','rgba(160,80,220,0.4)'];
-    colors.forEach((c,i)=>{const rb=document.createElement('div');
-      rb.style.cssText=`position:absolute;top:${15+i*2}%;left:-20%;width:140%;height:200px;border-radius:50%;border-top:10px solid ${c};border-left:10px solid transparent;border-right:10px solid transparent;animation:rainbowArc 3s ease forwards;animation-delay:${i*0.08}s`;
-      overlay.appendChild(rb);});
-    setTimeout(()=>overlay.classList.remove('active'),4000);
+    ov.style.display='block';
+    var cols=['rgba(255,80,80,0.45)','rgba(255,160,60,0.4)','rgba(255,220,60,0.38)','rgba(80,200,80,0.38)','rgba(80,100,255,0.38)','rgba(160,80,220,0.38)'];
+    cols.forEach(function(col,i){
+      var rb=document.createElement('div');
+      rb.style.cssText='position:absolute;top:'+(14+i*2.5)+'%;left:-20%;width:140%;height:180px;border-radius:50%;border-top:9px solid '+col+';border-left:9px solid transparent;border-right:9px solid transparent;animation:rainbowShow 3s ease forwards;animation-delay:'+(i*0.07)+'s';
+      ov.appendChild(rb);
+    });
+    setTimeout(function(){ov.className='';},4000);
   } else if(type==='night'){
-    overlay.style.cssText='display:block;background:rgba(0,0,30,0);transition:background 1s';
-    setTimeout(()=>overlay.style.background='rgba(0,0,30,0.72)',100);
-    for(let i=0;i<45;i++){const s=document.createElement('div');const sz=4+Math.random()*10;
-      s.style.cssText=`position:absolute;left:${Math.random()*100}%;top:${Math.random()*65}%;font-size:${sz}px;color:rgba(255,255,${180+Math.floor(Math.random()*75)},${0.5+Math.random()*0.5});animation:nightSky 3s ease forwards;animation-delay:${Math.random()*1.5}s`;
-      s.textContent='✦';overlay.appendChild(s);}
-    const moon=document.createElement('div');
-    moon.style.cssText='position:absolute;top:12%;right:18%;font-size:48px;animation:nightSky 4s ease forwards;';
-    moon.textContent='🌕';overlay.appendChild(moon);
-    setTimeout(()=>{overlay.classList.remove('active');overlay.style.background='';},5000);
+    ov.style.cssText='display:block;background:rgba(0,0,25,0);transition:background 1s';
+    setTimeout(function(){ov.style.background='rgba(0,0,25,0.68)';},50);
+    for(var i=0;i<40;i++){(function(){
+      var s=document.createElement('div');
+      s.style.cssText='position:absolute;left:'+Math.random()*100+'%;top:'+Math.random()*65+'%;font-size:'+(4+Math.random()*9)+'px;color:rgba(255,255,'+(180+Math.floor(Math.random()*75))+','+(0.4+Math.random()*0.6)+');animation:nightShow 3s ease forwards;animation-delay:'+(Math.random()*1.5)+'s';
+      s.textContent='✦';ov.appendChild(s);
+    })();}
+    var moon=document.createElement('div');
+    moon.style.cssText='position:absolute;top:14%;right:16%;font-size:46px;animation:nightShow 4s ease forwards';
+    moon.textContent='🌕';ov.appendChild(moon);
+    setTimeout(function(){ov.className='';ov.style.background='';},5000);
   }
 }
 
-// キーワードチェック
-function checkKeywordAnimation(text){
+function checkAnim(text){
   if(!text)return;
-  if(text.includes('会いたい'))triggerMsgAnimation('heart');
-  else if(text.includes('好き'))triggerMsgAnimation('petal');
-  else if(text.includes('おやすみ'))triggerMsgAnimation('star');
-  else if(text.includes('雨'))triggerMsgAnimation('rain');
-  else if(text.includes('虹'))triggerMsgAnimation('rainbow');
-  else if(text.includes('月')||text.includes('星'))triggerMsgAnimation('night');
+  if(text.includes('会いたい'))triggerAnim('heart');
+  else if(text.includes('好き'))triggerAnim('petal');
+  else if(text.includes('おやすみ'))triggerAnim('star');
+  else if(text.includes('雨'))triggerAnim('rain');
+  else if(text.includes('虹'))triggerAnim('rainbow');
+  else if(text.includes('月')||text.includes('星'))triggerAnim('night');
 }
 
-// 深夜0時
-function checkMidnight(){
-  if(new Date().getHours()===0&&document.getElementById('chat-screen').style.display!=='none')triggerMsgAnimation('star');
-}
-setInterval(checkMidnight,60000);
-
-// テーマ別時計画面アニメーション
-let themeAnimInterval=null;
-function startThemeAnimation(themeId){
-  stopThemeAnimation();
-  const cs=document.getElementById('clock-screen');
-  // Remove old anim elements
-  cs.querySelectorAll('.theme-anim-particle').forEach(e=>e.remove());
-  
-  const t=THEMES.find(x=>x.id===themeId);
-  if(!t||!t.anim)return;
-  
-  function spawnParticle(){
-    const p=document.createElement('div');
-    p.className='theme-anim-particle';
-    p.style.position='absolute';
-    p.style.pointerEvents='none';
-    p.style.zIndex='2';
-    
-    if(t.anim==='stars'){
-      const sz=3+Math.random()*5;
-      p.style.cssText+=`left:${Math.random()*100}%;top:${Math.random()*80}%;width:${sz}px;height:${sz}px;border-radius:50%;background:rgba(255,255,${180+Math.floor(Math.random()*75)},${0.4+Math.random()*0.6});animation:sparkleFloat ${2+Math.random()*3}s ease forwards;animation-delay:${Math.random()*2}s`;
-    } else if(t.anim==='petals'){
-      p.style.cssText+=`left:${Math.random()*100}%;top:-20px;font-size:${12+Math.random()*12}px;animation:petalDrift ${5+Math.random()*5}s ease-in forwards;animation-delay:${Math.random()*3}s`;
-      p.textContent=Math.random()>0.5?'🌸':'✿';
-    } else if(t.anim==='leaves'){
-      p.style.cssText+=`left:${Math.random()*100}%;top:${20+Math.random()*60}%;font-size:${10+Math.random()*10}px;animation:leafSway ${2+Math.random()*2}s ease-in-out infinite;animation-delay:${Math.random()*2}s`;
+// テーマ別時計アニメ
+var themeAnimInt=null;
+function startClockAnim(themeId){
+  stopClockAnim();
+  var cs=document.getElementById('clock-screen');
+  var animMap={
+    'night':'stars','sakura':'petals','forest':'leaves','sunset':'glow',
+    'winter':'snow','tropical':'firefly','mist':'mist','sea':'waves',
+    'rose':'rosepetals','galaxy':'galaxy','lavender':'sparkle','autumn':'autumn',
+    'cafe':'steam','tropicalnight':'firefly','blizzard':'blizzard',
+    'citynight':'city','botanical':'leaves','aurora':'aurora'
+  };
+  var anim=animMap[themeId];if(!anim)return;
+  function spawn(){
+    var p=document.createElement('div');
+    p.className='clock-anim-el';
+    if(anim==='stars'){
+      p.style.cssText='left:'+Math.random()*100+'%;top:'+Math.random()*80+'%;width:'+(3+Math.random()*4)+'px;height:'+(3+Math.random()*4)+'px;border-radius:50%;background:rgba(255,255,'+(200+Math.floor(Math.random()*55))+','+(0.4+Math.random()*0.6)+');animation:clockStar '+(2+Math.random()*3)+'s ease forwards;animation-delay:'+(Math.random()*2)+'s';
+    } else if(anim==='petals'||anim==='rosepetals'){
+      p.style.cssText='left:'+Math.random()*100+'%;top:-15px;font-size:'+(10+Math.random()*12)+'px;animation:clockPetal '+(5+Math.random()*5)+'s ease-in forwards;animation-delay:'+(Math.random()*3)+'s';
+      p.textContent=anim==='rosepetals'?(Math.random()>0.5?'🌹':'❤️'):(Math.random()>0.5?'🌸':'✿');
+    } else if(anim==='leaves'){
+      p.style.cssText='left:'+Math.random()*100+'%;top:-15px;font-size:'+(10+Math.random()*10)+'px;animation:clockLeaf '+(5+Math.random()*4)+'s ease-in forwards;animation-delay:'+(Math.random()*3)+'s';
       p.textContent=Math.random()>0.5?'🍃':'🌿';
-    } else if(t.anim==='glow'){
-      const sz=40+Math.random()*80;
-      p.style.cssText+=`left:${Math.random()*100}%;top:${Math.random()*100}%;width:${sz}px;height:${sz}px;border-radius:50%;background:radial-gradient(circle,rgba(255,150,50,0.15),transparent);animation:glowPulse ${3+Math.random()*4}s ease-in-out infinite;animation-delay:${Math.random()*3}s`;
-    } else if(t.anim==='snow'){
-      const sz=4+Math.random()*8;
-      p.style.setProperty('--bx',(Math.random()*40-20)+'px');
-      p.style.cssText+=`left:${Math.random()*100}%;top:-20px;width:${sz}px;height:${sz}px;border-radius:50%;background:rgba(255,255,255,0.8);animation:blizzardFlake ${4+Math.random()*5}s linear forwards;animation-delay:${Math.random()*4}s`;
-    } else if(t.anim==='fireflies'){
-      const fx=(Math.random()*100-50)+'px';const fy=(Math.random()*100-50)+'px';
-      p.style.setProperty('--fx',fx);p.style.setProperty('--fy',fy);
-      p.style.cssText+=`left:${Math.random()*100}%;top:${Math.random()*100}%;width:5px;height:5px;border-radius:50%;background:rgba(200,255,100,0.9);box-shadow:0 0 6px rgba(200,255,100,0.8);animation:fireflyFloat ${3+Math.random()*4}s ease-in-out infinite;animation-delay:${Math.random()*3}s`;
-    } else if(t.anim==='mist'){
-      const w=80+Math.random()*120;
-      p.style.cssText+=`left:${Math.random()*100}%;top:${30+Math.random()*50}%;width:${w}px;height:8px;border-radius:4px;background:rgba(255,255,255,0.2);animation:mistDrift ${5+Math.random()*5}s ease-in-out infinite;animation-delay:${Math.random()*4}s`;
-    } else if(t.anim==='rose'){
-      const rot=Math.random()*360;
-      p.style.setProperty('--rot',rot+'deg');
-      p.style.cssText+=`left:${Math.random()*100}%;top:-20px;font-size:${10+Math.random()*14}px;animation:rosePetal ${5+Math.random()*5}s ease-in forwards;animation-delay:${Math.random()*4}s`;
-      p.textContent=Math.random()>0.5?'🌹':'❤️';
-    } else if(t.anim==='galaxy'){
-      p.style.cssText+=`left:${Math.random()*100}%;top:${Math.random()*60}%;font-size:${6+Math.random()*10}px;color:rgba(220,210,255,${0.4+Math.random()*0.6});animation:shootingStar ${1+Math.random()*2}s ease-out forwards;animation-delay:${Math.random()*5}s`;
-      p.textContent='★';
-    } else if(t.anim==='sparkle'){
-      p.style.cssText+=`left:${Math.random()*100}%;top:${Math.random()*100}%;font-size:${8+Math.random()*14}px;animation:sparkleFloat ${2+Math.random()*3}s ease forwards;animation-delay:${Math.random()*3}s`;
-      p.textContent=Math.random()>0.5?'✦':'✧';
-      p.style.color=`rgba(${180+Math.floor(Math.random()*75)},150,255,0.8)`;
-    } else if(t.anim==='autumn'){
-      const rot=Math.random()*720;
-      p.style.setProperty('--rot',rot+'deg');
-      p.style.cssText+=`left:${Math.random()*100}%;top:-20px;font-size:${12+Math.random()*14}px;animation:autumnLeaf ${5+Math.random()*5}s ease-in forwards;animation-delay:${Math.random()*4}s`;
-      p.textContent=['🍂','🍁','🍃'][Math.floor(Math.random()*3)];
-    } else if(t.anim==='steam'){
-      p.style.cssText+=`left:${20+Math.random()*60}%;top:${40+Math.random()*30}%;width:${6+Math.random()*8}px;height:${20+Math.random()*20}px;border-radius:50%;background:rgba(255,240,220,0.3);animation:steamRise ${2+Math.random()*2}s ease-out infinite;animation-delay:${Math.random()*2}s`;
-    } else if(t.anim==='city'){
-      p.style.cssText+=`left:${Math.random()*100}%;top:${Math.random()*100}%;width:2px;height:2px;border-radius:50%;background:rgba(${200+Math.floor(Math.random()*55)},${180+Math.floor(Math.random()*75)},100,0.8);animation:cityLight ${1+Math.random()*3}s ease-in-out infinite;animation-delay:${Math.random()*3}s`;
-    } else if(t.anim==='botanical'){
-      p.style.cssText+=`left:${Math.random()*100}%;top:${Math.random()*100}%;font-size:${10+Math.random()*14}px;animation:botanicalSway ${2+Math.random()*3}s ease-in-out infinite;animation-delay:${Math.random()*3}s`;
-      p.textContent=Math.random()>0.5?'🌿':'🌱';
-    } else if(t.anim==='aurora'){
-      const h=10+Math.random()*20;
-      p.style.cssText+=`left:-10%;top:${10+Math.random()*50}%;width:120%;height:${h}px;background:linear-gradient(90deg,transparent,rgba(${80+Math.floor(Math.random()*60)},255,${180+Math.floor(Math.random()*75)},0.2),rgba(150,100,255,0.15),transparent);border-radius:50%;animation:auroraWave ${4+Math.random()*4}s ease-in-out infinite;animation-delay:${Math.random()*4}s`;
-    } else if(t.anim==='waves'){
-      p.style.cssText+=`left:-10%;bottom:${Math.random()*30}%;width:120%;height:3px;background:rgba(255,255,255,${0.1+Math.random()*0.2});border-radius:2px;animation:waveAnim ${3+Math.random()*3}s ease-in-out infinite;animation-delay:${Math.random()*3}s`;
-    } else if(t.anim==='blizzard'){
-      p.style.setProperty('--bx',(Math.random()*60-30)+'px');
-      p.style.cssText+=`left:${Math.random()*100}%;top:-15px;font-size:${8+Math.random()*10}px;color:rgba(200,230,255,0.8);animation:blizzardFlake ${3+Math.random()*4}s linear infinite;animation-delay:${Math.random()*5}s`;
+    } else if(anim==='snow'){
+      p.style.cssText='left:'+Math.random()*100+'%;top:-10px;font-size:'+(8+Math.random()*8)+'px;animation:clockSnow '+(4+Math.random()*4)+'s linear forwards;animation-delay:'+(Math.random()*3)+'s';
       p.textContent='❄';
+    } else if(anim==='blizzard'){
+      p.style.cssText='left:'+Math.random()*100+'%;top:-10px;width:'+(3+Math.random()*4)+'px;height:'+(3+Math.random()*4)+'px;border-radius:50%;background:rgba(220,235,255,0.8);animation:clockSnow '+(3+Math.random()*3)+'s linear forwards;animation-delay:'+(Math.random()*3)+'s';
+    } else if(anim==='firefly'){
+      var fx=(Math.random()*80-40)+'px';var fy=(Math.random()*80-40)+'px';
+      p.style.cssText='left:'+Math.random()*100+'%;top:'+Math.random()*100+'%;width:5px;height:5px;border-radius:50%;background:rgba(200,255,100,0.9);box-shadow:0 0 6px rgba(200,255,100,0.8);--fx:'+fx+';--fy:'+fy+';animation:clockFirefly '+(3+Math.random()*4)+'s ease-in-out infinite;animation-delay:'+(Math.random()*3)+'s';
+    } else if(anim==='mist'){
+      p.style.cssText='left:'+Math.random()*100+'%;top:'+(30+Math.random()*50)+'%;width:'+(70+Math.random()*100)+'px;height:6px;border-radius:3px;background:rgba(255,255,255,0.2);animation:clockMist '+(5+Math.random()*5)+'s ease-in-out infinite;animation-delay:'+(Math.random()*4)+'s';
+    } else if(anim==='glow'){
+      p.style.cssText='left:'+Math.random()*100+'%;top:'+Math.random()*100+'%;width:'+(30+Math.random()*60)+'px;height:'+(30+Math.random()*60)+'px;border-radius:50%;background:radial-gradient(circle,rgba(255,140,40,0.12),transparent);animation:clockGlow '+(3+Math.random()*4)+'s ease-in-out infinite;animation-delay:'+(Math.random()*3)+'s';
+    } else if(anim==='waves'){
+      p.style.cssText='left:-5%;bottom:'+(Math.random()*30)+'%;width:110%;height:2px;background:rgba(255,255,255,'+(0.08+Math.random()*0.12)+');border-radius:1px;animation:clockWave '+(3+Math.random()*3)+'s ease-in-out infinite;animation-delay:'+(Math.random()*3)+'s';
+    } else if(anim==='galaxy'){
+      p.style.cssText='left:'+Math.random()*100+'%;top:'+Math.random()*70+'%;font-size:'+(5+Math.random()*8)+'px;color:rgba(210,200,255,'+(0.4+Math.random()*0.5)+');animation:clockStar '+(2+Math.random()*3)+'s ease forwards;animation-delay:'+(Math.random()*4)+'s';
+      p.textContent='★';
+    } else if(anim==='sparkle'){
+      p.style.cssText='left:'+Math.random()*100+'%;top:'+Math.random()*100+'%;font-size:'+(6+Math.random()*12)+'px;color:rgba('+(180+Math.floor(Math.random()*75))+',150,255,'+(0.5+Math.random()*0.5)+');animation:clockStar '+(2+Math.random()*3)+'s ease forwards;animation-delay:'+(Math.random()*3)+'s';
+      p.textContent=Math.random()>0.5?'✦':'✧';
+    } else if(anim==='autumn'){
+      p.style.cssText='left:'+Math.random()*100+'%;top:-15px;font-size:'+(12+Math.random()*12)+'px;animation:clockLeaf '+(5+Math.random()*5)+'s ease-in forwards;animation-delay:'+(Math.random()*4)+'s';
+      p.textContent=['🍂','🍁','🍃'][Math.floor(Math.random()*3)];
+    } else if(anim==='steam'){
+      p.style.cssText='left:'+(20+Math.random()*60)+'%;top:'+(40+Math.random()*30)+'%;width:'+(5+Math.random()*7)+'px;height:'+(15+Math.random()*15)+'px;border-radius:50%;background:rgba(255,235,210,0.25);animation:clockGlow '+(2+Math.random()*2)+'s ease-out infinite;animation-delay:'+(Math.random()*2)+'s';
+    } else if(anim==='city'){
+      p.style.cssText='left:'+Math.random()*100+'%;top:'+Math.random()*100+'%;width:2px;height:2px;border-radius:50%;background:rgba('+(200+Math.floor(Math.random()*55))+','+(180+Math.floor(Math.random()*75))+',80,0.8);animation:clockGlow '+(1+Math.random()*3)+'s ease-in-out infinite;animation-delay:'+(Math.random()*3)+'s';
+    } else if(anim==='aurora'){
+      p.style.cssText='left:-10%;top:'+(8+Math.random()*55)+'%;width:120%;height:'+(8+Math.random()*16)+'px;background:linear-gradient(90deg,transparent,rgba('+(60+Math.floor(Math.random()*60))+',255,'+(160+Math.floor(Math.random()*80))+',0.18),rgba(140,90,255,0.12),transparent);border-radius:50%;animation:clockAurora '+(4+Math.random()*4)+'s ease-in-out infinite;animation-delay:'+(Math.random()*4)+'s';
     }
     cs.appendChild(p);
-    setTimeout(()=>{if(p.parentNode)p.remove();},9000);
+    setTimeout(function(){if(p.parentNode)p.remove();},10000);
   }
-  
-  // Initial burst
-  const count=t.anim==='waves'||t.anim==='aurora'||t.anim==='mist'?5:12;
-  for(let i=0;i<count;i++)setTimeout(spawnParticle,i*200);
-  // Continuous
-  themeAnimInterval=setInterval(spawnParticle,800);
+  var cnt=(anim==='waves'||anim==='aurora'||anim==='mist')?4:10;
+  for(var i=0;i<cnt;i++)(function(i){setTimeout(spawn,i*150);})(i);
+  themeAnimInt=setInterval(spawn,700);
 }
 
-function stopThemeAnimation(){
-  if(themeAnimInterval){clearInterval(themeAnimInterval);themeAnimInterval=null;}
-  document.getElementById('clock-screen').querySelectorAll('.theme-anim-particle').forEach(e=>e.remove());
+function stopClockAnim(){
+  if(themeAnimInt){clearInterval(themeAnimInt);themeAnimInt=null;}
+  document.getElementById('clock-screen').querySelectorAll('.clock-anim-el').forEach(function(e){e.remove();});
 }
 
-// テーマ変更時アニメーション開始はapplyTheme内で直接処理
-
-// Start animation on load
-setTimeout(()=>startThemeAnimation(currentTheme),500);
-
-// 時計長押しでデザイン変更
-let clockPressTimer=null;
-let clockStyleIdx=0;
-const clockStyles=['minimal','luxury','geometric'];
-
-document.getElementById('clock-svg').addEventListener('touchstart',()=>{
-  clockPressTimer=setTimeout(()=>{
-    clockStyleIdx=(clockStyleIdx+1)%clockStyles.length;
-    const t=THEMES.find(x=>x.id===currentTheme);
-    if(t){
-      t.clock.type=clockStyles[clockStyleIdx];
-      // Brief flash feedback
-      const svg=document.getElementById('clock-svg');
-      svg.style.opacity='0.3';
-      setTimeout(()=>svg.style.opacity='1',200);
-    }
+// 時計長押し
+var cpTimer=null,cpIdx=0,cpStyles=['minimal','luxury','geometric'];
+document.getElementById('clock-svg').addEventListener('touchstart',function(){
+  cpTimer=setTimeout(function(){
+    cpIdx=(cpIdx+1)%3;
+    var t=THEMES.find(function(x){return x.id===currentTheme;});
+    if(t){t.clock.type=cpStyles[cpIdx];var s=document.getElementById('clock-svg');s.style.opacity='0.3';setTimeout(function(){s.style.opacity='1';},200);}
   },600);
 },{passive:true});
+document.getElementById('clock-svg').addEventListener('touchend',function(){clearTimeout(cpTimer);},{passive:true});
+document.getElementById('clock-svg').addEventListener('touchmove',function(){clearTimeout(cpTimer);},{passive:true});
 
-document.getElementById('clock-svg').addEventListener('touchend',()=>{
-  clearTimeout(clockPressTimer);
-},{passive:true});
+// 深夜0時チェック
+setInterval(function(){
+  if(new Date().getHours()===0&&document.getElementById('chat-screen').style.display!=='none')triggerAnim('star');
+},60000);
 
-document.getElementById('clock-svg').addEventListener('touchmove',()=>{
-  clearTimeout(clockPressTimer);
-},{passive:true});
+// 起動時
+updateChatBg();
+setTimeout(function(){startClockAnim(currentTheme);},600);
 </script>
 
-<!-- アニメーションオーバーレイ -->
 <div id="msg-anim-overlay"></div>
-
-<!-- ヘルスケア画面 -->
 <div class="screen" id="health-screen">
   <div class="health-header">
-    <div class="health-header-top">
+    <div style="display:flex;align-items:center;justify-content:space-between">
       <div>
         <div class="health-title">HealthCheck</div>
         <div class="health-subtitle" id="health-date"></div>
