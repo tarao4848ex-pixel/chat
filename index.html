@@ -146,13 +146,16 @@
   </div>
   <div class="clock-date-display" id="clock-date"></div>
   <div class="unread-badge" id="unread-badge"></div>
+  <div id="hint-tap" onclick="showHint()" style="position:absolute;bottom:20px;left:20px;width:60px;height:60px;z-index:5;cursor:default"></div>
 </div>
+
+<div id="hint-overlay" onclick="closeHint()" style="position:fixed;inset:0;z-index:110;display:none;align-items:center;justify-content:center;background:rgba(10,60,120,0.5);backdrop-filter:blur(6px)"><div onclick="event.stopPropagation()" style="background:rgba(255,255,255,0.95);border-radius:20px;padding:32px 28px;max-width:300px;width:85%;box-shadow:0 8px 40px rgba(0,80,160,0.25)"><div style="color:#0e7490;font-size:11px;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px;text-align:center">Hint</div><div style="display:flex;gap:12px;margin-bottom:16px;align-items:flex-start"><div style="width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#0e7490,#22d3ee);color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0">1</div><div style="color:#1a5c8c;font-size:14px;line-height:1.6">時計を3回タップ</div></div><div style="display:flex;gap:12px;margin-bottom:16px;align-items:flex-start"><div style="width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#0e7490,#22d3ee);color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0">2</div><div style="color:#1a5c8c;font-size:14px;line-height:1.6">髪留めのデビュー年</div></div><div style="display:flex;gap:12px;margin-bottom:16px;align-items:flex-start"><div style="width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#0e7490,#22d3ee);color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0">3</div><div style="color:#1a5c8c;font-size:14px;line-height:1.6">初めてもらったもの（たぶん）を2で割った数字</div></div><button onclick="closeHint()" style="margin-top:24px;width:100%;padding:12px;background:linear-gradient(135deg,#0e7490,#22d3ee);border:none;border-radius:12px;color:#fff;font-size:15px;font-weight:600;cursor:pointer;font-family:inherit">閉じる</button></div></div>
 
 <div id="invite-screen" class="screen"><div class="invite-title">天才おざわさん</div><input class="invite-input" id="invite-input" type="text" placeholder="" maxlength="10" autocomplete="off" autocorrect="off" spellcheck="false"><button class="invite-btn" onclick="checkInvite()">入力</button><div class="invite-error" id="invite-error"></div><div class="invite-cancel" onclick="showClock()">キャンセル</div></div>
 
 <div id="pin-screen" class="screen"><div class="pin-title">正解すると時計がカレンダーになるよ</div><div class="pin-dots"><div class="pin-dot" id="pd0"></div><div class="pin-dot" id="pd1"></div><div class="pin-dot" id="pd2"></div><div class="pin-dot" id="pd3"></div></div><div class="pin-keypad"><button class="pin-key" onclick="pinInput('1')">1</button><button class="pin-key" onclick="pinInput('2')">2</button><button class="pin-key" onclick="pinInput('3')">3</button><button class="pin-key" onclick="pinInput('4')">4</button><button class="pin-key" onclick="pinInput('5')">5</button><button class="pin-key" onclick="pinInput('6')">6</button><button class="pin-key" onclick="pinInput('7')">7</button><button class="pin-key" onclick="pinInput('8')">8</button><button class="pin-key" onclick="pinInput('9')">9</button><button class="pin-key empty"></button><button class="pin-key" onclick="pinInput('0')">0</button><button class="pin-key del" onclick="pinDel()">⌫</button></div><div class="pin-cancel" onclick="showClock()">Cancel</div></div>
 
-<div id="chat-screen" class="screen"><div class="chat-header"><div class="chat-back" onclick="showClock()">‹</div><div class="chat-avatar" id="chat-avatar">?</div><div class="chat-header-info"><div class="chat-header-partner" id="chat-partner-name">Chat</div><div class="chat-header-me" id="chat-my-name"></div></div></div><div class="chat-messages" id="chat-messages"><div class="loading-msg">読み込み中...</div></div><div class="chat-input-area"><textarea class="chat-input" id="chat-input" placeholder="メッセージ..." rows="1" oninput="autoResize(this)"></textarea><button class="send-btn" onclick="sendMsg()">↑</button></div></div>
+<div id="chat-screen" class="screen"><div class="chat-header"><div class="chat-back" onclick="showClock()">‹</div><div class="chat-avatar" id="chat-avatar">?</div><div class="chat-header-info"><div class="chat-header-partner" id="chat-partner-name" onclick="editName('partner')">Chat</div><div class="chat-header-me" id="chat-my-name" onclick="editName('me')"></div></div></div><div class="chat-messages" id="chat-messages"><div class="loading-msg">読み込み中...</div></div><div class="chat-input-area"><textarea class="chat-input" id="chat-input" placeholder="メッセージ..." rows="1" oninput="autoResize(this)"></textarea><button class="send-btn" onclick="sendMsg()">↑</button></div></div>
 
 <script>
 const SUPABASE_URL='https://wxnbmrtwcicyvufpoadt.supabase.co';
@@ -569,9 +572,11 @@ function updatePinDots(){for(let i=0;i<4;i++)document.getElementById('pd'+i).cla
 
 async function showChatScreen(){
   const code=currentUser.invite_code;const info=USERS[code]||{name:'ユーザー',partner:'相手'};
-  document.getElementById('chat-partner-name').textContent=info.partner;
-  document.getElementById('chat-my-name').textContent='自分：'+info.name;
-  document.getElementById('chat-avatar').textContent=info.partner.charAt(0);
+  var partnerName=localStorage.getItem('custom_partner_name')||info.partner;
+  var myName=localStorage.getItem('custom_my_name')||info.name;
+  document.getElementById('chat-partner-name').textContent=partnerName;
+  document.getElementById('chat-my-name').textContent='自分：'+myName;
+  document.getElementById('chat-avatar').textContent=partnerName.charAt(0);
   showScreen('chat-screen');updateChatBg();await loadMessages();
   localStorage.setItem('last_read_time',new Date().toISOString());
   document.getElementById('unread-badge').textContent='';
@@ -648,6 +653,39 @@ function disconnectRealtime(){if(realtimeChannel){try{realtimeChannel.close()}ca
 function escHtml(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g,'<br>')}
 function scrollToBottom(){document.getElementById('chat-messages').scrollTop=9999999}
 function autoResize(el){el.style.height='auto';el.style.height=Math.min(el.scrollHeight,120)+'px'}
+
+// ヒント（Marinテーマのみ）
+function showHint(){
+  if(currentTheme!=='sea')return;
+  document.getElementById('hint-overlay').style.display='flex';
+}
+function closeHint(){document.getElementById('hint-overlay').style.display='none'}
+
+// 名前変更
+function editName(which){
+  var el,key,prefix;
+  if(which==='partner'){
+    el=document.getElementById('chat-partner-name');
+    key='custom_partner_name';
+    prefix='';
+  } else {
+    el=document.getElementById('chat-my-name');
+    key='custom_my_name';
+    prefix='自分：';
+  }
+  var current=el.textContent.replace('自分：','');
+  var newName=prompt('名前を入力',current);
+  if(newName!==null&&newName.trim()!==''){
+    newName=newName.trim();
+    localStorage.setItem(key,newName);
+    if(which==='partner'){
+      el.textContent=newName;
+      document.getElementById('chat-avatar').textContent=newName.charAt(0);
+    } else {
+      el.textContent=prefix+newName;
+    }
+  }
+}
 
 // テーマ並び替え (Marin=3行目2列目)
 var THEME_ORDER=['night','sakura','sunset','winter','forest','tropical','mist','aurora','rose','sea','lavender','ocean','moonlight','wine','cosmos','starlight'];
