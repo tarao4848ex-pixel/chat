@@ -1,4 +1,47 @@
-<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>時計</title><meta name="apple-mobile-web-app-title" content="時計"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><style>*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none;-webkit-user-select:none;user-select:none}body{font-family:-apple-system,'Helvetica Neue',sans-serif;height:100dvh;overflow:hidden}.screen{position:absolute;top:0;left:0;width:100%;height:100dvh;display:none;flex-direction:column;align-items:center;justify-content:center}#clock-screen{position:relative;overflow:hidden}
+<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>時計</title><meta name="apple-mobile-web-app-title" content="時計"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><link rel="manifest" href="data:application/json;base64,eyJuYW1lIjoi5pmC6KiIIiwic2hvcnRfbmFtZSI6IuaZguioiCIsImRpc3BsYXkiOiJzdGFuZGFsb25lIiwiYmFja2dyb3VuZF9jb2xvciI6IiMwMDAwMDAiLCJ0aGVtZV9jb2xvciI6IiMwMDAwMDAifQ=="><script>
+// 時計アイコン生成
+(function(){
+  var s=180;var c=document.createElement('canvas');c.width=s;c.height=s;var x=c.getContext('2d');
+  // 背景
+  x.fillStyle='#000';x.beginPath();x.arc(s/2,s/2,s/2,0,Math.PI*2);x.fill();
+  // 文字盤
+  x.fillStyle='#fff';x.beginPath();x.arc(s/2,s/2,78,0,Math.PI*2);x.fill();
+  // 目盛り
+  for(var i=0;i<60;i++){
+    var a=(i*6-90)*Math.PI/180;var isMaj=i%5===0;
+    var r1=isMaj?64:70;var r2=76;
+    x.strokeStyle='#000';x.lineWidth=isMaj?3:1;
+    x.beginPath();x.moveTo(s/2+r1*Math.cos(a),s/2+r1*Math.sin(a));
+    x.lineTo(s/2+r2*Math.cos(a),s/2+r2*Math.sin(a));x.stroke();
+  }
+  // 数字
+  x.fillStyle='#000';x.font='bold 18px -apple-system,Helvetica';x.textAlign='center';x.textBaseline='middle';
+  for(var n=1;n<=12;n++){
+    var na=(n*30-90)*Math.PI/180;
+    x.fillText(n.toString(),s/2+54*Math.cos(na),s/2+54*Math.sin(na));
+  }
+  // 針 10:09:30
+  var hA=(10+9/60)*30-90;var mA=(9+30/60)*6-90;var sA=30*6-90;
+  // 時針
+  x.strokeStyle='#000';x.lineWidth=6;x.lineCap='round';
+  x.beginPath();x.moveTo(s/2,s/2);
+  x.lineTo(s/2+38*Math.cos(hA*Math.PI/180),s/2+38*Math.sin(hA*Math.PI/180));x.stroke();
+  // 分針
+  x.lineWidth=4;
+  x.beginPath();x.moveTo(s/2,s/2);
+  x.lineTo(s/2+56*Math.cos(mA*Math.PI/180),s/2+56*Math.sin(mA*Math.PI/180));x.stroke();
+  // 秒針
+  x.strokeStyle='#ff3b30';x.lineWidth=1.5;
+  x.beginPath();x.moveTo(s/2-12*Math.cos(sA*Math.PI/180),s/2-12*Math.sin(sA*Math.PI/180));
+  x.lineTo(s/2+62*Math.cos(sA*Math.PI/180),s/2+62*Math.sin(sA*Math.PI/180));x.stroke();
+  // 中心
+  x.fillStyle='#ff3b30';x.beginPath();x.arc(s/2,s/2,3,0,Math.PI*2);x.fill();
+  // アイコン設定
+  var url=c.toDataURL('image/png');
+  var link=document.createElement('link');link.rel='apple-touch-icon';link.href=url;document.head.appendChild(link);
+  var link2=document.createElement('link');link2.rel='icon';link2.type='image/png';link2.sizes='180x180';link2.href=url;document.head.appendChild(link2);
+})();
+</script><style>*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none;-webkit-user-select:none;user-select:none}body{font-family:-apple-system,'Helvetica Neue',sans-serif;height:100dvh;overflow:hidden}.screen{position:absolute;top:0;left:0;width:100%;height:100dvh;display:none;flex-direction:column;align-items:center;justify-content:center}#clock-screen{position:relative;overflow:hidden}
 .theme-sea{background:linear-gradient(160deg,#d4f5ff 0%,#a0e4f8 15%,#5cc8e8 30%,#2aa0c8 50%,#0e7490 70%,#0a5068 85%,#083848 100%)}
 .theme-night{background:linear-gradient(160deg,#0a0a2e 0%,#0d1b4b 30%,#1a1a5e 60%,#0d0d3b 100%)}
 .theme-sakura{background:linear-gradient(160deg,#fff0f5 0%,#ffd6e7 25%,#ffb3d1 50%,#ff85b3 75%,#e0609a 100%)}
