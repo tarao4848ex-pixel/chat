@@ -162,7 +162,20 @@ const USERS={'1989':{name:'Marin🌊',partner:'天才おざわさん'},'1989B':{
 
 // テーマ定義
 const THEMES=[
-  ,
+  {
+    id:'sea',label:'Marin',
+    dateColor:'rgba(255,248,240,0.85)',badgeColor:'rgba(255,248,240,0.75)',
+    // SVGアイコン: 波形
+    icon:`<svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="26" cy="26" r="26" fill="url(#si)"/><defs><radialGradient id="si" cx="30%" cy="30%"><stop offset="0%" stop-color="#a8edff"/><stop offset="40%" stop-color="#4db8d8"/><stop offset="100%" stop-color="#0a5e7a"/></radialGradient></defs><circle cx="26" cy="16" r="6" fill="rgba(255,230,150,0.95)"/><circle cx="26" cy="16" r="9" fill="none" stroke="rgba(255,220,120,0.3)" stroke-width="0.8"/><circle cx="26" cy="16" r="12" fill="none" stroke="rgba(255,220,120,0.15)" stroke-width="0.5"/><path d="M8 32 Q14 26 20 32 Q26 38 32 32 Q38 26 44 32" stroke="rgba(255,255,255,0.9)" stroke-width="2" stroke-linecap="round" fill="none"/><path d="M6 36 Q12 30 18 36 Q24 42 30 36 Q36 30 42 36" stroke="rgba(255,255,255,0.45)" stroke-width="1.5" stroke-linecap="round" fill="none"/><circle cx="14" cy="24" r="1.5" fill="rgba(255,255,255,0.5)"/><circle cx="38" cy="22" r="1" fill="rgba(255,255,255,0.4)"/></svg>`,
+    // プレビュー
+    preview:`<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#p0)"/><defs><radialGradient id="p0" cx="30%" cy="30%"><stop offset="0%" stop-color="#a8edff"/><stop offset="40%" stop-color="#4db8d8"/><stop offset="100%" stop-color="#0a5e7a"/></radialGradient></defs><circle cx="26" cy="16" r="6" fill="rgba(255,230,150,0.9)"/><circle cx="26" cy="16" r="9" fill="none" stroke="rgba(255,220,120,0.25)" stroke-width="0.8"/><path d="M8 34 Q16 26 24 34 Q32 42 40 34" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round" fill="none"/></svg>`,
+    clock:{
+      type:'minimal',
+      face:'rgba(255,255,255,0.15)',faceStroke:'rgba(255,255,255,0.6)',
+      hourColor:'rgba(20,80,140,0.9)',minuteColor:'rgba(14,116,144,0.85)',secondColor:'#e05c2a',
+      centerColor:'#0e7490',tickColor:'rgba(0,80,140,0.5)',numColor:'rgba(0,60,120,0.7)'
+    }
+  },
   {
     id:'night',label:'Night',
     dateColor:'rgba(150,170,255,0.7)',badgeColor:'rgba(180,200,255,0.7)',
@@ -175,7 +188,6 @@ const THEMES=[
       centerColor:'#8899ff',tickColor:'rgba(130,150,255,0.4)',numColor:'rgba(180,200,255,0.75)'
     }
   },
-  ,
   {
     id:'sakura',label:'Sakura',
     dateColor:'rgba(160,40,90,0.7)',badgeColor:'rgba(160,40,90,0.55)',
@@ -188,33 +200,6 @@ const THEMES=[
       centerColor:'#e8729a',tickColor:'rgba(180,60,110,0.45)',numColor:'rgba(150,40,80,0.75)'
     }
   },
-  ,
-  {
-    id:'sunset',label:'Sunset',
-    dateColor:'rgba(120,40,10,0.75)',badgeColor:'rgba(120,40,10,0.6)',
-    icon:`<svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="26" cy="26" r="26" fill="url(#ssi)"/><defs><linearGradient id="ssi" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ff8a50"/><stop offset="100%" stop-color="#7b1fa2"/></linearGradient></defs><path d="M10 32 Q26 20 42 32" stroke="rgba(255,200,100,0.6)" stroke-width="1" fill="none"/><semicircle/><path d="M14 32 A12 12 0 0 1 38 32" fill="rgba(255,200,80,0.85)"/><line x1="26" y1="32" x2="26" y2="20" stroke="rgba(255,200,80,0.4)" stroke-width="1"/><line x1="10" y1="35" x2="42" y2="35" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/></svg>`,
-    preview:`<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#p4)"/><defs><linearGradient id="p4" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ff8a50"/><stop offset="100%" stop-color="#7b1fa2"/></linearGradient></defs><path d="M14 32 A12 12 0 0 1 38 32" fill="rgba(255,200,80,0.8)"/><line x1="10" y1="35" x2="42" y2="35" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/></svg>`,
-    clock:{
-      type:'luxury',
-      face:'rgba(255,255,255,0.12)',faceStroke:'rgba(255,160,80,0.5)',
-      hourColor:'rgba(180,54,12,0.95)',minuteColor:'rgba(230,74,25,0.85)',secondColor:'#4a148c',
-      centerColor:'#e64a19',tickColor:'rgba(180,80,10,0.4)',numColor:'rgba(140,50,10,0.8)'
-    }
-  },
-  ,
-  {
-    id:'winter',label:'Winter',
-    dateColor:'rgba(20,60,120,0.7)',badgeColor:'rgba(20,60,120,0.55)',
-    icon:`<svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="26" cy="26" r="26" fill="url(#wi)"/><defs><radialGradient id="wi" cx="40%" cy="35%"><stop offset="0%" stop-color="#e3f2fd"/><stop offset="100%" stop-color="#1565c0"/></radialGradient></defs><line x1="26" y1="12" x2="26" y2="40" stroke="rgba(255,255,255,0.85)" stroke-width="2" stroke-linecap="round"/><line x1="12" y1="26" x2="40" y2="26" stroke="rgba(255,255,255,0.85)" stroke-width="2" stroke-linecap="round"/><line x1="15.5" y1="15.5" x2="36.5" y2="36.5" stroke="rgba(255,255,255,0.6)" stroke-width="1.5" stroke-linecap="round"/><line x1="36.5" y1="15.5" x2="15.5" y2="36.5" stroke="rgba(255,255,255,0.6)" stroke-width="1.5" stroke-linecap="round"/><circle cx="26" cy="26" r="3" fill="rgba(255,255,255,0.9)"/></svg>`,
-    preview:`<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#p5)"/><defs><radialGradient id="p5" cx="40%" cy="35%"><stop offset="0%" stop-color="#e3f2fd"/><stop offset="100%" stop-color="#1565c0"/></radialGradient></defs><line x1="26" y1="12" x2="26" y2="40" stroke="rgba(255,255,255,0.8)" stroke-width="2" stroke-linecap="round"/><line x1="12" y1="26" x2="40" y2="26" stroke="rgba(255,255,255,0.8)" stroke-width="2" stroke-linecap="round"/><line x1="15.5" y1="15.5" x2="36.5" y2="36.5" stroke="rgba(255,255,255,0.55)" stroke-width="1.5" stroke-linecap="round"/><line x1="36.5" y1="15.5" x2="15.5" y2="36.5" stroke="rgba(255,255,255,0.55)" stroke-width="1.5" stroke-linecap="round"/><circle cx="26" cy="26" r="3" fill="rgba(255,255,255,0.85)"/></svg>`,
-    clock:{
-      type:'geometric',
-      face:'rgba(255,255,255,0.2)',faceStroke:'rgba(150,200,255,0.5)',
-      hourColor:'rgba(21,101,192,0.95)',minuteColor:'rgba(25,118,210,0.85)',secondColor:'#c62828',
-      centerColor:'#1976d2',tickColor:'rgba(20,80,180,0.35)',numColor:'rgba(20,60,140,0.75)'
-    }
-  },
-  ,
   {
     id:'forest',label:'Forest',
     dateColor:'rgba(20,80,20,0.7)',badgeColor:'rgba(20,80,20,0.55)',
@@ -227,7 +212,30 @@ const THEMES=[
       centerColor:'#388e3c',tickColor:'rgba(30,100,30,0.4)',numColor:'rgba(20,80,20,0.7)'
     }
   },
-  ,
+  {
+    id:'sunset',label:'Sunset',
+    dateColor:'rgba(120,40,10,0.75)',badgeColor:'rgba(120,40,10,0.6)',
+    icon:`<svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="26" cy="26" r="26" fill="url(#ssi)"/><defs><linearGradient id="ssi" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ff8a50"/><stop offset="100%" stop-color="#7b1fa2"/></linearGradient></defs><path d="M10 32 Q26 20 42 32" stroke="rgba(255,200,100,0.6)" stroke-width="1" fill="none"/><semicircle/><path d="M14 32 A12 12 0 0 1 38 32" fill="rgba(255,200,80,0.85)"/><line x1="26" y1="32" x2="26" y2="20" stroke="rgba(255,200,80,0.4)" stroke-width="1"/><line x1="10" y1="35" x2="42" y2="35" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/></svg>`,
+    preview:`<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#p4)"/><defs><linearGradient id="p4" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ff8a50"/><stop offset="100%" stop-color="#7b1fa2"/></linearGradient></defs><path d="M14 32 A12 12 0 0 1 38 32" fill="rgba(255,200,80,0.8)"/><line x1="10" y1="35" x2="42" y2="35" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/></svg>`,
+    clock:{
+      type:'luxury',
+      face:'rgba(255,255,255,0.12)',faceStroke:'rgba(255,160,80,0.5)',
+      hourColor:'rgba(180,54,12,0.95)',minuteColor:'rgba(230,74,25,0.85)',secondColor:'#4a148c',
+      centerColor:'#e64a19',tickColor:'rgba(180,80,10,0.4)',numColor:'rgba(140,50,10,0.8)'
+    }
+  },
+  {
+    id:'winter',label:'Winter',
+    dateColor:'rgba(20,60,120,0.7)',badgeColor:'rgba(20,60,120,0.55)',
+    icon:`<svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="26" cy="26" r="26" fill="url(#wi)"/><defs><radialGradient id="wi" cx="40%" cy="35%"><stop offset="0%" stop-color="#e3f2fd"/><stop offset="100%" stop-color="#1565c0"/></radialGradient></defs><line x1="26" y1="12" x2="26" y2="40" stroke="rgba(255,255,255,0.85)" stroke-width="2" stroke-linecap="round"/><line x1="12" y1="26" x2="40" y2="26" stroke="rgba(255,255,255,0.85)" stroke-width="2" stroke-linecap="round"/><line x1="15.5" y1="15.5" x2="36.5" y2="36.5" stroke="rgba(255,255,255,0.6)" stroke-width="1.5" stroke-linecap="round"/><line x1="36.5" y1="15.5" x2="15.5" y2="36.5" stroke="rgba(255,255,255,0.6)" stroke-width="1.5" stroke-linecap="round"/><circle cx="26" cy="26" r="3" fill="rgba(255,255,255,0.9)"/></svg>`,
+    preview:`<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#p5)"/><defs><radialGradient id="p5" cx="40%" cy="35%"><stop offset="0%" stop-color="#e3f2fd"/><stop offset="100%" stop-color="#1565c0"/></radialGradient></defs><line x1="26" y1="12" x2="26" y2="40" stroke="rgba(255,255,255,0.8)" stroke-width="2" stroke-linecap="round"/><line x1="12" y1="26" x2="40" y2="26" stroke="rgba(255,255,255,0.8)" stroke-width="2" stroke-linecap="round"/><line x1="15.5" y1="15.5" x2="36.5" y2="36.5" stroke="rgba(255,255,255,0.55)" stroke-width="1.5" stroke-linecap="round"/><line x1="36.5" y1="15.5" x2="15.5" y2="36.5" stroke="rgba(255,255,255,0.55)" stroke-width="1.5" stroke-linecap="round"/><circle cx="26" cy="26" r="3" fill="rgba(255,255,255,0.85)"/></svg>`,
+    clock:{
+      type:'geometric',
+      face:'rgba(255,255,255,0.2)',faceStroke:'rgba(150,200,255,0.5)',
+      hourColor:'rgba(21,101,192,0.95)',minuteColor:'rgba(25,118,210,0.85)',secondColor:'#c62828',
+      centerColor:'#1976d2',tickColor:'rgba(20,80,180,0.35)',numColor:'rgba(20,60,140,0.75)'
+    }
+  },
   {
     id:'tropical',label:'Tropical',
     dateColor:'rgba(0,80,70,0.75)',badgeColor:'rgba(0,80,70,0.6)',
@@ -240,7 +248,6 @@ const THEMES=[
       centerColor:'#00897b',tickColor:'rgba(0,100,90,0.4)',numColor:'rgba(0,80,70,0.75)'
     }
   },
-  ,
   {
     id:'mist',label:'Mist',
     dateColor:'rgba(50,70,80,0.7)',badgeColor:'rgba(50,70,80,0.55)',
@@ -253,77 +260,42 @@ const THEMES=[
       centerColor:'#455a64',tickColor:'rgba(60,80,90,0.35)',numColor:'rgba(50,70,80,0.7)'
     }
   },
-  {
-    id:'aurora',label:'Aurora',
-    dateColor:'rgba(100,255,218,0.8)',badgeColor:'rgba(100,255,218,0.7)',
+  {id:'aurora',label:'Aurora',dateColor:'rgba(100,255,218,0.8)',badgeColor:'rgba(100,255,218,0.7)',
     icon:`<svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="26" cy="26" r="26" fill="url(#aui)"/><defs><linearGradient id="aui" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0e6655"/><stop offset="50%" stop-color="#1abc9c"/><stop offset="100%" stop-color="#6c3483"/></linearGradient></defs><path d="M10 34 Q18 18 26 28 Q34 14 42 30" stroke="rgba(100,255,218,0.8)" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M12 36 Q20 24 28 32 Q36 20 40 34" stroke="rgba(167,139,250,0.5)" stroke-width="1.5" fill="none" stroke-linecap="round"/><circle cx="36" cy="16" r="1.2" fill="rgba(255,255,255,0.9)"/><circle cx="18" cy="14" r="0.8" fill="rgba(255,255,255,0.7)"/></svg>`,
     preview:`<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#pa)"/><defs><linearGradient id="pa" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0e6655"/><stop offset="50%" stop-color="#1abc9c"/><stop offset="100%" stop-color="#6c3483"/></linearGradient></defs><path d="M10 34 Q18 18 26 28 Q34 14 42 30" stroke="rgba(100,255,218,0.7)" stroke-width="2" fill="none" stroke-linecap="round"/></svg>`,
-    clock:{type:'minimal',face:'rgba(255,255,255,0.06)',faceStroke:'rgba(100,255,218,0.4)',hourColor:'rgba(100,255,218,0.95)',minuteColor:'rgba(167,139,250,0.85)',secondColor:'#f472b6',centerColor:'#1abc9c',tickColor:'rgba(100,255,218,0.35)',numColor:'rgba(100,255,218,0.7)'}
-  },
-  {
-    id:'rose',label:'Rose',
-    dateColor:'rgba(136,19,55,0.75)',badgeColor:'rgba(136,19,55,0.6)',
+    clock:{type:'minimal',face:'rgba(255,255,255,0.06)',faceStroke:'rgba(100,255,218,0.4)',hourColor:'rgba(100,255,218,0.95)',minuteColor:'rgba(167,139,250,0.85)',secondColor:'#f472b6',centerColor:'#1abc9c',tickColor:'rgba(100,255,218,0.35)',numColor:'rgba(100,255,218,0.7)'}},
+  {id:'rose',label:'Rose',dateColor:'rgba(136,19,55,0.75)',badgeColor:'rgba(136,19,55,0.6)',
     icon:`<svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="26" cy="26" r="26" fill="url(#roi)"/><defs><radialGradient id="roi" cx="40%" cy="35%"><stop offset="0%" stop-color="#fda4af"/><stop offset="100%" stop-color="#881337"/></radialGradient></defs><g transform="translate(26,24)"><path d="M0,-4 C3,-8 7,-6 5,-2 C8,-5 9,0 6,3 C9,2 8,6 4,6 C7,8 3,10 0,7 C-3,10 -7,8 -4,6 C-8,6 -9,2 -6,3 C-9,0 -8,-5 -5,-2 C-7,-6 -3,-8 0,-4Z" fill="rgba(255,255,255,0.85)"/><circle cx="0" cy="1" r="2.5" fill="rgba(255,180,190,0.9)"/></g></svg>`,
     preview:`<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#pr)"/><defs><radialGradient id="pr" cx="40%" cy="35%"><stop offset="0%" stop-color="#fda4af"/><stop offset="100%" stop-color="#881337"/></radialGradient></defs><g transform="translate(26,24)"><path d="M0,-4 C3,-8 7,-6 5,-2 C8,-5 9,0 6,3 C9,2 8,6 4,6 C7,8 3,10 0,7 C-3,10 -7,8 -4,6 C-8,6 -9,2 -6,3 C-9,0 -8,-5 -5,-2 C-7,-6 -3,-8 0,-4Z" fill="rgba(255,255,255,0.8)"/><circle cx="0" cy="1" r="2.5" fill="rgba(255,180,190,0.85)"/></g></svg>`,
-    clock:{type:'luxury',face:'rgba(255,255,255,0.12)',faceStroke:'rgba(253,164,175,0.5)',hourColor:'rgba(136,19,55,0.95)',minuteColor:'rgba(225,29,72,0.85)',secondColor:'#fda4af',centerColor:'#e11d48',tickColor:'rgba(136,19,55,0.4)',numColor:'rgba(136,19,55,0.75)'}
-  },
-  {
-    id:'sea',label:'Marin',
-    dateColor:'rgba(255,248,240,0.85)',badgeColor:'rgba(255,248,240,0.75)',
-    icon:`<svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="26" cy="26" r="26" fill="url(#si)"/><defs><radialGradient id="si" cx="30%" cy="30%"><stop offset="0%" stop-color="#a8edff"/><stop offset="40%" stop-color="#4db8d8"/><stop offset="100%" stop-color="#0a5e7a"/></radialGradient></defs><circle cx="26" cy="16" r="6" fill="rgba(255,230,150,0.95)"/><circle cx="26" cy="16" r="9" fill="none" stroke="rgba(255,220,120,0.3)" stroke-width="0.8"/><circle cx="26" cy="16" r="12" fill="none" stroke="rgba(255,220,120,0.15)" stroke-width="0.5"/><path d="M8 32 Q14 26 20 32 Q26 38 32 32 Q38 26 44 32" stroke="rgba(255,255,255,0.9)" stroke-width="2" stroke-linecap="round" fill="none"/><path d="M6 36 Q12 30 18 36 Q24 42 30 36 Q36 30 42 36" stroke="rgba(255,255,255,0.45)" stroke-width="1.5" stroke-linecap="round" fill="none"/><circle cx="14" cy="24" r="1.5" fill="rgba(255,255,255,0.5)"/><circle cx="38" cy="22" r="1" fill="rgba(255,255,255,0.4)"/></svg>`,
-    preview:`<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#p0)"/><defs><radialGradient id="p0" cx="30%" cy="30%"><stop offset="0%" stop-color="#a8edff"/><stop offset="40%" stop-color="#4db8d8"/><stop offset="100%" stop-color="#0a5e7a"/></radialGradient></defs><circle cx="26" cy="16" r="6" fill="rgba(255,230,150,0.9)"/><circle cx="26" cy="16" r="9" fill="none" stroke="rgba(255,220,120,0.25)" stroke-width="0.8"/><path d="M8 34 Q16 26 24 34 Q32 42 40 34" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round" fill="none"/></svg>`,
-    clock:{type:'luxury',face:'rgba(255,255,255,0.12)',faceStroke:'rgba(255,255,255,0.6)',hourColor:'rgba(10,60,100,0.92)',minuteColor:'rgba(14,116,144,0.88)',secondColor:'rgba(255,200,100,0.95)',centerColor:'#0e7490',tickColor:'rgba(0,80,140,0.45)',numColor:'rgba(0,60,120,0.7)'}
-  },
-  {
-    id:'lavender',label:'Lavender',
-    dateColor:'rgba(91,33,182,0.7)',badgeColor:'rgba(91,33,182,0.55)',
-    icon:`<svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="26" cy="26" r="26" fill="url(#lai)"/><defs><radialGradient id="lai" cx="40%" cy="35%"><stop offset="0%" stop-color="#c4b5fd"/><stop offset="100%" stop-color="#5b21b6"/></radialGradient></defs><g transform="translate(26,20)"><ellipse cx="-3" cy="0" rx="2.5" ry="4" fill="rgba(255,255,255,0.8)" transform="rotate(-15)"/><ellipse cx="3" cy="0" rx="2.5" ry="4" fill="rgba(255,255,255,0.7)" transform="rotate(15)"/><ellipse cx="0" cy="-5" rx="2" ry="3.5" fill="rgba(255,255,255,0.85)"/><ellipse cx="-5" cy="3" rx="2" ry="3" fill="rgba(255,255,255,0.6)" transform="rotate(-25)"/><ellipse cx="5" cy="3" rx="2" ry="3" fill="rgba(255,255,255,0.6)" transform="rotate(25)"/></g><line x1="26" y1="28" x2="26" y2="40" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round"/></svg>`,
-    preview:`<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#pl)"/><defs><radialGradient id="pl" cx="40%" cy="35%"><stop offset="0%" stop-color="#c4b5fd"/><stop offset="100%" stop-color="#5b21b6"/></radialGradient></defs><g transform="translate(26,22)"><ellipse cx="-3" cy="0" rx="2.5" ry="4" fill="rgba(255,255,255,0.75)" transform="rotate(-15)"/><ellipse cx="3" cy="0" rx="2.5" ry="4" fill="rgba(255,255,255,0.65)" transform="rotate(15)"/><ellipse cx="0" cy="-5" rx="2" ry="3.5" fill="rgba(255,255,255,0.8)"/></g></svg>`,
-    clock:{type:'luxury',face:'rgba(255,255,255,0.1)',faceStroke:'rgba(196,181,253,0.5)',hourColor:'rgba(91,33,182,0.95)',minuteColor:'rgba(139,92,246,0.85)',secondColor:'#f472b6',centerColor:'#8b5cf6',tickColor:'rgba(91,33,182,0.35)',numColor:'rgba(91,33,182,0.75)'}
-  },
-  {
-    id:'ocean',label:'Deep Sea',
-    dateColor:'rgba(103,232,249,0.8)',badgeColor:'rgba(103,232,249,0.7)',
-    icon:`<svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="26" cy="26" r="26" fill="url(#oci)"/><defs><linearGradient id="oci" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1e3a8a"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient></defs><path d="M12 30 Q17 26 22 30 Q27 34 32 30 Q37 26 42 30" stroke="rgba(103,232,249,0.7)" stroke-width="1.5" fill="none" stroke-linecap="round"/><path d="M10 35 Q15 31 20 35 Q25 39 30 35 Q35 31 40 35" stroke="rgba(103,232,249,0.4)" stroke-width="1" fill="none" stroke-linecap="round"/><circle cx="20" cy="20" r="3" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1"/><circle cx="34" cy="18" r="2" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="0.8"/></svg>`,
-    preview:`<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#po)"/><defs><linearGradient id="po" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1e3a8a"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient></defs><path d="M12 30 Q17 26 22 30 Q27 34 32 30 Q37 26 42 30" stroke="rgba(103,232,249,0.6)" stroke-width="1.5" fill="none" stroke-linecap="round"/><circle cx="22" cy="20" r="3" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1"/></svg>`,
-    clock:{type:'geometric',face:'rgba(255,255,255,0.06)',faceStroke:'rgba(103,232,249,0.4)',hourColor:'rgba(103,232,249,0.95)',minuteColor:'rgba(56,189,248,0.85)',secondColor:'#fbbf24',centerColor:'#06b6d4',tickColor:'rgba(103,232,249,0.3)',numColor:'rgba(103,232,249,0.75)'}
-  },
-  {
-    id:'moonlight',label:'Moonlight',
-    dateColor:'rgba(201,184,219,0.85)',badgeColor:'rgba(201,184,219,0.75)',
-    icon:`<svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="26" cy="26" r="26" fill="url(#mli)"/><defs><radialGradient id="mli" cx="50%" cy="40%"><stop offset="0%" stop-color="#4a3f6b"/><stop offset="100%" stop-color="#0f0f23"/></radialGradient></defs><circle cx="26" cy="22" r="10" fill="rgba(201,184,219,0.15)" stroke="rgba(201,184,219,0.6)" stroke-width="1"/><circle cx="26" cy="22" r="6" fill="rgba(255,250,240,0.9)"/><circle cx="24" cy="20" r="1.5" fill="rgba(201,184,219,0.4)"/><circle cx="28" cy="24" r="1" fill="rgba(201,184,219,0.3)"/><circle cx="14" cy="14" r="0.8" fill="rgba(255,255,255,0.7)"/><circle cx="40" cy="16" r="1" fill="rgba(255,255,255,0.6)"/><circle cx="38" cy="34" r="0.6" fill="rgba(255,255,255,0.5)"/></svg>`,
-    preview:`<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#pml)"/><defs><radialGradient id="pml" cx="50%" cy="40%"><stop offset="0%" stop-color="#4a3f6b"/><stop offset="100%" stop-color="#0f0f23"/></radialGradient></defs><circle cx="26" cy="22" r="6" fill="rgba(255,250,240,0.85)"/><circle cx="24" cy="20" r="1.5" fill="rgba(201,184,219,0.35)"/><circle cx="14" cy="14" r="0.8" fill="rgba(255,255,255,0.6)"/><circle cx="40" cy="16" r="1" fill="rgba(255,255,255,0.5)"/></svg>`,
-    clock:{type:'minimal',face:'rgba(255,255,255,0.05)',faceStroke:'rgba(201,184,219,0.35)',hourColor:'rgba(201,184,219,0.95)',minuteColor:'rgba(167,139,250,0.8)',secondColor:'#f9a8d4',centerColor:'#c9b8db',tickColor:'rgba(201,184,219,0.3)',numColor:'rgba(201,184,219,0.7)'}
-  },
-  {
-    id:'wine',label:'Wine',
-    dateColor:'rgba(232,180,203,0.85)',badgeColor:'rgba(232,180,203,0.75)',
-    icon:`<svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="26" cy="26" r="26" fill="url(#wni)"/><defs><linearGradient id="wni" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#e8b4cb"/><stop offset="50%" stop-color="#9f1239"/><stop offset="100%" stop-color="#2a0a1a"/></linearGradient></defs><path d="M20 16 Q20 26 26 28 Q32 26 32 16" stroke="rgba(255,255,255,0.7)" stroke-width="1.5" fill="rgba(255,255,255,0.15)"/><line x1="26" y1="28" x2="26" y2="36" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"/><line x1="20" y1="36" x2="32" y2="36" stroke="rgba(255,255,255,0.6)" stroke-width="1.5" stroke-linecap="round"/></svg>`,
-    preview:`<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#pwn)"/><defs><linearGradient id="pwn" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#e8b4cb"/><stop offset="50%" stop-color="#9f1239"/><stop offset="100%" stop-color="#2a0a1a"/></linearGradient></defs><path d="M20 16 Q20 26 26 28 Q32 26 32 16" stroke="rgba(255,255,255,0.6)" stroke-width="1.5" fill="rgba(255,255,255,0.1)"/><line x1="26" y1="28" x2="26" y2="36" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/></svg>`,
-    clock:{type:'luxury',face:'rgba(255,255,255,0.08)',faceStroke:'rgba(232,180,203,0.4)',hourColor:'rgba(232,180,203,0.95)',minuteColor:'rgba(251,113,133,0.85)',secondColor:'#fde68a',centerColor:'#e8b4cb',tickColor:'rgba(232,180,203,0.3)',numColor:'rgba(232,180,203,0.75)'}
-  },
-  {
-    id:'cosmos',label:'Cosmos',
-    dateColor:'rgba(192,132,252,0.85)',badgeColor:'rgba(192,132,252,0.75)',
-    icon:`<svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="26" cy="26" r="26" fill="url(#csi)"/><defs><radialGradient id="csi" cx="40%" cy="35%"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#030014"/></radialGradient></defs><circle cx="20" cy="18" r="1.5" fill="rgba(255,255,255,0.9)"/><circle cx="36" cy="22" r="1" fill="rgba(255,255,255,0.7)"/><circle cx="28" cy="14" r="0.8" fill="rgba(255,255,255,0.6)"/><circle cx="14" cy="30" r="0.6" fill="rgba(255,255,255,0.5)"/><circle cx="40" cy="34" r="0.8" fill="rgba(255,255,255,0.6)"/><ellipse cx="26" cy="26" rx="14" ry="5" fill="none" stroke="rgba(192,132,252,0.4)" stroke-width="1" transform="rotate(-20,26,26)"/><circle cx="26" cy="26" r="4" fill="rgba(192,132,252,0.6)"/><circle cx="26" cy="26" r="2" fill="rgba(255,240,255,0.9)"/></svg>`,
-    preview:`<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#pcs)"/><defs><radialGradient id="pcs" cx="40%" cy="35%"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#030014"/></radialGradient></defs><circle cx="20" cy="18" r="1.5" fill="rgba(255,255,255,0.8)"/><circle cx="36" cy="22" r="1" fill="rgba(255,255,255,0.6)"/><ellipse cx="26" cy="26" rx="14" ry="5" fill="none" stroke="rgba(192,132,252,0.35)" stroke-width="1" transform="rotate(-20,26,26)"/><circle cx="26" cy="26" r="4" fill="rgba(192,132,252,0.5)"/><circle cx="26" cy="26" r="2" fill="rgba(255,240,255,0.85)"/></svg>`,
-    clock:{type:'geometric',face:'rgba(255,255,255,0.04)',faceStroke:'rgba(192,132,252,0.35)',hourColor:'rgba(192,132,252,0.95)',minuteColor:'rgba(167,139,250,0.85)',secondColor:'#f9a8d4',centerColor:'#c084fc',tickColor:'rgba(192,132,252,0.3)',numColor:'rgba(192,132,252,0.75)'}
-  },
-  {
-    id:'starlight',label:'Starlight',
-    dateColor:'rgba(240,194,127,0.85)',badgeColor:'rgba(240,194,127,0.75)',
-    icon:`<svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="26" cy="26" r="26" fill="url(#sli)"/><defs><linearGradient id="sli" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1e1e4a"/><stop offset="100%" stop-color="#f0c27f"/></linearGradient></defs><path d="M26 14 L27.5 20 L34 20.5 L29 24.5 L30.5 31 L26 27 L21.5 31 L23 24.5 L18 20.5 L24.5 20Z" fill="rgba(255,236,210,0.9)" stroke="rgba(255,255,255,0.5)" stroke-width="0.5"/><circle cx="16" cy="18" r="1" fill="rgba(255,255,255,0.7)"/><circle cx="38" cy="16" r="0.8" fill="rgba(255,255,255,0.6)"/><circle cx="12" cy="30" r="0.6" fill="rgba(255,255,255,0.5)"/></svg>`,
-    preview:`<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#psl)"/><defs><linearGradient id="psl" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1e1e4a"/><stop offset="100%" stop-color="#f0c27f"/></linearGradient></defs><path d="M26 14 L27.5 20 L34 20.5 L29 24.5 L30.5 31 L26 27 L21.5 31 L23 24.5 L18 20.5 L24.5 20Z" fill="rgba(255,236,210,0.85)"/><circle cx="16" cy="18" r="1" fill="rgba(255,255,255,0.6)"/><circle cx="38" cy="16" r="0.8" fill="rgba(255,255,255,0.5)"/></svg>`,
-    clock:{type:'luxury',face:'rgba(255,255,255,0.06)',faceStroke:'rgba(240,194,127,0.4)',hourColor:'rgba(240,194,127,0.95)',minuteColor:'rgba(255,236,210,0.85)',secondColor:'#f472b6',centerColor:'#f0c27f',tickColor:'rgba(240,194,127,0.3)',numColor:'rgba(240,194,127,0.75)'}
-  }
+    clock:{type:'luxury',face:'rgba(255,255,255,0.12)',faceStroke:'rgba(253,164,175,0.5)',hourColor:'rgba(136,19,55,0.95)',minuteColor:'rgba(225,29,72,0.85)',secondColor:'#fda4af',centerColor:'#e11d48',tickColor:'rgba(136,19,55,0.4)',numColor:'rgba(136,19,55,0.75)'}},
+  {id:'lavender',label:'Lavender',dateColor:'rgba(91,33,182,0.7)',badgeColor:'rgba(91,33,182,0.55)',
+    icon:`<svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="26" cy="26" r="26" fill="url(#lai)"/><defs><radialGradient id="lai" cx="40%" cy="35%"><stop offset="0%" stop-color="#c4b5fd"/><stop offset="100%" stop-color="#5b21b6"/></radialGradient></defs><g transform="translate(26,20)"><ellipse cx="-3" cy="0" rx="2.5" ry="4" fill="rgba(255,255,255,0.8)" transform="rotate(-15)"/><ellipse cx="3" cy="0" rx="2.5" ry="4" fill="rgba(255,255,255,0.7)" transform="rotate(15)"/><ellipse cx="0" cy="-5" rx="2" ry="3.5" fill="rgba(255,255,255,0.85)"/></g><line x1="26" y1="28" x2="26" y2="40" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round"/></svg>`,
+    preview:`<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#pl)"/><defs><radialGradient id="pl" cx="40%" cy="35%"><stop offset="0%" stop-color="#c4b5fd"/><stop offset="100%" stop-color="#5b21b6"/></radialGradient></defs><g transform="translate(26,22)"><ellipse cx="-3" cy="0" rx="2.5" ry="4" fill="rgba(255,255,255,0.75)" transform="rotate(-15)"/><ellipse cx="3" cy="0" rx="2.5" ry="4" fill="rgba(255,255,255,0.65)" transform="rotate(15)"/></g></svg>`,
+    clock:{type:'luxury',face:'rgba(255,255,255,0.1)',faceStroke:'rgba(196,181,253,0.5)',hourColor:'rgba(91,33,182,0.95)',minuteColor:'rgba(139,92,246,0.85)',secondColor:'#f472b6',centerColor:'#8b5cf6',tickColor:'rgba(91,33,182,0.35)',numColor:'rgba(91,33,182,0.75)'}},
+  {id:'ocean',label:'Deep Sea',dateColor:'rgba(103,232,249,0.8)',badgeColor:'rgba(103,232,249,0.7)',
+    icon:`<svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="26" cy="26" r="26" fill="url(#oci)"/><defs><linearGradient id="oci" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1e3a8a"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient></defs><path d="M12 30 Q17 26 22 30 Q27 34 32 30 Q37 26 42 30" stroke="rgba(103,232,249,0.7)" stroke-width="1.5" fill="none" stroke-linecap="round"/><circle cx="20" cy="20" r="3" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1"/></svg>`,
+    preview:`<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#po)"/><defs><linearGradient id="po" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1e3a8a"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient></defs><path d="M12 30 Q17 26 22 30 Q27 34 32 30 Q37 26 42 30" stroke="rgba(103,232,249,0.6)" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>`,
+    clock:{type:'geometric',face:'rgba(255,255,255,0.06)',faceStroke:'rgba(103,232,249,0.4)',hourColor:'rgba(103,232,249,0.95)',minuteColor:'rgba(56,189,248,0.85)',secondColor:'#fbbf24',centerColor:'#06b6d4',tickColor:'rgba(103,232,249,0.3)',numColor:'rgba(103,232,249,0.75)'}},
+  {id:'moonlight',label:'Moonlight',dateColor:'rgba(201,184,219,0.85)',badgeColor:'rgba(201,184,219,0.75)',
+    icon:`<svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="26" cy="26" r="26" fill="url(#mli)"/><defs><radialGradient id="mli" cx="50%" cy="40%"><stop offset="0%" stop-color="#4a3f6b"/><stop offset="100%" stop-color="#0f0f23"/></radialGradient></defs><circle cx="26" cy="22" r="6" fill="rgba(255,250,240,0.9)"/><circle cx="24" cy="20" r="1.5" fill="rgba(201,184,219,0.4)"/><circle cx="14" cy="14" r="0.8" fill="rgba(255,255,255,0.7)"/><circle cx="40" cy="16" r="1" fill="rgba(255,255,255,0.6)"/></svg>`,
+    preview:`<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#pml)"/><defs><radialGradient id="pml" cx="50%" cy="40%"><stop offset="0%" stop-color="#4a3f6b"/><stop offset="100%" stop-color="#0f0f23"/></radialGradient></defs><circle cx="26" cy="22" r="6" fill="rgba(255,250,240,0.85)"/><circle cx="14" cy="14" r="0.8" fill="rgba(255,255,255,0.6)"/></svg>`,
+    clock:{type:'minimal',face:'rgba(255,255,255,0.05)',faceStroke:'rgba(201,184,219,0.35)',hourColor:'rgba(201,184,219,0.95)',minuteColor:'rgba(167,139,250,0.8)',secondColor:'#f9a8d4',centerColor:'#c9b8db',tickColor:'rgba(201,184,219,0.3)',numColor:'rgba(201,184,219,0.7)'}},
+  {id:'wine',label:'Wine',dateColor:'rgba(232,180,203,0.85)',badgeColor:'rgba(232,180,203,0.75)',
+    icon:`<svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="26" cy="26" r="26" fill="url(#wni)"/><defs><linearGradient id="wni" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#e8b4cb"/><stop offset="50%" stop-color="#9f1239"/><stop offset="100%" stop-color="#2a0a1a"/></linearGradient></defs><path d="M20 16 Q20 26 26 28 Q32 26 32 16" stroke="rgba(255,255,255,0.7)" stroke-width="1.5" fill="rgba(255,255,255,0.15)"/><line x1="26" y1="28" x2="26" y2="36" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"/></svg>`,
+    preview:`<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#pwn)"/><defs><linearGradient id="pwn" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#e8b4cb"/><stop offset="50%" stop-color="#9f1239"/><stop offset="100%" stop-color="#2a0a1a"/></linearGradient></defs><path d="M20 16 Q20 26 26 28 Q32 26 32 16" stroke="rgba(255,255,255,0.6)" stroke-width="1.5" fill="rgba(255,255,255,0.1)"/></svg>`,
+    clock:{type:'luxury',face:'rgba(255,255,255,0.08)',faceStroke:'rgba(232,180,203,0.4)',hourColor:'rgba(232,180,203,0.95)',minuteColor:'rgba(251,113,133,0.85)',secondColor:'#fde68a',centerColor:'#e8b4cb',tickColor:'rgba(232,180,203,0.3)',numColor:'rgba(232,180,203,0.75)'}},
+  {id:'cosmos',label:'Cosmos',dateColor:'rgba(192,132,252,0.85)',badgeColor:'rgba(192,132,252,0.75)',
+    icon:`<svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="26" cy="26" r="26" fill="url(#csi)"/><defs><radialGradient id="csi" cx="40%" cy="35%"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#030014"/></radialGradient></defs><circle cx="20" cy="18" r="1.5" fill="rgba(255,255,255,0.9)"/><circle cx="36" cy="22" r="1" fill="rgba(255,255,255,0.7)"/><ellipse cx="26" cy="26" rx="14" ry="5" fill="none" stroke="rgba(192,132,252,0.4)" stroke-width="1" transform="rotate(-20,26,26)"/><circle cx="26" cy="26" r="4" fill="rgba(192,132,252,0.6)"/><circle cx="26" cy="26" r="2" fill="rgba(255,240,255,0.9)"/></svg>`,
+    preview:`<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#pcs)"/><defs><radialGradient id="pcs" cx="40%" cy="35%"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#030014"/></radialGradient></defs><ellipse cx="26" cy="26" rx="14" ry="5" fill="none" stroke="rgba(192,132,252,0.35)" stroke-width="1" transform="rotate(-20,26,26)"/><circle cx="26" cy="26" r="4" fill="rgba(192,132,252,0.5)"/></svg>`,
+    clock:{type:'geometric',face:'rgba(255,255,255,0.04)',faceStroke:'rgba(192,132,252,0.35)',hourColor:'rgba(192,132,252,0.95)',minuteColor:'rgba(167,139,250,0.85)',secondColor:'#f9a8d4',centerColor:'#c084fc',tickColor:'rgba(192,132,252,0.3)',numColor:'rgba(192,132,252,0.75)'}},
+  {id:'starlight',label:'Starlight',dateColor:'rgba(240,194,127,0.85)',badgeColor:'rgba(240,194,127,0.75)',
+    icon:`<svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="26" cy="26" r="26" fill="url(#sli)"/><defs><linearGradient id="sli" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1e1e4a"/><stop offset="100%" stop-color="#f0c27f"/></linearGradient></defs><path d="M26 14 L27.5 20 L34 20.5 L29 24.5 L30.5 31 L26 27 L21.5 31 L23 24.5 L18 20.5 L24.5 20Z" fill="rgba(255,236,210,0.9)"/><circle cx="16" cy="18" r="1" fill="rgba(255,255,255,0.7)"/><circle cx="38" cy="16" r="0.8" fill="rgba(255,255,255,0.6)"/></svg>`,
+    preview:`<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#psl)"/><defs><linearGradient id="psl" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1e1e4a"/><stop offset="100%" stop-color="#f0c27f"/></linearGradient></defs><path d="M26 14 L27.5 20 L34 20.5 L29 24.5 L30.5 31 L26 27 L21.5 31 L23 24.5 L18 20.5 L24.5 20Z" fill="rgba(255,236,210,0.85)"/></svg>`,
+    clock:{type:'luxury',face:'rgba(255,255,255,0.06)',faceStroke:'rgba(240,194,127,0.4)',hourColor:'rgba(240,194,127,0.95)',minuteColor:'rgba(255,236,210,0.85)',secondColor:'#f472b6',centerColor:'#f0c27f',tickColor:'rgba(240,194,127,0.3)',numColor:'rgba(240,194,127,0.75)'}}
 ];
 
 let currentUser=null,realtimeChannel=null,tapCount=0,tapTimer=null,pinEntry='',lastPollTime=new Date(),pollInterval=null,selectedMsgId=null,currentTheme='sea';
 let hourAngle=0,minuteAngle=0,secondAngle=0;
-var inactivityTimer=null;
-function resetInactivity(){clearTimeout(inactivityTimer);inactivityTimer=setTimeout(function(){if(document.getElementById('chat-screen').style.display==='flex'){showClock();}},180000);}
-document.addEventListener('touchstart',resetInactivity,{passive:true});
-document.addEventListener('click',resetInactivity);
 
 // SVG時計描画
 function getClockSVG(themeId,h,m,s,ms){
@@ -677,6 +649,22 @@ function escHtml(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').
 function scrollToBottom(){document.getElementById('chat-messages').scrollTop=9999999}
 function autoResize(el){el.style.height='auto';el.style.height=Math.min(el.scrollHeight,120)+'px'}
 
+// テーマ並び替え (Marin=3行目2列目)
+var THEME_ORDER=['night','sakura','sunset','winter','forest','tropical','mist','aurora','rose','sea','lavender','ocean','moonlight','wine','cosmos','starlight'];
+var _sorted=[];
+for(var oi=0;oi<THEME_ORDER.length;oi++){
+  for(var ti=0;ti<THEMES.length;ti++){
+    if(THEMES[ti].id===THEME_ORDER[oi]){_sorted.push(THEMES[ti]);break;}
+  }
+}
+THEMES.length=0;
+for(var si=0;si<_sorted.length;si++){THEMES.push(_sorted[si]);}
+
+// 3分無操作で時計に戻る
+var inactivityTimer=null;
+function resetInactivity(){clearTimeout(inactivityTimer);inactivityTimer=setTimeout(function(){if(document.getElementById('chat-screen').style.display==='flex'){showClock();}},180000);}
+document.addEventListener('touchstart',resetInactivity,{passive:true});
+document.addEventListener('click',resetInactivity);
 
 // 時間帯によるチャット背景変化
 function updateChatBg(){
@@ -694,6 +682,7 @@ function updateChatBg(){
   el.style.background=bg;
 }
 setInterval(updateChatBg,60000);
+
 // 初期化
 setThemeIcon(THEMES[0].id);
 const overlay=document.getElementById('fade-overlay');
