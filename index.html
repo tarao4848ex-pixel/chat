@@ -1,5 +1,5 @@
 <!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>時計</title><meta name="apple-mobile-web-app-title" content="時計"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><style>*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none;-webkit-user-select:none;user-select:none}body{font-family:-apple-system,'Helvetica Neue',sans-serif;height:100dvh;overflow:hidden}.screen{position:absolute;top:0;left:0;width:100%;height:100dvh;display:none;flex-direction:column;align-items:center;justify-content:center}#clock-screen{position:relative;overflow:hidden}
-.theme-sea{background:linear-gradient(160deg,#e0f4ff 0%,#b8e8ff 25%,#7dd4f8 50%,#3ab5e6 75%,#1a8fc1 100%)}
+.theme-sea{background:linear-gradient(160deg,#d4f5ff 0%,#a0e4f8 15%,#5cc8e8 30%,#2aa0c8 50%,#0e7490 70%,#0a5068 85%,#083848 100%)}
 .theme-night{background:linear-gradient(160deg,#0a0a2e 0%,#0d1b4b 30%,#1a1a5e 60%,#0d0d3b 100%)}
 .theme-sakura{background:linear-gradient(160deg,#fff0f5 0%,#ffd6e7 25%,#ffb3d1 50%,#ff85b3 75%,#e0609a 100%)}
 .theme-forest{background:linear-gradient(160deg,#e8f5e9 0%,#c8e6c9 25%,#81c784 50%,#388e3c 75%,#1b5e20 100%)}
@@ -11,9 +11,7 @@
 .theme-rose{background:linear-gradient(160deg,#fff5f5 0%,#fecdd3 20%,#fda4af 40%,#e11d48 65%,#881337 100%)}
 .theme-lavender{background:linear-gradient(160deg,#faf5ff 0%,#e9d5ff 20%,#c4b5fd 40%,#8b5cf6 65%,#5b21b6 100%)}
 .theme-ocean{background:linear-gradient(160deg,#0c1445 0%,#122a6b 20%,#1e3a8a 40%,#1d4ed8 60%,#06b6d4 85%,#67e8f9 100%)}
-.theme-amber{background:linear-gradient(160deg,#fffbeb 0%,#fde68a 20%,#f59e0b 40%,#d97706 60%,#92400e 85%)}
 .theme-moonlight{background:linear-gradient(160deg,#0f0f23 0%,#1a1a3e 25%,#2d2b55 45%,#4a3f6b 65%,#c9b8db 90%)}
-.theme-coral{background:linear-gradient(160deg,#fff7ed 0%,#fed7aa 20%,#fb923c 40%,#ea580c 60%,#9a3412 85%)}
 .theme-wine{background:linear-gradient(160deg,#fdf2f8 0%,#e8b4cb 20%,#9f1239 45%,#6b0f28 65%,#2a0a1a 90%)}
 .theme-cosmos{background:linear-gradient(160deg,#030014 0%,#0a0028 20%,#1e0050 40%,#4c1d95 55%,#7c3aed 70%,#c084fc 90%)}
 .theme-starlight{background:linear-gradient(160deg,#0c0c1d 0%,#141432 20%,#1e1e4a 40%,#2d2b5e 55%,#f0c27f 85%,#ffecd2 100%)}
@@ -39,11 +37,6 @@
 .theme-icon:active{transform:scale(0.88)}
 .theme-icon svg{width:44px;height:44px}
 
-/* 浮き輪 */
-.lifebuoy-btn{position:absolute;bottom:36px;left:32px;width:44px;height:44px;cursor:pointer;z-index:5;transition:transform 0.2s,opacity 0.5s;opacity:0;pointer-events:none}
-#clock-screen.theme-sea .lifebuoy-btn{opacity:1;pointer-events:auto}
-.lifebuoy-btn:active{transform:scale(0.88)}
-.lifebuoy-btn svg{width:44px;height:44px;filter:drop-shadow(0 2px 6px rgba(0,80,140,0.4))}
 
 /* 夜空デコ */
 .star{position:absolute;border-radius:50%;background:#fff;pointer-events:none;opacity:0;transition:opacity 0.8s}
@@ -68,14 +61,6 @@
 .theme-label{font-size:10px;color:#777;text-align:center;letter-spacing:0.5px}
 .theme-close{width:100%;padding:14px;border:none;border-radius:14px;font-size:15px;font-family:inherit;cursor:pointer;background:rgba(0,0,0,0.06);color:#444;letter-spacing:1px}
 
-/* ヒント */
-#hint-overlay{position:fixed;inset:0;z-index:110;display:none;align-items:center;justify-content:center;background:rgba(10,60,120,0.5);backdrop-filter:blur(6px)}
-.hint-box{background:rgba(255,255,255,0.95);border-radius:20px;padding:32px 28px;max-width:300px;width:85%;box-shadow:0 8px 40px rgba(0,80,160,0.25)}
-.hint-title{color:#0e7490;font-size:11px;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px;text-align:center}
-.hint-item{display:flex;gap:12px;margin-bottom:16px;align-items:flex-start}
-.hint-num{width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#0e7490,#22d3ee);color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
-.hint-text{color:#1a5c8c;font-size:14px;line-height:1.6}
-.hint-close{margin-top:24px;width:100%;padding:12px;background:linear-gradient(135deg,#0e7490,#22d3ee);border:none;border-radius:12px;color:#fff;font-size:15px;font-weight:600;cursor:pointer;font-family:inherit}
 
 /* 削除確認 */
 #delete-confirm{position:fixed;inset:0;z-index:200;display:none;align-items:flex-end;justify-content:center;background:rgba(10,60,120,0.4);backdrop-filter:blur(4px)}
@@ -123,7 +108,7 @@
 .chat-header-info{flex:1}
 .chat-header-partner{color:#1a5c8c;font-size:16px;font-weight:600;line-height:1.2}
 .chat-header-me{color:rgba(14,116,144,0.5);font-size:11px;margin-top:2px}
-.chat-messages{flex:1;width:100%;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:6px;scroll-behavior:smooth;background:linear-gradient(180deg,#f0faff 0%,#e0f4ff 100%)}
+.chat-messages{flex:1;width:100%;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:6px;scroll-behavior:smooth;background:linear-gradient(180deg,#f0faff 0%,#e0f4ff 100%);transition:background 1s ease}
 .chat-messages::-webkit-scrollbar{display:none}
 .msg-row{display:flex;align-items:flex-end;gap:8px}
 .msg-row.mine{flex-direction:row-reverse}
@@ -146,7 +131,6 @@
 </style></head><body>
 <div id="fade-overlay"></div>
 
-<div id="hint-overlay" onclick="closeHint()"><div class="hint-box" onclick="event.stopPropagation()"><div class="hint-title">Hint</div><div class="hint-item"><div class="hint-num">1</div><div class="hint-text">時計の真ん中を3回タップ</div></div><div class="hint-item"><div class="hint-num">2</div><div class="hint-text">忘れ物の髪留めキャラクターのデビュー年</div></div><div class="hint-item"><div class="hint-num">3</div><div class="hint-text">雄町庵にもらったお心付けの金額を2で割った数字</div></div><button class="hint-close" onclick="closeHint()">閉じる</button></div></div>
 
 <div id="theme-overlay" onclick="closeTheme()"><div class="theme-panel" onclick="event.stopPropagation()"><div class="theme-panel-title">Theme</div><div class="theme-grid" id="theme-grid"></div></div></div>
 
@@ -154,7 +138,6 @@
 
 <div id="clock-screen" class="screen theme-sea">
   <div class="theme-icon" id="theme-icon-btn" onclick="openTheme()"></div>
-  <div class="lifebuoy-btn" onclick="showHint()" id="lifebuoy-btn"></div>
   <div class="cloud cloud1"></div><div class="cloud cloud2"></div><div class="wave2"></div>
   <div id="analog-clock">
     <div class="clock-svg-wrap" id="clock-svg-wrap" onclick="handleClockTap()">
@@ -179,20 +162,7 @@ const USERS={'1989':{name:'Marin🌊',partner:'天才おざわさん'},'1989B':{
 
 // テーマ定義
 const THEMES=[
-  {
-    id:'sea',label:'Marin',
-    dateColor:'rgba(10,60,100,0.65)',badgeColor:'rgba(10,60,100,0.5)',
-    // SVGアイコン: 波形
-    icon:`<svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="26" cy="26" r="26" fill="url(#si)"/><defs><radialGradient id="si" cx="40%" cy="35%"><stop offset="0%" stop-color="#7dd4f8"/><stop offset="100%" stop-color="#1a8fc1"/></radialGradient></defs><path d="M14 28 Q18 24 22 28 Q26 32 30 28 Q34 24 38 28" stroke="rgba(255,255,255,0.9)" stroke-width="2" stroke-linecap="round" fill="none"/><path d="M14 33 Q18 29 22 33 Q26 37 30 33 Q34 29 38 33" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round" fill="none"/><circle cx="26" cy="20" r="4" fill="rgba(255,240,100,0.95)"/></svg>`,
-    // プレビュー
-    preview:`<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#p0)"/><defs><radialGradient id="p0" cx="40%" cy="35%"><stop offset="0%" stop-color="#7dd4f8"/><stop offset="100%" stop-color="#1a8fc1"/></radialGradient></defs><path d="M12 34 Q17 29 22 34 Q27 39 32 34 Q37 29 42 34" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round" fill="none"/><circle cx="26" cy="18" r="5" fill="rgba(255,240,100,0.9)"/></svg>`,
-    clock:{
-      type:'minimal',
-      face:'rgba(255,255,255,0.15)',faceStroke:'rgba(255,255,255,0.6)',
-      hourColor:'rgba(20,80,140,0.9)',minuteColor:'rgba(14,116,144,0.85)',secondColor:'#e05c2a',
-      centerColor:'#0e7490',tickColor:'rgba(0,80,140,0.5)',numColor:'rgba(0,60,120,0.7)'
-    }
-  },
+  ,
   {
     id:'night',label:'Night',
     dateColor:'rgba(150,170,255,0.7)',badgeColor:'rgba(180,200,255,0.7)',
@@ -205,6 +175,7 @@ const THEMES=[
       centerColor:'#8899ff',tickColor:'rgba(130,150,255,0.4)',numColor:'rgba(180,200,255,0.75)'
     }
   },
+  ,
   {
     id:'sakura',label:'Sakura',
     dateColor:'rgba(160,40,90,0.7)',badgeColor:'rgba(160,40,90,0.55)',
@@ -217,18 +188,7 @@ const THEMES=[
       centerColor:'#e8729a',tickColor:'rgba(180,60,110,0.45)',numColor:'rgba(150,40,80,0.75)'
     }
   },
-  {
-    id:'forest',label:'Forest',
-    dateColor:'rgba(20,80,20,0.7)',badgeColor:'rgba(20,80,20,0.55)',
-    icon:`<svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="26" cy="26" r="26" fill="url(#fi)"/><defs><radialGradient id="fi" cx="40%" cy="35%"><stop offset="0%" stop-color="#81c784"/><stop offset="100%" stop-color="#1b5e20"/></radialGradient></defs><polygon points="26,12 34,26 18,26" fill="rgba(255,255,255,0.85)"/><polygon points="26,19 35,33 17,33" fill="rgba(255,255,255,0.7)"/><rect x="23" y="33" width="6" height="6" rx="1" fill="rgba(255,255,255,0.6)"/></svg>`,
-    preview:`<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#p3)"/><defs><radialGradient id="p3" cx="40%" cy="35%"><stop offset="0%" stop-color="#81c784"/><stop offset="100%" stop-color="#1b5e20"/></radialGradient></defs><polygon points="26,12 34,26 18,26" fill="rgba(255,255,255,0.8)"/><polygon points="26,19 35,33 17,33" fill="rgba(255,255,255,0.65)"/><rect x="23" y="33" width="6" height="6" rx="1" fill="rgba(255,255,255,0.55)"/></svg>`,
-    clock:{
-      type:'minimal',
-      face:'rgba(255,255,255,0.15)',faceStroke:'rgba(100,200,100,0.5)',
-      hourColor:'rgba(27,94,32,0.95)',minuteColor:'rgba(56,142,60,0.85)',secondColor:'#e65100',
-      centerColor:'#388e3c',tickColor:'rgba(30,100,30,0.4)',numColor:'rgba(20,80,20,0.7)'
-    }
-  },
+  ,
   {
     id:'sunset',label:'Sunset',
     dateColor:'rgba(120,40,10,0.75)',badgeColor:'rgba(120,40,10,0.6)',
@@ -241,6 +201,7 @@ const THEMES=[
       centerColor:'#e64a19',tickColor:'rgba(180,80,10,0.4)',numColor:'rgba(140,50,10,0.8)'
     }
   },
+  ,
   {
     id:'winter',label:'Winter',
     dateColor:'rgba(20,60,120,0.7)',badgeColor:'rgba(20,60,120,0.55)',
@@ -253,6 +214,20 @@ const THEMES=[
       centerColor:'#1976d2',tickColor:'rgba(20,80,180,0.35)',numColor:'rgba(20,60,140,0.75)'
     }
   },
+  ,
+  {
+    id:'forest',label:'Forest',
+    dateColor:'rgba(20,80,20,0.7)',badgeColor:'rgba(20,80,20,0.55)',
+    icon:`<svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="26" cy="26" r="26" fill="url(#fi)"/><defs><radialGradient id="fi" cx="40%" cy="35%"><stop offset="0%" stop-color="#81c784"/><stop offset="100%" stop-color="#1b5e20"/></radialGradient></defs><polygon points="26,12 34,26 18,26" fill="rgba(255,255,255,0.85)"/><polygon points="26,19 35,33 17,33" fill="rgba(255,255,255,0.7)"/><rect x="23" y="33" width="6" height="6" rx="1" fill="rgba(255,255,255,0.6)"/></svg>`,
+    preview:`<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#p3)"/><defs><radialGradient id="p3" cx="40%" cy="35%"><stop offset="0%" stop-color="#81c784"/><stop offset="100%" stop-color="#1b5e20"/></radialGradient></defs><polygon points="26,12 34,26 18,26" fill="rgba(255,255,255,0.8)"/><polygon points="26,19 35,33 17,33" fill="rgba(255,255,255,0.65)"/><rect x="23" y="33" width="6" height="6" rx="1" fill="rgba(255,255,255,0.55)"/></svg>`,
+    clock:{
+      type:'minimal',
+      face:'rgba(255,255,255,0.15)',faceStroke:'rgba(100,200,100,0.5)',
+      hourColor:'rgba(27,94,32,0.95)',minuteColor:'rgba(56,142,60,0.85)',secondColor:'#e65100',
+      centerColor:'#388e3c',tickColor:'rgba(30,100,30,0.4)',numColor:'rgba(20,80,20,0.7)'
+    }
+  },
+  ,
   {
     id:'tropical',label:'Tropical',
     dateColor:'rgba(0,80,70,0.75)',badgeColor:'rgba(0,80,70,0.6)',
@@ -265,6 +240,7 @@ const THEMES=[
       centerColor:'#00897b',tickColor:'rgba(0,100,90,0.4)',numColor:'rgba(0,80,70,0.75)'
     }
   },
+  ,
   {
     id:'mist',label:'Mist',
     dateColor:'rgba(50,70,80,0.7)',badgeColor:'rgba(50,70,80,0.55)',
@@ -277,6 +253,7 @@ const THEMES=[
       centerColor:'#455a64',tickColor:'rgba(60,80,90,0.35)',numColor:'rgba(50,70,80,0.7)'
     }
   },
+  ,
   {
     id:'aurora',label:'Aurora',
     dateColor:'rgba(100,255,218,0.8)',badgeColor:'rgba(100,255,218,0.7)',
@@ -289,6 +266,7 @@ const THEMES=[
       centerColor:'#1abc9c',tickColor:'rgba(100,255,218,0.35)',numColor:'rgba(100,255,218,0.7)'
     }
   },
+  ,
   {
     id:'rose',label:'Rose',
     dateColor:'rgba(136,19,55,0.75)',badgeColor:'rgba(136,19,55,0.6)',
@@ -302,6 +280,20 @@ const THEMES=[
     }
   },
   {
+    id:'sea',label:'Marin',
+    dateColor:'rgba(255,248,240,0.85)',badgeColor:'rgba(255,248,240,0.75)',
+    icon:`<svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="26" cy="26" r="26" fill="url(#si)"/><defs><radialGradient id="si" cx="30%" cy="30%"><stop offset="0%" stop-color="#a8edff"/><stop offset="40%" stop-color="#4db8d8"/><stop offset="100%" stop-color="#0a5e7a"/></radialGradient></defs><circle cx="26" cy="16" r="6" fill="rgba(255,230,150,0.95)"/><circle cx="26" cy="16" r="9" fill="none" stroke="rgba(255,220,120,0.3)" stroke-width="0.8"/><circle cx="26" cy="16" r="12" fill="none" stroke="rgba(255,220,120,0.15)" stroke-width="0.5"/><path d="M8 32 Q14 26 20 32 Q26 38 32 32 Q38 26 44 32" stroke="rgba(255,255,255,0.9)" stroke-width="2" stroke-linecap="round" fill="none"/><path d="M6 36 Q12 30 18 36 Q24 42 30 36 Q36 30 42 36" stroke="rgba(255,255,255,0.45)" stroke-width="1.5" stroke-linecap="round" fill="none"/><circle cx="14" cy="24" r="1.5" fill="rgba(255,255,255,0.5)"/><circle cx="38" cy="22" r="1" fill="rgba(255,255,255,0.4)"/><circle cx="10" cy="28" r="0.8" fill="rgba(255,255,255,0.3)"/></svg>`,
+    preview:`<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#p0)"/><defs><radialGradient id="p0" cx="30%" cy="30%"><stop offset="0%" stop-color="#a8edff"/><stop offset="40%" stop-color="#4db8d8"/><stop offset="100%" stop-color="#0a5e7a"/></radialGradient></defs><circle cx="26" cy="16" r="6" fill="rgba(255,230,150,0.9)"/><circle cx="26" cy="16" r="9" fill="none" stroke="rgba(255,220,120,0.25)" stroke-width="0.8"/><path d="M8 34 Q16 26 24 34 Q32 42 40 34" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round" fill="none"/></svg>`,
+    clock:{
+      type:'fantasy',
+      face:'rgba(255,255,255,0.12)',faceStroke:'rgba(255,255,255,0.6)',
+      hourColor:'rgba(10,60,100,0.92)',minuteColor:'rgba(14,116,144,0.88)',secondColor:'rgba(255,200,100,0.95)',
+      centerColor:'#0e7490',tickColor:'rgba(0,80,140,0.45)',numColor:'rgba(0,60,120,0.7)',
+      outerRing:'rgba(255,220,120,0.2)',innerRing:'rgba(100,220,255,0.15)',glowColor:'rgba(255,220,120,0.12)'
+    }
+  },
+  ,
+  {
     id:'lavender',label:'Lavender',
     dateColor:'rgba(91,33,182,0.7)',badgeColor:'rgba(91,33,182,0.55)',
     icon:`<svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="26" cy="26" r="26" fill="url(#lai)"/><defs><radialGradient id="lai" cx="40%" cy="35%"><stop offset="0%" stop-color="#c4b5fd"/><stop offset="100%" stop-color="#5b21b6"/></radialGradient></defs><g transform="translate(26,20)"><ellipse cx="-3" cy="0" rx="2.5" ry="4" fill="rgba(255,255,255,0.8)" transform="rotate(-15)"/><ellipse cx="3" cy="0" rx="2.5" ry="4" fill="rgba(255,255,255,0.7)" transform="rotate(15)"/><ellipse cx="0" cy="-5" rx="2" ry="3.5" fill="rgba(255,255,255,0.85)"/><ellipse cx="-5" cy="3" rx="2" ry="3" fill="rgba(255,255,255,0.6)" transform="rotate(-25)"/><ellipse cx="5" cy="3" rx="2" ry="3" fill="rgba(255,255,255,0.6)" transform="rotate(25)"/></g><line x1="26" y1="28" x2="26" y2="40" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round"/></svg>`,
@@ -313,6 +305,7 @@ const THEMES=[
       centerColor:'#8b5cf6',tickColor:'rgba(91,33,182,0.35)',numColor:'rgba(91,33,182,0.75)'
     }
   },
+  ,
   {
     id:'ocean',label:'Deep Sea',
     dateColor:'rgba(103,232,249,0.8)',badgeColor:'rgba(103,232,249,0.7)',
@@ -325,18 +318,7 @@ const THEMES=[
       centerColor:'#06b6d4',tickColor:'rgba(103,232,249,0.3)',numColor:'rgba(103,232,249,0.75)'
     }
   },
-  {
-    id:'amber',label:'Amber',
-    dateColor:'rgba(120,53,15,0.8)',badgeColor:'rgba(120,53,15,0.65)',
-    icon:`<svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="26" cy="26" r="26" fill="url(#ami)"/><defs><radialGradient id="ami" cx="40%" cy="35%"><stop offset="0%" stop-color="#fde68a"/><stop offset="100%" stop-color="#92400e"/></radialGradient></defs><circle cx="26" cy="22" r="8" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"/><circle cx="26" cy="22" r="4" fill="rgba(255,220,100,0.9)"/><path d="M18 34 Q22 30 26 34 Q30 30 34 34" stroke="rgba(255,255,255,0.5)" stroke-width="1" fill="none" stroke-linecap="round"/></svg>`,
-    preview:`<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#pam)"/><defs><radialGradient id="pam" cx="40%" cy="35%"><stop offset="0%" stop-color="#fde68a"/><stop offset="100%" stop-color="#92400e"/></radialGradient></defs><circle cx="26" cy="22" r="8" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"/><circle cx="26" cy="22" r="4" fill="rgba(255,220,100,0.85)"/></svg>`,
-    clock:{
-      type:'luxury',
-      face:'rgba(255,255,255,0.15)',faceStroke:'rgba(253,230,138,0.5)',
-      hourColor:'rgba(120,53,15,0.95)',minuteColor:'rgba(217,119,6,0.88)',secondColor:'#dc2626',
-      centerColor:'#d97706',tickColor:'rgba(146,64,14,0.4)',numColor:'rgba(120,53,15,0.8)'
-    }
-  },
+  ,
   {
     id:'moonlight',label:'Moonlight',
     dateColor:'rgba(201,184,219,0.85)',badgeColor:'rgba(201,184,219,0.75)',
@@ -349,18 +331,7 @@ const THEMES=[
       centerColor:'#c9b8db',tickColor:'rgba(201,184,219,0.3)',numColor:'rgba(201,184,219,0.7)'
     }
   },
-  {
-    id:'coral',label:'Coral',
-    dateColor:'rgba(124,45,18,0.8)',badgeColor:'rgba(124,45,18,0.65)',
-    icon:`<svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="26" cy="26" r="26" fill="url(#coi)"/><defs><radialGradient id="coi" cx="40%" cy="35%"><stop offset="0%" stop-color="#fed7aa"/><stop offset="100%" stop-color="#9a3412"/></radialGradient></defs><path d="M20 36 Q20 26 16 18" stroke="rgba(255,255,255,0.7)" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M26 36 Q26 24 26 16" stroke="rgba(255,255,255,0.8)" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M32 36 Q32 26 36 18" stroke="rgba(255,255,255,0.6)" stroke-width="2" fill="none" stroke-linecap="round"/><circle cx="16" cy="16" r="2.5" fill="rgba(255,255,255,0.7)"/><circle cx="26" cy="14" r="2.5" fill="rgba(255,255,255,0.8)"/><circle cx="36" cy="16" r="2.5" fill="rgba(255,255,255,0.6)"/></svg>`,
-    preview:`<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#pco)"/><defs><radialGradient id="pco" cx="40%" cy="35%"><stop offset="0%" stop-color="#fed7aa"/><stop offset="100%" stop-color="#9a3412"/></radialGradient></defs><path d="M20 38 Q20 26 16 18" stroke="rgba(255,255,255,0.65)" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M26 38 Q26 24 26 16" stroke="rgba(255,255,255,0.75)" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M32 38 Q32 26 36 18" stroke="rgba(255,255,255,0.55)" stroke-width="2" fill="none" stroke-linecap="round"/></svg>`,
-    clock:{
-      type:'geometric',
-      face:'rgba(255,255,255,0.12)',faceStroke:'rgba(251,146,60,0.5)',
-      hourColor:'rgba(154,52,18,0.95)',minuteColor:'rgba(234,88,12,0.85)',secondColor:'#fbbf24',
-      centerColor:'#ea580c',tickColor:'rgba(154,52,18,0.35)',numColor:'rgba(124,45,18,0.8)'
-    }
-  },
+  ,
   {
     id:'wine',label:'Wine',
     dateColor:'rgba(232,180,203,0.85)',badgeColor:'rgba(232,180,203,0.75)',
@@ -373,6 +344,7 @@ const THEMES=[
       centerColor:'#e8b4cb',tickColor:'rgba(232,180,203,0.3)',numColor:'rgba(232,180,203,0.75)'
     }
   },
+  ,
   {
     id:'cosmos',label:'Cosmos',
     dateColor:'rgba(192,132,252,0.85)',badgeColor:'rgba(192,132,252,0.75)',
@@ -385,6 +357,7 @@ const THEMES=[
       centerColor:'#c084fc',tickColor:'rgba(192,132,252,0.3)',numColor:'rgba(192,132,252,0.75)'
     }
   },
+  ,
   {
     id:'starlight',label:'Starlight',
     dateColor:'rgba(240,194,127,0.85)',badgeColor:'rgba(240,194,127,0.75)',
@@ -469,7 +442,7 @@ function getClockSVG(themeId,h,m,s,ms){
     svgContent+=`<line x1="${sb.x}" y1="${sb.y}" x2="${sp.x}" y2="${sp.y}" stroke="${c.secondColor}" stroke-width="1.5" stroke-linecap="round"/>`;
     svgContent+=`<circle cx="${cx}" cy="${cy}" r="7" fill="${c.centerColor}"/><circle cx="${cx}" cy="${cy}" r="3" fill="rgba(255,255,255,0.85)"/>`;
 
-  } else {
+  } else if(c.type==='geometric'){
     // geometric: 直線的・モダン
     svgContent+=`<circle cx="${cx}" cy="${cy}" r="${r}" fill="${c.face}" stroke="${c.faceStroke}" stroke-width="1.5"/>`;
     // 4点のみ太い目盛り、残りは細い
@@ -500,6 +473,53 @@ function getClockSVG(themeId,h,m,s,ms){
     // 中心(四角)
     const cs=6;
     svgContent+=`<rect x="${cx-cs/2}" y="${cy-cs/2}" width="${cs}" height="${cs}" fill="${c.centerColor}" transform="rotate(45,${cx},${cy})"/>`;
+
+  } else if(c.type==='fantasy'){
+    // ファンタジー: Marin専用 - 二重リング、光輪、ローマ数字風
+    svgContent+=`<circle cx="${cx}" cy="${cy}" r="${r}" fill="${c.face}" stroke="${c.faceStroke}" stroke-width="1.5"/>`;
+    // 外側の光輪
+    svgContent+=`<circle cx="${cx}" cy="${cy}" r="${r-4}" fill="none" stroke="${c.outerRing||'rgba(255,220,120,0.2)'}" stroke-width="6"/>`;
+    svgContent+=`<circle cx="${cx}" cy="${cy}" r="${r-12}" fill="none" stroke="${c.innerRing||'rgba(100,220,255,0.15)'}" stroke-width="3"/>`;
+    // グロー効果
+    svgContent+=`<circle cx="${cx}" cy="${cy}" r="${r+2}" fill="none" stroke="${c.glowColor||'rgba(255,220,120,0.1)'}" stroke-width="4" opacity="0.6"/>`;
+    // 優雅な目盛り
+    for(let i=0;i<60;i++){
+      const isMaj=i%5===0;
+      const a=(i*6-90)*Math.PI/180;
+      const r1=isMaj?r-24:r-16;
+      const r2=r-10;
+      if(isMaj){
+        svgContent+=`<line x1="${cx+r1*Math.cos(a)}" y1="${cy+r1*Math.sin(a)}" x2="${cx+r2*Math.cos(a)}" y2="${cy+r2*Math.sin(a)}" stroke="${c.tickColor}" stroke-width="2.5" stroke-linecap="round"/>`;
+        // 目盛り先端に小さな装飾円
+        svgContent+=`<circle cx="${cx+(r-8)*Math.cos(a)}" cy="${cy+(r-8)*Math.sin(a)}" r="1.5" fill="${c.outerRing||'rgba(255,220,120,0.3)'}"/>`;
+      } else if(i%5!==0){
+        svgContent+=`<circle cx="${cx+(r-13)*Math.cos(a)}" cy="${cy+(r-13)*Math.sin(a)}" r="0.6" fill="${c.tickColor}"/>`;
+      }
+    }
+    // ローマ数字風の数字
+    const fantasyNums=['XII','I','II','III','IV','V','VI','VII','VIII','IX','X','XI'];
+    fantasyNums.forEach((n,i)=>{
+      const a=(i*30-90)*Math.PI/180;
+      const rx=cx+(r-38)*Math.cos(a);
+      const ry=cy+(r-38)*Math.sin(a);
+      const fs=n.length>2?10:n.length>1?12:14;
+      svgContent+=`<text x="${rx}" y="${ry}" text-anchor="middle" dominant-baseline="central" font-size="${fs}" font-weight="300" fill="${c.numColor}" font-family="Georgia,'Times New Roman',serif" letter-spacing="1">${n}</text>`;
+    });
+    // 時針 - 優雅な幅広デザイン
+    const hp=toXY(hAngle,68),hb=toXY(hAngle+180,14);
+    svgContent+=`<line x1="${hb.x}" y1="${hb.y}" x2="${hp.x}" y2="${hp.y}" stroke="${c.hourColor}" stroke-width="6" stroke-linecap="round"/>`;
+    svgContent+=`<line x1="${hb.x}" y1="${hb.y}" x2="${hp.x}" y2="${hp.y}" stroke="rgba(255,255,255,0.15)" stroke-width="2" stroke-linecap="round"/>`;
+    // 分針
+    const mp=toXY(mAngle,94),mb=toXY(mAngle+180,16);
+    svgContent+=`<line x1="${mb.x}" y1="${mb.y}" x2="${mp.x}" y2="${mp.y}" stroke="${c.minuteColor}" stroke-width="3.5" stroke-linecap="round"/>`;
+    svgContent+=`<line x1="${mb.x}" y1="${mb.y}" x2="${mp.x}" y2="${mp.y}" stroke="rgba(255,255,255,0.1)" stroke-width="1.5" stroke-linecap="round"/>`;
+    // 秒針 - ゴールドアクセント
+    const sp=toXY(sAngle,104),sb=toXY(sAngle+180,24);
+    svgContent+=`<line x1="${sb.x}" y1="${sb.y}" x2="${sp.x}" y2="${sp.y}" stroke="${c.secondColor}" stroke-width="1.5" stroke-linecap="round"/>`;
+    // 中心装飾
+    svgContent+=`<circle cx="${cx}" cy="${cy}" r="8" fill="${c.centerColor}"/>`;
+    svgContent+=`<circle cx="${cx}" cy="${cy}" r="5" fill="rgba(255,255,255,0.2)"/>`;
+    svgContent+=`<circle cx="${cx}" cy="${cy}" r="2.5" fill="rgba(255,240,200,0.9)"/>`;
   }
   return svgContent;
 }
@@ -536,10 +556,8 @@ function buildThemeGrid(){
 }
 
 function setThemeIcon(themeId){
-  const t=THEMES.find(x=>x.id===themeId)||THEMES[0];
+  var t=THEMES.find(function(x){return x.id===themeId})||THEMES[0];
   document.getElementById('theme-icon-btn').innerHTML=t.icon;
-  // 浮き輪SVG
-  document.getElementById('lifebuoy-btn').innerHTML=`<svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg"><g transform="translate(22,22)"><path d="M0,-16 C3,-9 9,-3 16,0 C9,3 3,9 0,16 C-3,9 -9,3 -16,0 C-9,-3 -3,-9 0,-16Z" fill="rgba(255,140,160,0.9)" stroke="rgba(255,255,255,0.8)" stroke-width="1.5"/><circle cx="0" cy="0" r="5" fill="rgba(255,220,100,0.95)" stroke="rgba(255,255,255,0.9)" stroke-width="1.5"/><circle cx="0" cy="-10" r="2.5" fill="rgba(255,200,210,0.9)"/><circle cx="9.5" cy="3" r="2.5" fill="rgba(255,200,210,0.9)"/><circle cx="5.9" cy="-8" r="2.5" fill="rgba(255,200,210,0.9)"/><circle cx="-9.5" cy="3" r="2.5" fill="rgba(255,200,210,0.9)"/><circle cx="-5.9" cy="-8" r="2.5" fill="rgba(255,200,210,0.9)"/></g></svg>`;
 }
 
 async function applyTheme(themeId,save){
@@ -623,8 +641,6 @@ function updateDecorations(themeId){
 
 function openTheme(){buildThemeGrid();document.getElementById('theme-overlay').style.display='flex'}
 function closeTheme(){document.getElementById('theme-overlay').style.display='none'}
-function showHint(){document.getElementById('hint-overlay').style.display='flex'}
-function closeHint(){document.getElementById('hint-overlay').style.display='none'}
 
 async function loadTheme(){
   const local=localStorage.getItem('theme');
@@ -687,7 +703,7 @@ async function showChatScreen(){
   document.getElementById('chat-partner-name').textContent=info.partner;
   document.getElementById('chat-my-name').textContent='自分：'+info.name;
   document.getElementById('chat-avatar').textContent=info.partner.charAt(0);
-  showScreen('chat-screen');await loadMessages();
+  showScreen('chat-screen');updateChatBg();await loadMessages();
   localStorage.setItem('last_read_time',new Date().toISOString());
   document.getElementById('unread-badge').textContent='';
   connectRealtime();setTimeout(()=>scrollToBottom(),100);
@@ -764,8 +780,25 @@ function escHtml(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').
 function scrollToBottom(){document.getElementById('chat-messages').scrollTop=9999999}
 function autoResize(el){el.style.height='auto';el.style.height=Math.min(el.scrollHeight,120)+'px'}
 
+
+// 時間帯によるチャット背景変化
+function updateChatBg(){
+  var h=new Date().getHours();
+  var el=document.getElementById('chat-messages');
+  if(!el)return;
+  var bg;
+  if(h>=5&&h<8){bg='linear-gradient(180deg,#fff8f0 0%,#ffe8d6 30%,#ffd4b8 100%)';}
+  else if(h>=8&&h<12){bg='linear-gradient(180deg,#f0faff 0%,#e0f4ff 50%,#d0ecff 100%)';}
+  else if(h>=12&&h<15){bg='linear-gradient(180deg,#fafffe 0%,#e8f8f0 50%,#d8f2e8 100%)';}
+  else if(h>=15&&h<18){bg='linear-gradient(180deg,#fff8f0 0%,#ffe8d0 40%,#ffd8b8 100%)';}
+  else if(h>=18&&h<20){bg='linear-gradient(180deg,#fff0f0 0%,#f0d8e0 40%,#e0c0d0 70%,#c8a8c0 100%)';}
+  else if(h>=20&&h<23){bg='linear-gradient(180deg,#e8e0f0 0%,#d0c0e0 30%,#b8a0d0 60%,#9880b8 100%)';}
+  else{bg='linear-gradient(180deg,#e0d8f0 0%,#c0b0d8 30%,#a090c0 60%,#7868a0 100%)';}
+  el.style.background=bg;
+}
+setInterval(updateChatBg,60000);
 // 初期化
-setThemeIcon('sea');
+setThemeIcon(THEMES[0].id);
 const overlay=document.getElementById('fade-overlay');
 showScreen('clock-screen');checkUnread();loadTheme();
 setTimeout(()=>{overlay.style.opacity='0';setTimeout(()=>overlay.style.display='none',400)},300);
