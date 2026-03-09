@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>時計</title><meta name="apple-mobile-web-app-title" content="メモ"><link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' rx='40' fill='%23b3e5fc'/%3E%3Crect x='0' y='0' width='180' height='50' rx='40' fill='%2381d4fa'/%3E%3Crect x='0' y='25' width='180' height='25' fill='%2381d4fa'/%3E%3Ccircle cx='30' cy='25' r='4' fill='rgba(255,255,255,0.5)'/%3E%3Ccircle cx='50' cy='25' r='4' fill='rgba(255,255,255,0.5)'/%3E%3Ccircle cx='70' cy='25' r='4' fill='rgba(255,255,255,0.5)'/%3E%3Ccircle cx='90' cy='25' r='4' fill='rgba(255,255,255,0.5)'/%3E%3Ccircle cx='110' cy='25' r='4' fill='rgba(255,255,255,0.5)'/%3E%3Ccircle cx='130' cy='25' r='4' fill='rgba(255,255,255,0.5)'/%3E%3Crect x='24' y='75' width='132' height='8' rx='4' fill='%23b0bec5' opacity='0.6'/%3E%3Crect x='24' y='100' width='132' height='8' rx='4' fill='%23b0bec5' opacity='0.5'/%3E%3Crect x='24' y='125' width='90' height='8' rx='4' fill='%23b0bec5' opacity='0.4'/%3E%3C/svg%3E"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><style>*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none;-webkit-user-select:none;user-select:none}body{font-family:-apple-system,'Helvetica Neue',sans-serif;height:100dvh;overflow:hidden}.screen{position:absolute;top:0;left:0;width:100%;height:100dvh;display:none;flex-direction:column;align-items:center;justify-content:center}#clock-screen{position:relative;overflow:hidden}
+<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>時計</title><meta name="apple-mobile-web-app-title" content="時計"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><style>*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none;-webkit-user-select:none;user-select:none}body{font-family:-apple-system,'Helvetica Neue',sans-serif;height:100dvh;overflow:hidden}.screen{position:absolute;top:0;left:0;width:100%;height:100dvh;display:none;flex-direction:column;align-items:center;justify-content:center}#clock-screen{position:relative;overflow:hidden}
 .theme-sea{background:linear-gradient(160deg,#e0f4ff 0%,#b8e8ff 25%,#7dd4f8 50%,#3ab5e6 75%,#1a8fc1 100%)}
 .theme-night{background:linear-gradient(160deg,#0a0a2e 0%,#0d1b4b 30%,#1a1a5e 60%,#0d0d3b 100%)}
 .theme-sakura{background:linear-gradient(160deg,#fff0f5 0%,#ffd6e7 25%,#ffb3d1 50%,#ff85b3 75%,#e0609a 100%)}
@@ -30,10 +30,8 @@
 .theme-icon svg{width:44px;height:44px}
 
 /* 浮き輪 */
-.lifebuoy-btn{position:absolute;bottom:36px;left:32px;width:44px;height:44px;cursor:pointer;z-index:5;transition:transform 0.2s,opacity 0.5s;opacity:0;pointer-events:auto}
-#clock-screen.theme-sea .lifebuoy-btn{opacity:0;pointer-events:auto}
-.lifebuoy-btn{display:none!important}
-#clock-screen.theme-sea .lifebuoy-btn{display:flex!important;pointer-events:auto}
+.lifebuoy-btn{position:absolute;bottom:36px;left:32px;width:44px;height:44px;cursor:pointer;z-index:5;opacity:0;pointer-events:none;display:none}
+#clock-screen.theme-sea .lifebuoy-btn{display:flex;pointer-events:auto}
 .lifebuoy-btn:active{transform:scale(0.88)}
 .lifebuoy-btn svg{width:44px;height:44px;filter:drop-shadow(0 2px 6px rgba(0,80,140,0.4))}
 
@@ -136,62 +134,22 @@
 .loading-msg{text-align:center;color:rgba(14,116,144,0.4);font-size:13px;padding:20px}
 #fade-overlay{position:fixed;inset:0;background:#e0f4ff;z-index:999;transition:opacity .35s;pointer-events:none}
 
-/* ヘルスケア画面 */
-#health-screen{background:#f2f2f7;justify-content:flex-start;overflow-y:auto}
-.health-header{width:100%;background:#fff;padding:16px 20px 12px;border-bottom:1px solid rgba(0,0,0,0.1);position:sticky;top:0;z-index:10}
-.health-title{font-size:17px;font-weight:600;color:#000}
-.health-subtitle{font-size:13px;color:#8e8e93;margin-top:2px}
-.health-body{width:100%;padding:16px;display:flex;flex-direction:column;gap:12px}
-.health-card{background:#fff;border-radius:16px;padding:16px;box-shadow:0 1px 3px rgba(0,0,0,0.08)}
-.health-card-title{font-size:12px;font-weight:600;color:#8e8e93;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px}
-.health-card-value{font-size:36px;font-weight:300;color:#000;line-height:1}
-.health-card-unit{font-size:14px;color:#8e8e93;margin-top:4px}
-.health-card-icon{font-size:22px;float:right;margin-top:-4px}
-.health-graph{width:100%;height:60px;margin-top:8px}
-.health-ring-wrap{display:flex;align-items:center;gap:16px}
-.health-ring-labels{display:flex;flex-direction:column;gap:6px}
-.health-ring-label{display:flex;align-items:center;gap:8px;font-size:13px;color:#3c3c43}
-.health-ring-dot{width:8px;height:8px;border-radius:50%}
-.health-summary{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.health-tap-hint{text-align:center;color:#c7c7cc;font-size:12px;padding:20px 0 40px}
-.health-btn{position:absolute;top:14px;right:14px;width:30px;height:30px;background:rgba(255,255,255,0.2);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:20}
-.health-btn svg{width:16px;height:16px}
-/* 時間帯背景 */
-#chat-screen.time-morning{background:linear-gradient(160deg,#fff5ee 0%,#ffe4cc 40%,#ffd0a8 100%)}
-#chat-screen.time-afternoon{background:linear-gradient(160deg,#f0f8ff 0%,#ddeeff 40%,#c4e0ff 100%)}
-#chat-screen.time-evening{background:linear-gradient(160deg,#1a0533 0%,#4a1560 40%,#8b2a8a 70%,#e05520 100%)}
-#chat-screen.time-night{background:linear-gradient(160deg,#020818 0%,#0a1628 40%,#0d2040 100%)}
-/* アニメーションオーバーレイ */
-#msg-anim-overlay{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1000;overflow:hidden;display:none}
-#msg-anim-overlay.active{display:block}
-@keyframes heartFloat{0%{transform:translateY(0) scale(1);opacity:1}100%{transform:translateY(-110vh) scale(0.5);opacity:0}}
-@keyframes petalDrift{0%{transform:translateY(-20px) rotate(0deg);opacity:1}100%{transform:translateY(110vh) rotate(720deg);opacity:0}}
-@keyframes starFall{0%{transform:translateY(-20px);opacity:1}100%{transform:translateY(110vh);opacity:0}}
-@keyframes rainDrop{0%{transform:translateY(-20px);opacity:0.7}100%{transform:translateY(110vh);opacity:0}}
-@keyframes rainbowShow{0%{opacity:0}30%{opacity:0.8}70%{opacity:0.8}100%{opacity:0}}
-@keyframes nightShow{0%{opacity:0}30%{opacity:1}70%{opacity:1}100%{opacity:0}}
-/* テーマアニメ */
-@keyframes clockPetal{0%{transform:translateY(-10px) rotate(0deg);opacity:1}100%{transform:translateY(110vh) rotate(540deg);opacity:0}}
-@keyframes clockStar{0%{opacity:0;transform:scale(0)}50%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(0)}}
-@keyframes clockSnow{0%{transform:translateY(-10px) rotate(0deg);opacity:0.8}100%{transform:translateY(110vh) rotate(360deg);opacity:0}}
-@keyframes clockLeaf{0%{transform:translateY(-10px) rotate(0deg);opacity:1}100%{transform:translateY(110vh) rotate(480deg);opacity:0}}
-@keyframes clockGlow{0%,100%{opacity:0.2}50%{opacity:0.6}}
-@keyframes clockFirefly{0%{opacity:0;transform:translate(0,0)}40%{opacity:1}100%{opacity:0;transform:translate(var(--fx),var(--fy))}}
-@keyframes clockMist{0%{transform:translateX(0);opacity:0.3}50%{opacity:0.6}100%{transform:translateX(40px);opacity:0.1}}
-@keyframes clockAurora{0%,100%{opacity:0.2;transform:scaleX(0.95)}50%{opacity:0.6;transform:scaleX(1.05)}}
-@keyframes clockWave{0%,100%{transform:translateX(0)}50%{transform:translateX(-15px)}}
-.clock-anim-el{position:absolute;pointer-events:none;z-index:2}
-
 .theme-rose{background:linear-gradient(160deg,#fff0f0 0%,#ffd0d8 25%,#ff9aaa 50%,#e05070 75%,#8b1a3a 100%)}
 .theme-galaxy{background:linear-gradient(160deg,#020510 0%,#050d28 30%,#0a1545 60%,#050d28 100%)}
 .theme-lavender{background:linear-gradient(160deg,#f3f0ff 0%,#e0d4ff 25%,#c4a8ff 50%,#9b6dff 75%,#6b3fa0 100%)}
 .theme-autumn{background:linear-gradient(160deg,#fff8f0 0%,#ffe0b0 20%,#ffaa50 45%,#cc5500 70%,#7a2000 100%)}
 .theme-cafe{background:linear-gradient(160deg,#fdf8f0 0%,#f5e6cc 25%,#d4a96a 50%,#8b5e3c 75%,#3e2010 100%)}
-.theme-tropicalnight{background:linear-gradient(160deg,#010a15 0%,#032035 30%,#044a3a 60%,#032035 100%)}
 .theme-blizzard{background:linear-gradient(160deg,#f0f8ff 0%,#d8eeff 25%,#a8d4ff 50%,#6090cc 75%,#2040a0 100%)}
-.theme-citynight{background:linear-gradient(160deg,#050510 0%,#0a0a25 30%,#15153a 60%,#0a0a25 100%)}
-.theme-botanical{background:linear-gradient(160deg,#f0fff0 0%,#d0f0d0 25%,#80c880 50%,#2d8a2d 75%,#0a3a0a 100%)}
 .theme-aurora{background:linear-gradient(160deg,#020810 0%,#041a20 30%,#063030 60%,#041a20 100%)}
+
+@keyframes heartFloat{0%{transform:translateY(0) scale(1);opacity:1}100%{transform:translateY(-110vh) scale(0.5);opacity:0}}
+@keyframes petalDrift{0%{transform:translateY(-20px) rotate(0deg);opacity:1}100%{transform:translateY(110vh) rotate(720deg);opacity:0}}
+@keyframes starFall{0%{transform:translateY(-20px);opacity:1}100%{transform:translateY(110vh);opacity:0}}
+@keyframes rainDrop{0%{transform:translateY(-20px);opacity:0.7}100%{transform:translateY(110vh);opacity:0}}
+#chat-screen.time-morning{background:linear-gradient(160deg,#fff5ee 0%,#ffe4cc 40%,#ffd0a8 100%)}
+#chat-screen.time-afternoon{background:linear-gradient(160deg,#f0f8ff 0%,#ddeeff 40%,#c4e0ff 100%)}
+#chat-screen.time-evening{background:linear-gradient(160deg,#1a0533 0%,#4a1560 40%,#8b2a8a 70%,#e05520 100%)}
+#chat-screen.time-night{background:linear-gradient(160deg,#020818 0%,#0a1628 40%,#0d2040 100%)}
 </style></head><body>
 <div id="fade-overlay"></div>
 
@@ -218,7 +176,7 @@
 
 <div id="pin-screen" class="screen"><div class="pin-title">正解すると時計がカレンダーになるよ</div><div class="pin-dots"><div class="pin-dot" id="pd0"></div><div class="pin-dot" id="pd1"></div><div class="pin-dot" id="pd2"></div><div class="pin-dot" id="pd3"></div></div><div class="pin-keypad"><button class="pin-key" onclick="pinInput('1')">1</button><button class="pin-key" onclick="pinInput('2')">2</button><button class="pin-key" onclick="pinInput('3')">3</button><button class="pin-key" onclick="pinInput('4')">4</button><button class="pin-key" onclick="pinInput('5')">5</button><button class="pin-key" onclick="pinInput('6')">6</button><button class="pin-key" onclick="pinInput('7')">7</button><button class="pin-key" onclick="pinInput('8')">8</button><button class="pin-key" onclick="pinInput('9')">9</button><button class="pin-key empty"></button><button class="pin-key" onclick="pinInput('0')">0</button><button class="pin-key del" onclick="pinDel()">⌫</button></div><div class="pin-cancel" onclick="showClock()">Cancel</div></div>
 
-<div id="chat-screen" class="screen"><div class="chat-header"><div class="chat-back" onclick="showClock()">‹</div><div class="chat-avatar" id="chat-avatar">?</div><div class="chat-header-info"><div class="chat-header-partner" id="chat-partner-name">Chat</div><div class="chat-header-me" id="chat-my-name"></div></div><button class="health-btn" onclick="showHealth()"><svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></button></div><div class="chat-messages" id="chat-messages"><div class="loading-msg">読み込み中...</div></div><div class="chat-input-area"><textarea class="chat-input" id="chat-input" placeholder="メッセージ..." rows="1" oninput="autoResize(this)"></textarea><button class="send-btn" onclick="sendMsg()">↑</button></div></div>
+<div id="chat-screen" class="screen"><div class="chat-header"><div class="chat-back" onclick="showClock()">‹</div><div class="chat-avatar" id="chat-avatar">?</div><div class="chat-header-info"><div class="chat-header-partner" id="chat-partner-name">Chat</div><div class="chat-header-me" id="chat-my-name"></div></div><button onclick="showHealth()" style="background:rgba(255,255,255,0.2);border:none;border-radius:50%;width:30px;height:30px;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:14px;color:rgba(255,255,255,0.8)">♥</button></div><div class="chat-messages" id="chat-messages"><div class="loading-msg">読み込み中...</div></div><div class="chat-input-area"><textarea class="chat-input" id="chat-input" placeholder="メッセージ..." rows="1" oninput="autoResize(this)"></textarea><button class="send-btn" onclick="sendMsg()">↑</button></div></div>
 
 <script>
 const SUPABASE_URL='https://wxnbmrtwcicyvufpoadt.supabase.co';
@@ -228,24 +186,22 @@ const USERS={'1989':{name:'Marin🌊',partner:'天才おざわさん'},'1989B':{
 
 // テーマ定義
 const THEMES=[
-{id:'night',label:'Night',dateColor:'rgba(150,170,255,0.7)',badgeColor:'rgba(180,200,255,0.7)',icon:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#ni)"/><defs><radialGradient id="ni" cx="40%" cy="35%"><stop offset="0%" stop-color="#1a1a6e"/><stop offset="100%" stop-color="#060620"/></radialGradient></defs><path d="M30 14 A10 10 0 1 0 20 30 A8 8 0 1 1 30 14Z" fill="rgba(200,220,255,0.9)"/><circle cx="37" cy="18" r="1.2" fill="rgba(255,255,255,0.9)"/><circle cx="34" cy="26" r="0.8" fill="rgba(255,255,255,0.7)"/><circle cx="40" cy="24" r="1" fill="rgba(255,255,255,0.8)"/></svg>',preview:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#p1)"/><defs><radialGradient id="p1" cx="40%" cy="35%"><stop offset="0%" stop-color="#1a1a6e"/><stop offset="100%" stop-color="#060620"/></radialGradient></defs><path d="M28 14 A9 9 0 1 0 20 29 A7 7 0 1 1 28 14Z" fill="rgba(200,220,255,0.85)"/></svg>',clock:{type:'geometric',face:'rgba(255,255,255,0.04)',faceStroke:'rgba(100,120,255,0.3)',hourColor:'rgba(170,190,255,0.95)',minuteColor:'rgba(130,160,255,0.85)',secondColor:'#ff6699',centerColor:'#8899ff',tickColor:'rgba(130,150,255,0.4)',numColor:'rgba(180,200,255,0.75)'}},
-{id:'sakura',label:'Sakura',dateColor:'rgba(160,40,90,0.7)',badgeColor:'rgba(160,40,90,0.55)',icon:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#ski)"/><defs><radialGradient id="ski" cx="40%" cy="35%"><stop offset="0%" stop-color="#ffb3d1"/><stop offset="100%" stop-color="#e0609a"/></radialGradient></defs><g transform="translate(26,26)"><ellipse cx="0" cy="-8" rx="4" ry="7" fill="rgba(255,255,255,0.85)" transform="rotate(0)"/><ellipse cx="0" cy="-8" rx="4" ry="7" fill="rgba(255,255,255,0.85)" transform="rotate(72)"/><ellipse cx="0" cy="-8" rx="4" ry="7" fill="rgba(255,255,255,0.85)" transform="rotate(144)"/><ellipse cx="0" cy="-8" rx="4" ry="7" fill="rgba(255,255,255,0.85)" transform="rotate(216)"/><ellipse cx="0" cy="-8" rx="4" ry="7" fill="rgba(255,255,255,0.85)" transform="rotate(288)"/><circle cx="0" cy="0" r="3" fill="rgba(255,200,210,0.95)"/></g></svg>',preview:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#p2)"/><defs><radialGradient id="p2" cx="40%" cy="35%"><stop offset="0%" stop-color="#ffb3d1"/><stop offset="100%" stop-color="#e0609a"/></radialGradient></defs><g transform="translate(26,26)"><ellipse cx="0" cy="-8" rx="4" ry="7" fill="rgba(255,255,255,0.8)" transform="rotate(0)"/><ellipse cx="0" cy="-8" rx="4" ry="7" fill="rgba(255,255,255,0.8)" transform="rotate(72)"/><ellipse cx="0" cy="-8" rx="4" ry="7" fill="rgba(255,255,255,0.8)" transform="rotate(144)"/><ellipse cx="0" cy="-8" rx="4" ry="7" fill="rgba(255,255,255,0.8)" transform="rotate(216)"/><ellipse cx="0" cy="-8" rx="4" ry="7" fill="rgba(255,255,255,0.8)" transform="rotate(288)"/><circle cx="0" cy="0" r="3" fill="rgba(255,200,210,0.9)"/></g></svg>',clock:{type:'luxury',face:'rgba(255,255,255,0.18)',faceStroke:'rgba(255,160,200,0.6)',hourColor:'rgba(180,50,100,0.9)',minuteColor:'rgba(220,100,140,0.85)',secondColor:'#a0204a',centerColor:'#e8729a',tickColor:'rgba(180,60,110,0.45)',numColor:'rgba(150,40,80,0.75)'}},
-{id:'forest',label:'Forest',dateColor:'rgba(20,80,20,0.7)',badgeColor:'rgba(20,80,20,0.55)',icon:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#fi)"/><defs><radialGradient id="fi" cx="40%" cy="35%"><stop offset="0%" stop-color="#81c784"/><stop offset="100%" stop-color="#1b5e20"/></radialGradient></defs><polygon points="26,12 34,26 18,26" fill="rgba(255,255,255,0.85)"/><polygon points="26,19 35,33 17,33" fill="rgba(255,255,255,0.7)"/><rect x="23" y="33" width="6" height="6" rx="1" fill="rgba(255,255,255,0.6)"/></svg>',preview:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#p3)"/><defs><radialGradient id="p3" cx="40%" cy="35%"><stop offset="0%" stop-color="#81c784"/><stop offset="100%" stop-color="#1b5e20"/></radialGradient></defs><polygon points="26,12 34,26 18,26" fill="rgba(255,255,255,0.8)"/><polygon points="26,19 35,33 17,33" fill="rgba(255,255,255,0.65)"/></svg>',clock:{type:'minimal',face:'rgba(255,255,255,0.15)',faceStroke:'rgba(100,200,100,0.5)',hourColor:'rgba(27,94,32,0.95)',minuteColor:'rgba(56,142,60,0.85)',secondColor:'#e65100',centerColor:'#388e3c',tickColor:'rgba(30,100,30,0.4)',numColor:'rgba(20,80,20,0.7)'}},
-{id:'sunset',label:'Sunset',dateColor:'rgba(120,40,10,0.75)',badgeColor:'rgba(120,40,10,0.6)',icon:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#ssi)"/><defs><linearGradient id="ssi" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ff8a50"/><stop offset="100%" stop-color="#7b1fa2"/></linearGradient></defs><path d="M14 32 A12 12 0 0 1 38 32" fill="rgba(255,200,80,0.85)"/><line x1="10" y1="35" x2="42" y2="35" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/></svg>',preview:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#p4)"/><defs><linearGradient id="p4" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ff8a50"/><stop offset="100%" stop-color="#7b1fa2"/></linearGradient></defs><path d="M14 32 A12 12 0 0 1 38 32" fill="rgba(255,200,80,0.8)"/></svg>',clock:{type:'luxury',face:'rgba(255,255,255,0.12)',faceStroke:'rgba(255,160,80,0.5)',hourColor:'rgba(180,54,12,0.95)',minuteColor:'rgba(230,74,25,0.85)',secondColor:'#4a148c',centerColor:'#e64a19',tickColor:'rgba(180,80,10,0.4)',numColor:'rgba(140,50,10,0.8)'}},
-{id:'winter',label:'Winter',dateColor:'rgba(20,60,120,0.7)',badgeColor:'rgba(20,60,120,0.55)',icon:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#wi)"/><defs><radialGradient id="wi" cx="40%" cy="35%"><stop offset="0%" stop-color="#e3f2fd"/><stop offset="100%" stop-color="#1565c0"/></radialGradient></defs><line x1="26" y1="12" x2="26" y2="40" stroke="rgba(255,255,255,0.85)" stroke-width="2" stroke-linecap="round"/><line x1="12" y1="26" x2="40" y2="26" stroke="rgba(255,255,255,0.85)" stroke-width="2" stroke-linecap="round"/><line x1="15.5" y1="15.5" x2="36.5" y2="36.5" stroke="rgba(255,255,255,0.6)" stroke-width="1.5" stroke-linecap="round"/><line x1="36.5" y1="15.5" x2="15.5" y2="36.5" stroke="rgba(255,255,255,0.6)" stroke-width="1.5" stroke-linecap="round"/><circle cx="26" cy="26" r="3" fill="rgba(255,255,255,0.9)"/></svg>',preview:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#p5)"/><defs><radialGradient id="p5" cx="40%" cy="35%"><stop offset="0%" stop-color="#e3f2fd"/><stop offset="100%" stop-color="#1565c0"/></radialGradient></defs><line x1="26" y1="12" x2="26" y2="40" stroke="rgba(255,255,255,0.8)" stroke-width="2" stroke-linecap="round"/><line x1="12" y1="26" x2="40" y2="26" stroke="rgba(255,255,255,0.8)" stroke-width="2" stroke-linecap="round"/></svg>',clock:{type:'geometric',face:'rgba(255,255,255,0.2)',faceStroke:'rgba(150,200,255,0.5)',hourColor:'rgba(21,101,192,0.95)',minuteColor:'rgba(25,118,210,0.85)',secondColor:'#c62828',centerColor:'#1976d2',tickColor:'rgba(20,80,180,0.35)',numColor:'rgba(20,60,140,0.75)'}},
-{id:'tropical',label:'Tropical',dateColor:'rgba(0,80,70,0.75)',badgeColor:'rgba(0,80,70,0.6)',icon:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#ti)"/><defs><radialGradient id="ti" cx="40%" cy="35%"><stop offset="0%" stop-color="#4dd0e1"/><stop offset="100%" stop-color="#006064"/></radialGradient></defs><path d="M26 38 Q26 28 20 22 Q26 26 32 18 Q30 26 26 28 Q26 33 26 38Z" fill="rgba(255,255,255,0.85)"/><circle cx="26" cy="38" r="2" fill="rgba(255,220,100,0.9)"/></svg>',preview:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#p6)"/><defs><radialGradient id="p6" cx="40%" cy="35%"><stop offset="0%" stop-color="#4dd0e1"/><stop offset="100%" stop-color="#006064"/></radialGradient></defs><path d="M26 40 Q26 28 18 20 Q26 26 34 16 Q30 26 26 28 Q26 34 26 40Z" fill="rgba(255,255,255,0.8)"/></svg>',clock:{type:'minimal',face:'rgba(255,255,255,0.15)',faceStroke:'rgba(100,220,210,0.5)',hourColor:'rgba(0,105,92,0.95)',minuteColor:'rgba(0,137,123,0.85)',secondColor:'#f57f17',centerColor:'#00897b',tickColor:'rgba(0,100,90,0.4)',numColor:'rgba(0,80,70,0.75)'}},
-{id:'mist',label:'Mist',dateColor:'rgba(50,70,80,0.7)',badgeColor:'rgba(50,70,80,0.55)',icon:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#mi)"/><defs><radialGradient id="mi" cx="40%" cy="35%"><stop offset="0%" stop-color="#cfd8dc"/><stop offset="100%" stop-color="#37474f"/></radialGradient></defs><line x1="14" y1="22" x2="38" y2="22" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round"/><line x1="11" y1="28" x2="41" y2="28" stroke="rgba(255,255,255,0.5)" stroke-width="2" stroke-linecap="round"/><line x1="16" y1="34" x2="36" y2="34" stroke="rgba(255,255,255,0.35)" stroke-width="2" stroke-linecap="round"/></svg>',preview:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#p7)"/><defs><radialGradient id="p7" cx="40%" cy="35%"><stop offset="0%" stop-color="#cfd8dc"/><stop offset="100%" stop-color="#37474f"/></radialGradient></defs><line x1="14" y1="22" x2="38" y2="22" stroke="rgba(255,255,255,0.65)" stroke-width="2" stroke-linecap="round"/></svg>',clock:{type:'geometric',face:'rgba(255,255,255,0.15)',faceStroke:'rgba(150,170,180,0.4)',hourColor:'rgba(55,71,79,0.95)',minuteColor:'rgba(69,90,100,0.85)',secondColor:'#bf360c',centerColor:'#455a64',tickColor:'rgba(60,80,90,0.35)',numColor:'rgba(50,70,80,0.7)'}},
-{id:'rose',label:'Rose',dateColor:'rgba(120,20,50,0.75)',badgeColor:'rgba(120,20,50,0.6)',icon:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#roi)"/><defs><radialGradient id="roi" cx="40%" cy="35%"><stop offset="0%" stop-color="#ffb3c1"/><stop offset="100%" stop-color="#8b1a3a"/></radialGradient></defs><g transform="translate(26,26)"><ellipse cx="0" cy="-7" rx="5" ry="8" fill="rgba(255,255,255,0.5)" transform="rotate(0)"/><ellipse cx="0" cy="-7" rx="5" ry="8" fill="rgba(255,255,255,0.5)" transform="rotate(60)"/><ellipse cx="0" cy="-7" rx="5" ry="8" fill="rgba(255,255,255,0.5)" transform="rotate(120)"/><ellipse cx="0" cy="-7" rx="5" ry="8" fill="rgba(255,255,255,0.5)" transform="rotate(180)"/><ellipse cx="0" cy="-7" rx="5" ry="8" fill="rgba(255,255,255,0.5)" transform="rotate(240)"/><ellipse cx="0" cy="-7" rx="5" ry="8" fill="rgba(255,255,255,0.5)" transform="rotate(300)"/><circle cx="0" cy="0" r="4" fill="rgba(255,200,210,0.9)"/></g></svg>',preview:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#pro)"/><defs><radialGradient id="pro" cx="40%" cy="35%"><stop offset="0%" stop-color="#ffb3c1"/><stop offset="100%" stop-color="#8b1a3a"/></radialGradient></defs><g transform="translate(26,26)"><ellipse cx="0" cy="-7" rx="5" ry="8" fill="rgba(255,255,255,0.45)" transform="rotate(0)"/><ellipse cx="0" cy="-7" rx="5" ry="8" fill="rgba(255,255,255,0.45)" transform="rotate(60)"/><ellipse cx="0" cy="-7" rx="5" ry="8" fill="rgba(255,255,255,0.45)" transform="rotate(120)"/><circle cx="0" cy="0" r="4" fill="rgba(255,200,210,0.85)"/></g></svg>',clock:{type:'luxury',face:'rgba(255,255,255,0.12)',faceStroke:'rgba(255,100,150,0.5)',hourColor:'rgba(139,26,58,0.95)',minuteColor:'rgba(180,50,90,0.85)',secondColor:'#c0392b',centerColor:'#a0204a',tickColor:'rgba(140,30,60,0.4)',numColor:'rgba(120,20,50,0.75)'}},
-{id:'galaxy',label:'Galaxy',dateColor:'rgba(160,180,255,0.75)',badgeColor:'rgba(160,180,255,0.6)',icon:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#gai)"/><defs><radialGradient id="gai" cx="50%" cy="50%"><stop offset="0%" stop-color="#2a1a5e"/><stop offset="100%" stop-color="#020510"/></radialGradient></defs><ellipse cx="26" cy="26" rx="16" ry="6" fill="none" stroke="rgba(180,160,255,0.6)" stroke-width="1.5" transform="rotate(-20,26,26)"/><circle cx="26" cy="26" r="3" fill="rgba(220,210,255,0.9)"/><circle cx="38" cy="20" r="1.2" fill="rgba(255,255,255,0.9)"/></svg>',preview:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#pga)"/><defs><radialGradient id="pga" cx="50%" cy="50%"><stop offset="0%" stop-color="#2a1a5e"/><stop offset="100%" stop-color="#020510"/></radialGradient></defs><ellipse cx="26" cy="26" rx="16" ry="6" fill="none" stroke="rgba(180,160,255,0.55)" stroke-width="1.5" transform="rotate(-20,26,26)"/><circle cx="26" cy="26" r="3" fill="rgba(220,210,255,0.85)"/></svg>',clock:{type:'geometric',face:'rgba(255,255,255,0.03)',faceStroke:'rgba(150,130,255,0.25)',hourColor:'rgba(200,190,255,0.95)',minuteColor:'rgba(170,160,255,0.85)',secondColor:'#ff4499',centerColor:'#6644cc',tickColor:'rgba(150,130,255,0.3)',numColor:'rgba(180,170,255,0.7)'}},
-{id:'lavender',label:'Lavender',dateColor:'rgba(80,40,130,0.75)',badgeColor:'rgba(80,40,130,0.6)',icon:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#lai)"/><defs><radialGradient id="lai" cx="40%" cy="35%"><stop offset="0%" stop-color="#e0d4ff"/><stop offset="100%" stop-color="#6b3fa0"/></radialGradient></defs><ellipse cx="22" cy="18" rx="3" ry="5" fill="rgba(255,255,255,0.8)"/><ellipse cx="26" cy="15" rx="3" ry="5" fill="rgba(255,255,255,0.85)"/><ellipse cx="30" cy="18" rx="3" ry="5" fill="rgba(255,255,255,0.8)"/><line x1="26" y1="22" x2="26" y2="36" stroke="rgba(255,255,255,0.6)" stroke-width="2" stroke-linecap="round"/></svg>',preview:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#pla)"/><defs><radialGradient id="pla" cx="40%" cy="35%"><stop offset="0%" stop-color="#e0d4ff"/><stop offset="100%" stop-color="#6b3fa0"/></radialGradient></defs><ellipse cx="26" cy="15" rx="3" ry="5" fill="rgba(255,255,255,0.8)"/><line x1="26" y1="22" x2="26" y2="36" stroke="rgba(255,255,255,0.55)" stroke-width="2" stroke-linecap="round"/></svg>',clock:{type:'luxury',face:'rgba(255,255,255,0.12)',faceStroke:'rgba(200,180,255,0.5)',hourColor:'rgba(80,40,130,0.95)',minuteColor:'rgba(110,60,170,0.85)',secondColor:'#9b59b6',centerColor:'#8e44ad',tickColor:'rgba(100,60,160,0.4)',numColor:'rgba(80,40,130,0.75)'}},
-{id:'sea',label:'Marin',dateColor:'rgba(10,60,100,0.65)',badgeColor:'rgba(10,60,100,0.5)',icon:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#si)"/><defs><radialGradient id="si" cx="40%" cy="35%"><stop offset="0%" stop-color="#7dd4f8"/><stop offset="100%" stop-color="#1a8fc1"/></radialGradient></defs><path d="M14 28 Q18 24 22 28 Q26 32 30 28 Q34 24 38 28" stroke="rgba(255,255,255,0.9)" stroke-width="2" stroke-linecap="round" fill="none"/><path d="M14 33 Q18 29 22 33 Q26 37 30 33 Q34 29 38 33" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round" fill="none"/><circle cx="26" cy="20" r="4" fill="rgba(255,240,100,0.95)"/></svg>',preview:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#p0)"/><defs><radialGradient id="p0" cx="40%" cy="35%"><stop offset="0%" stop-color="#7dd4f8"/><stop offset="100%" stop-color="#1a8fc1"/></radialGradient></defs><path d="M12 34 Q17 29 22 34 Q27 39 32 34 Q37 29 42 34" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round" fill="none"/><circle cx="26" cy="18" r="5" fill="rgba(255,240,100,0.9)"/></svg>',clock:{type:'minimal',face:'rgba(255,255,255,0.15)',faceStroke:'rgba(255,255,255,0.6)',hourColor:'rgba(20,80,140,0.9)',minuteColor:'rgba(14,116,144,0.85)',secondColor:'#e05c2a',centerColor:'#0e7490',tickColor:'rgba(0,80,140,0.5)',numColor:'rgba(0,60,120,0.7)'}},
-{id:'autumn',label:'Autumn',dateColor:'rgba(100,40,10,0.75)',badgeColor:'rgba(100,40,10,0.6)',icon:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#aui)"/><defs><radialGradient id="aui" cx="40%" cy="35%"><stop offset="0%" stop-color="#ffcc80"/><stop offset="100%" stop-color="#7a2000"/></radialGradient></defs><path d="M26 36 Q20 28 22 20 Q26 25 30 20 Q32 28 26 36Z" fill="rgba(255,255,255,0.75)"/></svg>',preview:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#pau)"/><defs><radialGradient id="pau" cx="40%" cy="35%"><stop offset="0%" stop-color="#ffcc80"/><stop offset="100%" stop-color="#7a2000"/></radialGradient></defs><path d="M26 36 Q20 28 22 20 Q26 25 30 20 Q32 28 26 36Z" fill="rgba(255,255,255,0.7)"/></svg>',clock:{type:'luxury',face:'rgba(255,255,255,0.12)',faceStroke:'rgba(255,150,50,0.5)',hourColor:'rgba(122,32,0,0.95)',minuteColor:'rgba(180,60,10,0.85)',secondColor:'#e65100',centerColor:'#bf360c',tickColor:'rgba(140,50,10,0.4)',numColor:'rgba(100,40,10,0.75)'}},
-{id:'cafe',label:'Café',dateColor:'rgba(60,30,10,0.75)',badgeColor:'rgba(60,30,10,0.6)',icon:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#cai)"/><defs><radialGradient id="cai" cx="40%" cy="35%"><stop offset="0%" stop-color="#d4a96a"/><stop offset="100%" stop-color="#3e2010"/></radialGradient></defs><rect x="17" y="26" width="18" height="12" rx="3" fill="rgba(255,255,255,0.7)"/><path d="M35 30 Q40 30 40 34 Q40 38 35 38" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="2"/></svg>',preview:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#pca)"/><defs><radialGradient id="pca" cx="40%" cy="35%"><stop offset="0%" stop-color="#d4a96a"/><stop offset="100%" stop-color="#3e2010"/></radialGradient></defs><rect x="17" y="26" width="18" height="12" rx="3" fill="rgba(255,255,255,0.65)"/></svg>',clock:{type:'minimal',face:'rgba(255,255,255,0.12)',faceStroke:'rgba(200,150,80,0.5)',hourColor:'rgba(62,32,16,0.95)',minuteColor:'rgba(100,60,30,0.85)',secondColor:'#8d4600',centerColor:'#6d4c41',tickColor:'rgba(80,50,20,0.4)',numColor:'rgba(60,30,10,0.75)'}},
-{id:'tropicalnight',label:'Tropic Night',dateColor:'rgba(100,220,180,0.75)',badgeColor:'rgba(100,220,180,0.6)',icon:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#tni)"/><defs><radialGradient id="tni" cx="40%" cy="35%"><stop offset="0%" stop-color="#044a3a"/><stop offset="100%" stop-color="#010a15"/></radialGradient></defs><path d="M26 38 Q26 28 20 22 Q26 26 32 18 Q30 26 26 28 Q26 33 26 38Z" fill="rgba(100,255,180,0.6)"/><circle cx="15" cy="20" r="2" fill="rgba(255,255,150,0.9)"/><circle cx="38" cy="15" r="1.5" fill="rgba(255,255,150,0.8)"/></svg>',preview:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#ptn)"/><defs><radialGradient id="ptn" cx="40%" cy="35%"><stop offset="0%" stop-color="#044a3a"/><stop offset="100%" stop-color="#010a15"/></radialGradient></defs><path d="M26 38 Q26 28 20 22 Q26 26 32 18 Q30 26 26 28 Q26 33 26 38Z" fill="rgba(100,255,180,0.55)"/></svg>',clock:{type:'minimal',face:'rgba(255,255,255,0.06)',faceStroke:'rgba(100,220,160,0.3)',hourColor:'rgba(80,200,150,0.95)',minuteColor:'rgba(60,180,130,0.85)',secondColor:'#ffeb3b',centerColor:'#00796b',tickColor:'rgba(80,180,140,0.35)',numColor:'rgba(80,200,150,0.7)'}},
-{id:'blizzard',label:'Blizzard',dateColor:'rgba(20,50,150,0.75)',badgeColor:'rgba(20,50,150,0.6)',icon:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#bli)"/><defs><radialGradient id="bli" cx="40%" cy="35%"><stop offset="0%" stop-color="#a8d4ff"/><stop offset="100%" stop-color="#2040a0"/></radialGradient></defs><line x1="26" y1="12" x2="26" y2="40" stroke="rgba(255,255,255,0.9)" stroke-width="2"/><line x1="12" y1="26" x2="40" y2="26" stroke="rgba(255,255,255,0.9)" stroke-width="2"/><line x1="15.5" y1="15.5" x2="36.5" y2="36.5" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"/><line x1="36.5" y1="15.5" x2="15.5" y2="36.5" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"/></svg>',preview:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#pbl)"/><defs><radialGradient id="pbl" cx="40%" cy="35%"><stop offset="0%" stop-color="#a8d4ff"/><stop offset="100%" stop-color="#2040a0"/></radialGradient></defs><line x1="26" y1="12" x2="26" y2="40" stroke="rgba(255,255,255,0.85)" stroke-width="2"/><line x1="12" y1="26" x2="40" y2="26" stroke="rgba(255,255,255,0.85)" stroke-width="2"/></svg>',clock:{type:'geometric',face:'rgba(255,255,255,0.18)',faceStroke:'rgba(180,220,255,0.5)',hourColor:'rgba(20,60,180,0.95)',minuteColor:'rgba(40,80,200,0.85)',secondColor:'#1565c0',centerColor:'#1976d2',tickColor:'rgba(30,70,180,0.35)',numColor:'rgba(20,50,160,0.75)'}},
-{id:'citynight',label:'City Night',dateColor:'rgba(200,210,255,0.75)',badgeColor:'rgba(200,210,255,0.6)',icon:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#cni)"/><defs><radialGradient id="cni" cx="50%" cy="80%"><stop offset="0%" stop-color="#1a1a4e"/><stop offset="100%" stop-color="#050510"/></radialGradient></defs><rect x="10" y="22" width="8" height="16" fill="rgba(255,220,100,0.4)"/><rect x="20" y="16" width="6" height="22" fill="rgba(255,220,100,0.5)"/><rect x="28" y="19" width="7" height="19" fill="rgba(255,220,100,0.45)"/><rect x="37" y="24" width="6" height="14" fill="rgba(255,220,100,0.4)"/></svg>',preview:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#pcn)"/><defs><radialGradient id="pcn" cx="50%" cy="80%"><stop offset="0%" stop-color="#1a1a4e"/><stop offset="100%" stop-color="#050510"/></radialGradient></defs><rect x="20" y="18" width="6" height="20" fill="rgba(255,220,100,0.45)"/><rect x="28" y="21" width="7" height="17" fill="rgba(255,220,100,0.4)"/></svg>',clock:{type:'geometric',face:'rgba(255,255,255,0.04)',faceStroke:'rgba(180,190,255,0.2)',hourColor:'rgba(200,210,255,0.95)',minuteColor:'rgba(180,190,255,0.85)',secondColor:'#ffd700',centerColor:'#3344aa',tickColor:'rgba(160,170,255,0.3)',numColor:'rgba(180,190,255,0.65)'}},
-{id:'aurora',label:'Aurora',dateColor:'rgba(100,220,200,0.75)',badgeColor:'rgba(100,220,200,0.6)',icon:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#ari)"/><defs><radialGradient id="ari" cx="50%" cy="100%"><stop offset="0%" stop-color="#063030"/><stop offset="100%" stop-color="#020810"/></radialGradient></defs><path d="M8 30 Q18 10 26 25 Q34 10 44 30" stroke="rgba(100,255,200,0.7)" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M6 36 Q18 16 26 30 Q34 16 46 36" stroke="rgba(150,100,255,0.5)" stroke-width="2" fill="none" stroke-linecap="round"/></svg>',preview:'<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#par)"/><defs><radialGradient id="par" cx="50%" cy="100%"><stop offset="0%" stop-color="#063030"/><stop offset="100%" stop-color="#020810"/></radialGradient></defs><path d="M8 30 Q18 10 26 25 Q34 10 44 30" stroke="rgba(100,255,200,0.65)" stroke-width="3" fill="none" stroke-linecap="round"/></svg>',clock:{type:'geometric',face:'rgba(255,255,255,0.04)',faceStroke:'rgba(100,220,180,0.25)',hourColor:'rgba(100,220,200,0.95)',minuteColor:'rgba(80,200,180,0.85)',secondColor:'#b39ddb',centerColor:'#00897b',tickColor:'rgba(80,200,170,0.3)',numColor:'rgba(100,210,190,0.7)'}}
-];
+{id:'night',label:'Night',dateColor:'rgba(150,170,255,0.7)',badgeColor:'rgba(180,200,255,0.7)',icon:`<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#ni)"/><defs><radialGradient id="ni" cx="40%" cy="35%"><stop offset="0%" stop-color="#1a1a6e"/><stop offset="100%" stop-color="#060620"/></radialGradient></defs><path d="M30 14 A10 10 0 1 0 20 30 A8 8 0 1 1 30 14Z" fill="rgba(200,220,255,0.9)"/></svg>`,preview:`<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#pn)"/><defs><radialGradient id="pn" cx="40%" cy="35%"><stop offset="0%" stop-color="#1a1a6e"/><stop offset="100%" stop-color="#060620"/></radialGradient></defs><path d="M30 14 A10 10 0 1 0 20 30 A8 8 0 1 1 30 14Z" fill="rgba(200,220,255,0.85)"/></svg>`,clock:{type:'geometric',face:'rgba(255,255,255,0.04)',faceStroke:'rgba(100,120,255,0.3)',hourColor:'rgba(170,190,255,0.95)',minuteColor:'rgba(130,160,255,0.85)',secondColor:'#ff6699',centerColor:'#8899ff',tickColor:'rgba(130,150,255,0.4)',numColor:'rgba(180,200,255,0.75)'}},
+{id:'sakura',label:'Sakura',dateColor:'rgba(160,40,90,0.7)',badgeColor:'rgba(160,40,90,0.55)',icon:`<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#sk)"/><defs><radialGradient id="sk" cx="40%" cy="35%"><stop offset="0%" stop-color="#ffb3d1"/><stop offset="100%" stop-color="#e0609a"/></radialGradient></defs><g transform="translate(26,26)"><ellipse cx="0" cy="-8" rx="4" ry="7" fill="rgba(255,255,255,0.85)" transform="rotate(0)"/><ellipse cx="0" cy="-8" rx="4" ry="7" fill="rgba(255,255,255,0.85)" transform="rotate(72)"/><ellipse cx="0" cy="-8" rx="4" ry="7" fill="rgba(255,255,255,0.85)" transform="rotate(144)"/><ellipse cx="0" cy="-8" rx="4" ry="7" fill="rgba(255,255,255,0.85)" transform="rotate(216)"/><ellipse cx="0" cy="-8" rx="4" ry="7" fill="rgba(255,255,255,0.85)" transform="rotate(288)"/><circle cx="0" cy="0" r="3" fill="rgba(255,200,210,0.95)"/></g></svg>`,preview:`<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#ps)"/><defs><radialGradient id="ps" cx="40%" cy="35%"><stop offset="0%" stop-color="#ffb3d1"/><stop offset="100%" stop-color="#e0609a"/></radialGradient></defs><g transform="translate(26,26)"><ellipse cx="0" cy="-8" rx="4" ry="7" fill="rgba(255,255,255,0.8)" transform="rotate(0)"/><ellipse cx="0" cy="-8" rx="4" ry="7" fill="rgba(255,255,255,0.8)" transform="rotate(72)"/><ellipse cx="0" cy="-8" rx="4" ry="7" fill="rgba(255,255,255,0.8)" transform="rotate(144)"/><ellipse cx="0" cy="-8" rx="4" ry="7" fill="rgba(255,255,255,0.8)" transform="rotate(216)"/><ellipse cx="0" cy="-8" rx="4" ry="7" fill="rgba(255,255,255,0.8)" transform="rotate(288)"/><circle cx="0" cy="0" r="3" fill="rgba(255,200,210,0.9)"/></g></svg>`,clock:{type:'luxury',face:'rgba(255,255,255,0.18)',faceStroke:'rgba(255,160,200,0.6)',hourColor:'rgba(180,50,100,0.9)',minuteColor:'rgba(220,100,140,0.85)',secondColor:'#a0204a',centerColor:'#e8729a',tickColor:'rgba(180,60,110,0.45)',numColor:'rgba(150,40,80,0.75)'}},
+{id:'forest',label:'Forest',dateColor:'rgba(20,80,20,0.7)',badgeColor:'rgba(20,80,20,0.55)',icon:`<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#fo)"/><defs><radialGradient id="fo" cx="40%" cy="35%"><stop offset="0%" stop-color="#81c784"/><stop offset="100%" stop-color="#1b5e20"/></radialGradient></defs><polygon points="26,12 34,26 18,26" fill="rgba(255,255,255,0.85)"/><polygon points="26,19 35,33 17,33" fill="rgba(255,255,255,0.7)"/><rect x="23" y="33" width="6" height="6" rx="1" fill="rgba(255,255,255,0.6)"/></svg>`,preview:`<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#pf)"/><defs><radialGradient id="pf" cx="40%" cy="35%"><stop offset="0%" stop-color="#81c784"/><stop offset="100%" stop-color="#1b5e20"/></radialGradient></defs><polygon points="26,12 34,26 18,26" fill="rgba(255,255,255,0.8)"/><polygon points="26,19 35,33 17,33" fill="rgba(255,255,255,0.65)"/></svg>`,clock:{type:'minimal',face:'rgba(255,255,255,0.15)',faceStroke:'rgba(100,200,100,0.5)',hourColor:'rgba(27,94,32,0.95)',minuteColor:'rgba(56,142,60,0.85)',secondColor:'#e65100',centerColor:'#388e3c',tickColor:'rgba(30,100,30,0.4)',numColor:'rgba(20,80,20,0.7)'}},
+{id:'sunset',label:'Sunset',dateColor:'rgba(120,40,10,0.75)',badgeColor:'rgba(120,40,10,0.6)',icon:`<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#su)"/><defs><linearGradient id="su" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ff8a50"/><stop offset="100%" stop-color="#7b1fa2"/></linearGradient></defs><path d="M14 32 A12 12 0 0 1 38 32" fill="rgba(255,200,80,0.85)"/><line x1="10" y1="35" x2="42" y2="35" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/></svg>`,preview:`<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#pu)"/><defs><linearGradient id="pu" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ff8a50"/><stop offset="100%" stop-color="#7b1fa2"/></linearGradient></defs><path d="M14 32 A12 12 0 0 1 38 32" fill="rgba(255,200,80,0.8)"/></svg>`,clock:{type:'luxury',face:'rgba(255,255,255,0.12)',faceStroke:'rgba(255,160,80,0.5)',hourColor:'rgba(180,54,12,0.95)',minuteColor:'rgba(230,74,25,0.85)',secondColor:'#4a148c',centerColor:'#e64a19',tickColor:'rgba(180,80,10,0.4)',numColor:'rgba(140,50,10,0.8)'}},
+{id:'winter',label:'Winter',dateColor:'rgba(20,60,120,0.7)',badgeColor:'rgba(20,60,120,0.55)',icon:`<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#wi)"/><defs><radialGradient id="wi" cx="40%" cy="35%"><stop offset="0%" stop-color="#e3f2fd"/><stop offset="100%" stop-color="#1565c0"/></radialGradient></defs><line x1="26" y1="12" x2="26" y2="40" stroke="rgba(255,255,255,0.85)" stroke-width="2" stroke-linecap="round"/><line x1="12" y1="26" x2="40" y2="26" stroke="rgba(255,255,255,0.85)" stroke-width="2" stroke-linecap="round"/><line x1="15.5" y1="15.5" x2="36.5" y2="36.5" stroke="rgba(255,255,255,0.6)" stroke-width="1.5" stroke-linecap="round"/><line x1="36.5" y1="15.5" x2="15.5" y2="36.5" stroke="rgba(255,255,255,0.6)" stroke-width="1.5" stroke-linecap="round"/></svg>`,preview:`<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#pw)"/><defs><radialGradient id="pw" cx="40%" cy="35%"><stop offset="0%" stop-color="#e3f2fd"/><stop offset="100%" stop-color="#1565c0"/></radialGradient></defs><line x1="26" y1="12" x2="26" y2="40" stroke="rgba(255,255,255,0.8)" stroke-width="2" stroke-linecap="round"/><line x1="12" y1="26" x2="40" y2="26" stroke="rgba(255,255,255,0.8)" stroke-width="2" stroke-linecap="round"/></svg>`,clock:{type:'geometric',face:'rgba(255,255,255,0.2)',faceStroke:'rgba(150,200,255,0.5)',hourColor:'rgba(21,101,192,0.95)',minuteColor:'rgba(25,118,210,0.85)',secondColor:'#c62828',centerColor:'#1976d2',tickColor:'rgba(20,80,180,0.35)',numColor:'rgba(20,60,140,0.75)'}},
+{id:'tropical',label:'Tropical',dateColor:'rgba(0,80,70,0.75)',badgeColor:'rgba(0,80,70,0.6)',icon:`<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#tr)"/><defs><radialGradient id="tr" cx="40%" cy="35%"><stop offset="0%" stop-color="#4dd0e1"/><stop offset="100%" stop-color="#006064"/></radialGradient></defs><path d="M26 38 Q26 28 20 22 Q26 26 32 18 Q30 26 26 28 Q26 33 26 38Z" fill="rgba(255,255,255,0.85)"/></svg>`,preview:`<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#pt)"/><defs><radialGradient id="pt" cx="40%" cy="35%"><stop offset="0%" stop-color="#4dd0e1"/><stop offset="100%" stop-color="#006064"/></radialGradient></defs><path d="M26 40 Q26 28 18 20 Q26 26 34 16 Q30 26 26 28 Q26 34 26 40Z" fill="rgba(255,255,255,0.8)"/></svg>`,clock:{type:'minimal',face:'rgba(255,255,255,0.15)',faceStroke:'rgba(100,220,210,0.5)',hourColor:'rgba(0,105,92,0.95)',minuteColor:'rgba(0,137,123,0.85)',secondColor:'#f57f17',centerColor:'#00897b',tickColor:'rgba(0,100,90,0.4)',numColor:'rgba(0,80,70,0.75)'}},
+{id:'mist',label:'Mist',dateColor:'rgba(50,70,80,0.7)',badgeColor:'rgba(50,70,80,0.55)',icon:`<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#mi)"/><defs><radialGradient id="mi" cx="40%" cy="35%"><stop offset="0%" stop-color="#cfd8dc"/><stop offset="100%" stop-color="#37474f"/></radialGradient></defs><line x1="14" y1="22" x2="38" y2="22" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round"/><line x1="11" y1="28" x2="41" y2="28" stroke="rgba(255,255,255,0.5)" stroke-width="2" stroke-linecap="round"/><line x1="16" y1="34" x2="36" y2="34" stroke="rgba(255,255,255,0.35)" stroke-width="2" stroke-linecap="round"/></svg>`,preview:`<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#pm)"/><defs><radialGradient id="pm" cx="40%" cy="35%"><stop offset="0%" stop-color="#cfd8dc"/><stop offset="100%" stop-color="#37474f"/></radialGradient></defs><line x1="14" y1="22" x2="38" y2="22" stroke="rgba(255,255,255,0.65)" stroke-width="2" stroke-linecap="round"/></svg>`,clock:{type:'geometric',face:'rgba(255,255,255,0.15)',faceStroke:'rgba(150,170,180,0.4)',hourColor:'rgba(55,71,79,0.95)',minuteColor:'rgba(69,90,100,0.85)',secondColor:'#bf360c',centerColor:'#455a64',tickColor:'rgba(60,80,90,0.35)',numColor:'rgba(50,70,80,0.7)'}},
+{id:'rose',label:'Rose',dateColor:'rgba(120,20,50,0.75)',badgeColor:'rgba(120,20,50,0.6)',icon:`<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#ro)"/><defs><radialGradient id="ro" cx="40%" cy="35%"><stop offset="0%" stop-color="#ffb3c1"/><stop offset="100%" stop-color="#8b1a3a"/></radialGradient></defs><g transform="translate(26,26)"><ellipse cx="0" cy="-7" rx="5" ry="8" fill="rgba(255,255,255,0.5)" transform="rotate(0)"/><ellipse cx="0" cy="-7" rx="5" ry="8" fill="rgba(255,255,255,0.5)" transform="rotate(60)"/><ellipse cx="0" cy="-7" rx="5" ry="8" fill="rgba(255,255,255,0.5)" transform="rotate(120)"/><ellipse cx="0" cy="-7" rx="5" ry="8" fill="rgba(255,255,255,0.5)" transform="rotate(180)"/><ellipse cx="0" cy="-7" rx="5" ry="8" fill="rgba(255,255,255,0.5)" transform="rotate(240)"/><ellipse cx="0" cy="-7" rx="5" ry="8" fill="rgba(255,255,255,0.5)" transform="rotate(300)"/><circle cx="0" cy="0" r="4" fill="rgba(255,200,210,0.9)"/></g></svg>`,preview:`<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#pr)"/><defs><radialGradient id="pr" cx="40%" cy="35%"><stop offset="0%" stop-color="#ffb3c1"/><stop offset="100%" stop-color="#8b1a3a"/></radialGradient></defs><g transform="translate(26,26)"><ellipse cx="0" cy="-7" rx="5" ry="8" fill="rgba(255,255,255,0.45)" transform="rotate(0)"/><ellipse cx="0" cy="-7" rx="5" ry="8" fill="rgba(255,255,255,0.45)" transform="rotate(120)"/><circle cx="0" cy="0" r="4" fill="rgba(255,200,210,0.85)"/></g></svg>`,clock:{type:'luxury',face:'rgba(255,255,255,0.12)',faceStroke:'rgba(255,100,150,0.5)',hourColor:'rgba(139,26,58,0.95)',minuteColor:'rgba(180,50,90,0.85)',secondColor:'#c0392b',centerColor:'#a0204a',tickColor:'rgba(140,30,60,0.4)',numColor:'rgba(120,20,50,0.75)'}},
+{id:'galaxy',label:'Galaxy',dateColor:'rgba(160,180,255,0.75)',badgeColor:'rgba(160,180,255,0.6)',icon:`<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#ga)"/><defs><radialGradient id="ga" cx="50%" cy="50%"><stop offset="0%" stop-color="#2a1a5e"/><stop offset="100%" stop-color="#020510"/></radialGradient></defs><ellipse cx="26" cy="26" rx="16" ry="6" fill="none" stroke="rgba(180,160,255,0.6)" stroke-width="1.5" transform="rotate(-20,26,26)"/><circle cx="26" cy="26" r="3" fill="rgba(220,210,255,0.9)"/></svg>`,preview:`<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#pg)"/><defs><radialGradient id="pg" cx="50%" cy="50%"><stop offset="0%" stop-color="#2a1a5e"/><stop offset="100%" stop-color="#020510"/></radialGradient></defs><ellipse cx="26" cy="26" rx="16" ry="6" fill="none" stroke="rgba(180,160,255,0.55)" stroke-width="1.5" transform="rotate(-20,26,26)"/></svg>`,clock:{type:'geometric',face:'rgba(255,255,255,0.03)',faceStroke:'rgba(150,130,255,0.25)',hourColor:'rgba(200,190,255,0.95)',minuteColor:'rgba(170,160,255,0.85)',secondColor:'#ff4499',centerColor:'#6644cc',tickColor:'rgba(150,130,255,0.3)',numColor:'rgba(180,170,255,0.7)'}},
+{id:'lavender',label:'Lavender',dateColor:'rgba(80,40,130,0.75)',badgeColor:'rgba(80,40,130,0.6)',icon:`<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#la)"/><defs><radialGradient id="la" cx="40%" cy="35%"><stop offset="0%" stop-color="#e0d4ff"/><stop offset="100%" stop-color="#6b3fa0"/></radialGradient></defs><ellipse cx="22" cy="18" rx="3" ry="5" fill="rgba(255,255,255,0.8)"/><ellipse cx="26" cy="15" rx="3" ry="5" fill="rgba(255,255,255,0.85)"/><ellipse cx="30" cy="18" rx="3" ry="5" fill="rgba(255,255,255,0.8)"/><line x1="26" y1="22" x2="26" y2="36" stroke="rgba(255,255,255,0.6)" stroke-width="2" stroke-linecap="round"/></svg>`,preview:`<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#pl)"/><defs><radialGradient id="pl" cx="40%" cy="35%"><stop offset="0%" stop-color="#e0d4ff"/><stop offset="100%" stop-color="#6b3fa0"/></radialGradient></defs><ellipse cx="26" cy="15" rx="3" ry="5" fill="rgba(255,255,255,0.8)"/><line x1="26" y1="22" x2="26" y2="36" stroke="rgba(255,255,255,0.55)" stroke-width="2" stroke-linecap="round"/></svg>`,clock:{type:'luxury',face:'rgba(255,255,255,0.12)',faceStroke:'rgba(200,180,255,0.5)',hourColor:'rgba(80,40,130,0.95)',minuteColor:'rgba(110,60,170,0.85)',secondColor:'#9b59b6',centerColor:'#8e44ad',tickColor:'rgba(100,60,160,0.4)',numColor:'rgba(80,40,130,0.75)'}},
+{id:'sea',label:'Marin',dateColor:'rgba(10,60,100,0.65)',badgeColor:'rgba(10,60,100,0.5)',icon:`<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#si)"/><defs><radialGradient id="si" cx="40%" cy="35%"><stop offset="0%" stop-color="#7dd4f8"/><stop offset="100%" stop-color="#1a8fc1"/></radialGradient></defs><path d="M14 28 Q18 24 22 28 Q26 32 30 28 Q34 24 38 28" stroke="rgba(255,255,255,0.9)" stroke-width="2" stroke-linecap="round" fill="none"/><circle cx="26" cy="20" r="4" fill="rgba(255,240,100,0.95)"/></svg>`,preview:`<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#p0)"/><defs><radialGradient id="p0" cx="40%" cy="35%"><stop offset="0%" stop-color="#7dd4f8"/><stop offset="100%" stop-color="#1a8fc1"/></radialGradient></defs><path d="M12 34 Q17 29 22 34 Q27 39 32 34 Q37 29 42 34" stroke="rgba(255,255,255,0.7)" stroke-width="2" stroke-linecap="round" fill="none"/><circle cx="26" cy="18" r="5" fill="rgba(255,240,100,0.9)"/></svg>`,clock:{type:'minimal',face:'rgba(255,255,255,0.15)',faceStroke:'rgba(255,255,255,0.6)',hourColor:'rgba(20,80,140,0.9)',minuteColor:'rgba(14,116,144,0.85)',secondColor:'#e05c2a',centerColor:'#0e7490',tickColor:'rgba(0,80,140,0.5)',numColor:'rgba(0,60,120,0.7)'}},
+{id:'autumn',label:'Autumn',dateColor:'rgba(100,40,10,0.75)',badgeColor:'rgba(100,40,10,0.6)',icon:`<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#au)"/><defs><radialGradient id="au" cx="40%" cy="35%"><stop offset="0%" stop-color="#ffcc80"/><stop offset="100%" stop-color="#7a2000"/></radialGradient></defs><path d="M26 36 Q20 28 22 20 Q26 25 30 20 Q32 28 26 36Z" fill="rgba(255,255,255,0.75)"/></svg>`,preview:`<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#pau)"/><defs><radialGradient id="pau" cx="40%" cy="35%"><stop offset="0%" stop-color="#ffcc80"/><stop offset="100%" stop-color="#7a2000"/></radialGradient></defs><path d="M26 36 Q20 28 22 20 Q26 25 30 20 Q32 28 26 36Z" fill="rgba(255,255,255,0.7)"/></svg>`,clock:{type:'luxury',face:'rgba(255,255,255,0.12)',faceStroke:'rgba(255,150,50,0.5)',hourColor:'rgba(122,32,0,0.95)',minuteColor:'rgba(180,60,10,0.85)',secondColor:'#e65100',centerColor:'#bf360c',tickColor:'rgba(140,50,10,0.4)',numColor:'rgba(100,40,10,0.75)'}},
+{id:'cafe',label:'Café',dateColor:'rgba(60,30,10,0.75)',badgeColor:'rgba(60,30,10,0.6)',icon:`<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#ca)"/><defs><radialGradient id="ca" cx="40%" cy="35%"><stop offset="0%" stop-color="#d4a96a"/><stop offset="100%" stop-color="#3e2010"/></radialGradient></defs><rect x="17" y="26" width="18" height="12" rx="3" fill="rgba(255,255,255,0.7)"/><path d="M35 30 Q40 30 40 34 Q40 38 35 38" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="2"/></svg>`,preview:`<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#pca)"/><defs><radialGradient id="pca" cx="40%" cy="35%"><stop offset="0%" stop-color="#d4a96a"/><stop offset="100%" stop-color="#3e2010"/></radialGradient></defs><rect x="17" y="26" width="18" height="12" rx="3" fill="rgba(255,255,255,0.65)"/></svg>`,clock:{type:'minimal',face:'rgba(255,255,255,0.12)',faceStroke:'rgba(200,150,80,0.5)',hourColor:'rgba(62,32,16,0.95)',minuteColor:'rgba(100,60,30,0.85)',secondColor:'#8d4600',centerColor:'#6d4c41',tickColor:'rgba(80,50,20,0.4)',numColor:'rgba(60,30,10,0.75)'}},
+{id:'blizzard',label:'Blizzard',dateColor:'rgba(20,50,150,0.75)',badgeColor:'rgba(20,50,150,0.6)',icon:`<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#bl)"/><defs><radialGradient id="bl" cx="40%" cy="35%"><stop offset="0%" stop-color="#a8d4ff"/><stop offset="100%" stop-color="#2040a0"/></radialGradient></defs><line x1="26" y1="12" x2="26" y2="40" stroke="rgba(255,255,255,0.9)" stroke-width="2"/><line x1="12" y1="26" x2="40" y2="26" stroke="rgba(255,255,255,0.9)" stroke-width="2"/><line x1="15.5" y1="15.5" x2="36.5" y2="36.5" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"/><line x1="36.5" y1="15.5" x2="15.5" y2="36.5" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"/></svg>`,preview:`<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#pbl)"/><defs><radialGradient id="pbl" cx="40%" cy="35%"><stop offset="0%" stop-color="#a8d4ff"/><stop offset="100%" stop-color="#2040a0"/></radialGradient></defs><line x1="26" y1="12" x2="26" y2="40" stroke="rgba(255,255,255,0.85)" stroke-width="2"/><line x1="12" y1="26" x2="40" y2="26" stroke="rgba(255,255,255,0.85)" stroke-width="2"/></svg>`,clock:{type:'geometric',face:'rgba(255,255,255,0.18)',faceStroke:'rgba(180,220,255,0.5)',hourColor:'rgba(20,60,180,0.95)',minuteColor:'rgba(40,80,200,0.85)',secondColor:'#1565c0',centerColor:'#1976d2',tickColor:'rgba(30,70,180,0.35)',numColor:'rgba(20,50,160,0.75)'}},
+{id:'aurora',label:'Aurora',dateColor:'rgba(100,220,200,0.75)',badgeColor:'rgba(100,220,200,0.6)',icon:`<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#ar)"/><defs><radialGradient id="ar" cx="50%" cy="100%"><stop offset="0%" stop-color="#063030"/><stop offset="100%" stop-color="#020810"/></radialGradient></defs><path d="M8 30 Q18 10 26 25 Q34 10 44 30" stroke="rgba(100,255,200,0.7)" stroke-width="3" fill="none" stroke-linecap="round"/></svg>`,preview:`<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#par)"/><defs><radialGradient id="par" cx="50%" cy="100%"><stop offset="0%" stop-color="#063030"/><stop offset="100%" stop-color="#020810"/></radialGradient></defs><path d="M8 30 Q18 10 26 25 Q34 10 44 30" stroke="rgba(100,255,200,0.65)" stroke-width="3" fill="none" stroke-linecap="round"/></svg>`,clock:{type:'geometric',face:'rgba(255,255,255,0.04)',faceStroke:'rgba(100,220,180,0.25)',hourColor:'rgba(100,220,200,0.95)',minuteColor:'rgba(80,200,180,0.85)',secondColor:'#b39ddb',centerColor:'#00897b',tickColor:'rgba(80,200,170,0.3)',numColor:'rgba(100,210,190,0.7)'}}
+]
 
 let currentUser=null,realtimeChannel=null,tapCount=0,tapTimer=null,pinEntry='',lastPollTime=new Date(),pollInterval=null,selectedMsgId=null,currentTheme='sea';
 let hourAngle=0,minuteAngle=0,secondAngle=0;
@@ -464,7 +420,7 @@ async function checkUnread(){
   try{
     const lastRead=localStorage.getItem('last_read_time')||new Date(0).toISOString();
     const msgs=await sbFetch(`messages?select=id,user_id&created_at=gt.${encodeURIComponent(lastRead)}`);
-    if(msgs){const u=msgs.filter(m=>m.user_id!==code).length;document.getElementById('unread-badge').style.display='none';}
+    if(msgs){const u=msgs.filter(m=>m.user_id!==code).length;document.getElementById('unread-badge').textContent=u>0?u:'';}
   }catch(e){}
 }
 
@@ -475,7 +431,7 @@ function handleClockTap(){
 }
 
 function showScreen(id){document.querySelectorAll('.screen').forEach(s=>s.style.display='none');document.getElementById(id).style.display='flex'}
-function showClock(){disconnectRealtime();pinEntry='';updatePinDots();showScreen('clock-screen');checkUnread();}
+function showClock(){disconnectRealtime();pinEntry='';updatePinDots();showScreen('clock-screen');checkUnread()}
 function showInvite(){document.getElementById('invite-input').value='';document.getElementById('invite-error').textContent='';showScreen('invite-screen');setTimeout(()=>document.getElementById('invite-input').focus(),300)}
 function showPin(){pinEntry='';updatePinDots();showScreen('pin-screen')}
 
@@ -507,7 +463,7 @@ async function showChatScreen(){
   document.getElementById('chat-avatar').textContent=info.partner.charAt(0);
   showScreen('chat-screen');await loadMessages();
   localStorage.setItem('last_read_time',new Date().toISOString());
-  document.getElementById('unread-badge').style.display='none';
+  document.getElementById('unread-badge').textContent='';
   connectRealtime();setTimeout(()=>scrollToBottom(),100);
 }
 
@@ -535,7 +491,7 @@ function appendMessage(msg,animate=true){
   if(!animate)bubble.style.animation='none';
   addPressEvents(bubble,msg.id);
   const wrap=document.createElement('div');wrap.className='msg-wrap';wrap.appendChild(bubble);
-  if(!isMine){const av=document.createElement('div');av.className='msg-avatar-sm';if(typeof updateChatBg==='function')updateChatBg();if(typeof resetTimer==='function')resetTimer();av.textContent=info.partner.slice(0,2);row.appendChild(av);}
+  if(!isMine){const av=document.createElement('div');av.className='msg-avatar-sm';av.textContent=info.partner.slice(0,2);row.appendChild(av);}
   row.appendChild(wrap);container.appendChild(row);scrollToBottom();
 }
 
@@ -553,7 +509,7 @@ async function loadMessages(){
 
 async function sendMsg(){
   const input=document.getElementById('chat-input');const text=input.value.trim();if(!text)return;
-  input.value='';input.style.height='';if(typeof checkAnim==='function')setTimeout(function(){checkAnim(text);},300);
+  input.value='';input.style.height='';
   try{
     const result=await sbFetch('messages',{method:'POST',body:JSON.stringify({user_id:currentUser.invite_code,content:text})});
     if(result&&result[0]){document.querySelector('#chat-messages .loading-msg')?.remove();appendMessage(result[0]);lastPollTime=new Date();localStorage.setItem('last_read_time',new Date().toISOString());}
@@ -582,9 +538,37 @@ function escHtml(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').
 function scrollToBottom(){document.getElementById('chat-messages').scrollTop=9999999}
 function autoResize(el){el.style.height='auto';el.style.height=Math.min(el.scrollHeight,120)+'px'}
 
-// 初期化はスクリプト末尾へ移動
+// ===== 新機能 =====
 
-// ========== 新機能 ==========
+// ヘルスケア
+var _healthTaps=0,_healthTapT=null;
+
+function showHealth(){
+  var d=new Date();
+  document.getElementById('health-date').textContent=(d.getMonth()+1)+'月'+d.getDate()+'日（'+'日月火水木金土'[d.getDay()]+'）';
+  var prog=(d.getHours()*60+d.getMinutes())/(24*60);
+  var steps=Math.floor(7500*Math.max(prog,0.05)+Math.floor(Math.random()*50));
+  document.getElementById('health-steps').textContent=steps.toLocaleString();
+  document.getElementById('health-heart').textContent=65+Math.floor(Math.random()*15);
+  drawGraph('steps-graph','#007aff',[15,40,25,55,75,50,65,80,60,85,70,88]);
+  drawGraph('weight-graph','#30d158',[62,61.5,61.8,61.2,60.8,60.5,60.2,59.8,59.5,59.2,58.8,58.4],57,5);
+  showScreen('health-screen');
+}
+
+function drawGraph(id,color,vals,base,range){
+  var el=document.getElementById(id);
+  if(!el)return;
+  base=base||0;range=range||100;
+  var pts='';
+  vals.forEach(function(v,i){var x=i*(300/11);var y=60-(v-base)*(60/range);pts+=i===0?(x+','+y):('L'+x+','+y);});
+  el.innerHTML='<path d="M'+pts+'" fill="none" stroke="'+color+'" stroke-width="2" stroke-linecap="round"/>';
+}
+
+document.getElementById('health-screen').addEventListener('touchend',function(){
+  _healthTaps++;clearTimeout(_healthTapT);
+  if(_healthTaps>=3){_healthTaps=0;if(currentUser)showChatScreen();else showClock();return;}
+  _healthTapT=setTimeout(function(){_healthTaps=0;},1500);
+},{passive:true});
 
 // 時間帯背景
 function updateChatBg(){
@@ -596,138 +580,41 @@ function updateChatBg(){
   else if(h>=17&&h<20)cs.classList.add('time-evening');
   else cs.classList.add('time-night');
 }
-setInterval(updateChatBg,60000);
 
-// ヘルスケア
-var healthTaps=0,healthTapT=null;
-
-function showHealth(){
-  var d=new Date();
-  document.getElementById('health-date').textContent=(d.getMonth()+1)+'月'+d.getDate()+'日（'+'日月火水木金土'[d.getDay()]+'）';
-  updateHealthNums();drawHealthGraphs();
-  showScreen('health-screen');
-}
-
-function updateHealthNums(){
-  var now=new Date();
-  var prog=(now.getHours()*60+now.getMinutes())/(24*60);
-  var steps=Math.floor(7500*Math.max(prog,0.05)+Math.random()*20);
-  document.getElementById('health-steps').textContent=steps.toLocaleString();
-  var bpm=65+Math.floor(Math.random()*15);
-  document.getElementById('health-heart').textContent=bpm;
-}
-
-function drawHealthGraphs(){
-  var sg=document.getElementById('steps-graph');
-  var sv=[15,40,25,55,75,50,65,80,60,85,70,88];
-  var sp='M';sv.forEach(function(v,i){var x=i*(300/11);var y=60-v*0.58;sp+=i===0?(x+','+y):('L'+x+','+y);});
-  sg.innerHTML='<defs><linearGradient id="sg1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#007aff" stop-opacity="0.3"/><stop offset="100%" stop-color="#007aff" stop-opacity="0"/></linearGradient></defs><path d="'+sp+'L300,60L0,60Z" fill="url(#sg1)"/><path d="'+sp+'" fill="none" stroke="#007aff" stroke-width="2" stroke-linecap="round"/>';
-  var wg=document.getElementById('weight-graph');
-  var wv=[62,61.5,61.8,61.2,60.8,60.5,60.2,59.8,59.5,59.2,58.8,58.4];
-  var wp='M';wv.forEach(function(v,i){var x=i*(300/11);var y=60-(v-57)*15;wp+=i===0?(x+','+y):('L'+x+','+y);});
-  wg.innerHTML='<defs><linearGradient id="wg1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#30d158" stop-opacity="0.3"/><stop offset="100%" stop-color="#30d158" stop-opacity="0"/></linearGradient></defs><path d="'+wp+'L300,60L0,60Z" fill="url(#wg1)"/><path d="'+wp+'" fill="none" stroke="#30d158" stroke-width="2" stroke-linecap="round"/>';
-}
-
-setInterval(function(){
-  if(document.getElementById('health-screen').style.display!=='none')updateHealthNums();
-},5000);
-
-document.getElementById('health-screen').addEventListener('touchend',function(e){e.stopPropagation();
-  healthTaps++;clearTimeout(healthTapT);
-  if(healthTaps>=3){healthTaps=0;if(currentUser)showChatScreen();else showClock();return;}
-  healthTapT=setTimeout(function(){healthTaps=0;},1500);
-});
-document.getElementById('health-screen').addEventListener('click',function(){
-  healthTaps++;clearTimeout(healthTapT);
-  if(healthTaps>=3){healthTaps=0;if(currentUser)showChatScreen();else showClock();return;}
-  healthTapT=setTimeout(function(){healthTaps=0;},1500);
-});
-
-// シェイク
-var lastShake=0;
-window.addEventListener('devicemotion',function(e){
-  var a=e.accelerationIncludingGravity;if(!a)return;
-  var f=Math.abs(a.x)+Math.abs(a.y)+Math.abs(a.z);
-  if(f>40){var n=Date.now();if(n-lastShake>2000){lastShake=n;
-    if(document.getElementById('chat-screen').style.display!=='none')showHealth();}}
-});
-
-// 3分タイマー
-var inactTimer=null;
-function resetTimer(){
-  clearTimeout(inactTimer);
-  if(document.getElementById('chat-screen').style.display!=='none'){
-    inactTimer=setTimeout(function(){showClock();},180000);
-  }
-}
-document.getElementById('chat-screen').addEventListener('touchstart',resetTimer,{passive:true});
-document.getElementById('chat-screen').addEventListener('click',resetTimer);
-
-// アニメーション
+// アニメ
 function triggerAnim(type){
   var ov=document.getElementById('msg-anim-overlay');
-  ov.innerHTML='';ov.className='active';
+  if(!ov)return;
+  ov.innerHTML='';ov.style.display='block';
+  var items=[];
   if(type==='heart'){
-    ov.style.cssText='display:block;background:rgba(255,182,193,0);transition:background 0.5s';
-    setTimeout(function(){ov.style.background='rgba(255,182,193,0.12)';},50);
-    for(var i=0;i<20;i++){(function(i){
-      var h=document.createElement('div');
-      h.style.cssText='position:absolute;left:'+Math.random()*100+'%;bottom:-40px;font-size:'+(14+Math.random()*26)+'px;animation:heartFloat '+(2+Math.random()*3)+'s ease-out forwards;animation-delay:'+(Math.random()*1.5)+'s';
-      h.textContent=Math.random()>0.4?'💕':'🩷';ov.appendChild(h);
-    })(i);}
-    var big=document.createElement('div');
-    big.style.cssText='position:absolute;top:42%;left:50%;transform:translate(-50%,-50%);font-size:65px;animation:heartFloat 2.5s ease-out forwards';
-    big.textContent='💗';ov.appendChild(big);
-    setTimeout(function(){ov.className='';ov.style.background='';},4000);
+    for(var i=0;i<18;i++){
+      var el=document.createElement('div');
+      el.style.cssText='position:absolute;left:'+Math.random()*100+'%;bottom:-40px;font-size:'+(16+Math.random()*24)+'px;animation:heartFloat '+(2+Math.random()*2)+'s ease-out forwards;animation-delay:'+(Math.random()*1)+'s';
+      el.textContent=Math.random()>0.4?'💕':'🩷';ov.appendChild(el);
+    }
+    setTimeout(function(){ov.style.display='none';ov.innerHTML='';},4000);
   } else if(type==='petal'){
-    ov.style.display='block';
-    for(var i=0;i<20;i++){(function(){
-      var p=document.createElement('div');
-      p.style.cssText='position:absolute;left:'+Math.random()*100+'%;top:-20px;font-size:'+(14+Math.random()*14)+'px;animation:petalDrift '+(4+Math.random()*4)+'s ease-in forwards;animation-delay:'+(Math.random()*2)+'s';
-      p.textContent=Math.random()>0.5?'🌸':'🌺';ov.appendChild(p);
-    })();}
-    setTimeout(function(){ov.className='';},7000);
+    for(var i=0;i<18;i++){
+      var el=document.createElement('div');
+      el.style.cssText='position:absolute;left:'+Math.random()*100+'%;top:-20px;font-size:'+(12+Math.random()*12)+'px;animation:petalDrift '+(4+Math.random()*3)+'s ease-in forwards;animation-delay:'+(Math.random()*2)+'s';
+      el.textContent=Math.random()>0.5?'🌸':'✿';ov.appendChild(el);
+    }
+    setTimeout(function(){ov.style.display='none';ov.innerHTML='';},7000);
   } else if(type==='star'){
-    ov.style.cssText='display:block;background:rgba(0,0,20,0);transition:background 1s';
-    setTimeout(function(){ov.style.background='rgba(0,0,20,0.65)';},50);
-    for(var i=0;i<30;i++){(function(){
-      var s=document.createElement('div');
-      s.style.cssText='position:absolute;left:'+Math.random()*100+'%;top:-20px;font-size:'+(10+Math.random()*16)+'px;animation:starFall '+(3+Math.random()*4)+'s ease-in forwards;animation-delay:'+(Math.random()*2)+'s';
-      s.textContent=Math.random()>0.5?'⭐':'✨';ov.appendChild(s);
-    })();}
-    var m=document.createElement('div');
-    m.style.cssText='position:absolute;top:18%;left:50%;transform:translateX(-50%);font-size:50px;animation:nightShow 4s ease forwards';
-    m.textContent='🌙';ov.appendChild(m);
-    setTimeout(function(){ov.className='';ov.style.background='';},6000);
+    for(var i=0;i<20;i++){
+      var el=document.createElement('div');
+      el.style.cssText='position:absolute;left:'+Math.random()*100+'%;top:-20px;font-size:'+(10+Math.random()*14)+'px;animation:starFall '+(3+Math.random()*3)+'s ease-in forwards;animation-delay:'+(Math.random()*2)+'s';
+      el.textContent=Math.random()>0.5?'⭐':'✨';ov.appendChild(el);
+    }
+    setTimeout(function(){ov.style.display='none';ov.innerHTML='';},6000);
   } else if(type==='rain'){
-    ov.style.display='block';
-    for(var i=0;i<40;i++){(function(){
-      var r=document.createElement('div');
-      r.style.cssText='position:absolute;left:'+Math.random()*100+'%;top:-15px;width:1.5px;height:'+(18+Math.random()*22)+'px;background:rgba(100,160,255,0.55);animation:rainDrop '+(0.5+Math.random()*0.6)+'s linear infinite;animation-delay:'+(Math.random()*1)+'s';
-      ov.appendChild(r);
-    })();}
-    setTimeout(function(){ov.className='';},4000);
-  } else if(type==='rainbow'){
-    ov.style.display='block';
-    var cols=['rgba(255,80,80,0.45)','rgba(255,160,60,0.4)','rgba(255,220,60,0.38)','rgba(80,200,80,0.38)','rgba(80,100,255,0.38)','rgba(160,80,220,0.38)'];
-    cols.forEach(function(col,i){
-      var rb=document.createElement('div');
-      rb.style.cssText='position:absolute;top:'+(14+i*2.5)+'%;left:-20%;width:140%;height:180px;border-radius:50%;border-top:9px solid '+col+';border-left:9px solid transparent;border-right:9px solid transparent;animation:rainbowShow 3s ease forwards;animation-delay:'+(i*0.07)+'s';
-      ov.appendChild(rb);
-    });
-    setTimeout(function(){ov.className='';},4000);
-  } else if(type==='night'){
-    ov.style.cssText='display:block;background:rgba(0,0,25,0);transition:background 1s';
-    setTimeout(function(){ov.style.background='rgba(0,0,25,0.68)';},50);
-    for(var i=0;i<40;i++){(function(){
-      var s=document.createElement('div');
-      s.style.cssText='position:absolute;left:'+Math.random()*100+'%;top:'+Math.random()*65+'%;font-size:'+(4+Math.random()*9)+'px;color:rgba(255,255,'+(180+Math.floor(Math.random()*75))+','+(0.4+Math.random()*0.6)+');animation:nightShow 3s ease forwards;animation-delay:'+(Math.random()*1.5)+'s';
-      s.textContent='✦';ov.appendChild(s);
-    })();}
-    var moon=document.createElement('div');
-    moon.style.cssText='position:absolute;top:14%;right:16%;font-size:46px;animation:nightShow 4s ease forwards';
-    moon.textContent='🌕';ov.appendChild(moon);
-    setTimeout(function(){ov.className='';ov.style.background='';},5000);
+    for(var i=0;i<35;i++){
+      var el=document.createElement('div');
+      el.style.cssText='position:absolute;left:'+Math.random()*100+'%;top:-15px;width:1.5px;height:'+(18+Math.random()*20)+'px;background:rgba(100,160,255,0.5);animation:rainDrop '+(0.5+Math.random()*0.5)+'s linear infinite;animation-delay:'+(Math.random()*1)+'s';
+      ov.appendChild(el);
+    }
+    setTimeout(function(){ov.style.display='none';ov.innerHTML='';},4000);
   }
 }
 
@@ -737,75 +624,85 @@ function checkAnim(text){
   else if(text.includes('好き'))triggerAnim('petal');
   else if(text.includes('おやすみ'))triggerAnim('star');
   else if(text.includes('雨'))triggerAnim('rain');
-  else if(text.includes('虹'))triggerAnim('rainbow');
-  else if(text.includes('月')||text.includes('星'))triggerAnim('night');
 }
 
+// 3分タイマー
+var _inactT=null;
+function resetInactTimer(){
+  clearTimeout(_inactT);
+  _inactT=setTimeout(function(){
+    if(document.getElementById('chat-screen').style.display!=='none')showClock();
+  },180000);
+}
+document.getElementById('chat-screen').addEventListener('touchstart',resetInactTimer,{passive:true});
 
+// シェイク
+var _lastShake=0;
+window.addEventListener('devicemotion',function(e){
+  var a=e.accelerationIncludingGravity;if(!a)return;
+  var f=Math.abs(a.x)+Math.abs(a.y)+Math.abs(a.z);
+  if(f>40){var n=Date.now();if(n-_lastShake>2000){_lastShake=n;
+    if(document.getElementById('chat-screen').style.display!=='none')showHealth();
+  }}
+},{passive:true});
+
+// showChatScreen に機能追加
+var _origShowChatScreen=showChatScreen;
+async function showChatScreen(){
+  await _origShowChatScreen();
+  updateChatBg();
+  resetInactTimer();
+}
+
+// sendMsg にアニメ追加
+var _origSendMsg=sendMsg;
+async function sendMsg(){
+  var txt=document.getElementById('chat-input').value.trim();
+  await _origSendMsg();
+  if(txt)setTimeout(function(){checkAnim(txt);},300);
+}
 
 // 初期化
 setThemeIcon('sea');
 const overlay=document.getElementById('fade-overlay');
 showScreen('clock-screen');checkUnread();loadTheme();
 setTimeout(()=>{overlay.style.opacity='0';setTimeout(()=>overlay.style.display='none',400)},300);
-updateChatBg();
 </script>
 
-<div id="msg-anim-overlay"></div>
-<div class="screen" id="health-screen">
-  <div class="health-header">
+<div id="msg-anim-overlay" style="position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1000;overflow:hidden;display:none"></div>
+<div class="screen" id="health-screen" style="background:#f2f2f7;justify-content:flex-start;overflow-y:auto">
+  <div style="width:100%;background:#fff;padding:16px 20px 12px;border-bottom:1px solid rgba(0,0,0,0.1);position:sticky;top:0;z-index:10">
     <div style="display:flex;align-items:center;justify-content:space-between">
-      <div>
-        <div class="health-title">HealthCheck</div>
-        <div class="health-subtitle" id="health-date"></div>
-      </div>
+      <div><div style="font-size:17px;font-weight:600;color:#000">HealthCheck</div><div id="health-date" style="font-size:13px;color:#8e8e93;margin-top:2px"></div></div>
       <div style="width:32px;height:32px;background:#f2f2f7;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px">👤</div>
     </div>
   </div>
-  <div class="health-body">
-    <div class="health-card">
-      <div class="health-card-title">歩数 <span class="health-card-icon">🦶</span></div>
-      <div class="health-card-value" id="health-steps">8,432</div>
-      <div class="health-card-unit">歩 / 目標 10,000歩</div>
-      <svg class="health-graph" id="steps-graph" viewBox="0 0 300 60"></svg>
+  <div style="width:100%;padding:16px;display:flex;flex-direction:column;gap:12px">
+    <div style="background:#fff;border-radius:16px;padding:16px;box-shadow:0 1px 3px rgba(0,0,0,0.08)">
+      <div style="font-size:12px;font-weight:600;color:#8e8e93;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px">歩数 <span style="float:right;font-size:20px">🦶</span></div>
+      <div id="health-steps" style="font-size:36px;font-weight:300;color:#000;line-height:1">8,432</div>
+      <div style="font-size:14px;color:#8e8e93;margin-top:4px">歩 / 目標 10,000歩</div>
+      <svg id="steps-graph" viewBox="0 0 300 60" style="width:100%;height:60px;margin-top:8px"></svg>
     </div>
-    <div class="health-summary">
-      <div class="health-card">
-        <div class="health-card-title">心拍数 <span class="health-card-icon">❤️</span></div>
-        <div class="health-card-value" id="health-heart">72</div>
-        <div class="health-card-unit">BPM</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+      <div style="background:#fff;border-radius:16px;padding:16px;box-shadow:0 1px 3px rgba(0,0,0,0.08)">
+        <div style="font-size:12px;font-weight:600;color:#8e8e93;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px">心拍数 <span>❤️</span></div>
+        <div id="health-heart" style="font-size:36px;font-weight:300;color:#000;line-height:1">72</div>
+        <div style="font-size:14px;color:#8e8e93;margin-top:4px">BPM</div>
       </div>
-      <div class="health-card">
-        <div class="health-card-title">睡眠 <span class="health-card-icon">🌙</span></div>
-        <div class="health-card-value">6.5</div>
-        <div class="health-card-unit">時間</div>
-      </div>
-    </div>
-    <div class="health-card">
-      <div class="health-card-title">アクティビティ <span class="health-card-icon">🏃</span></div>
-      <div class="health-ring-wrap">
-        <svg width="80" height="80" viewBox="0 0 80 80">
-          <circle cx="40" cy="40" r="34" fill="none" stroke="#f2f2f7" stroke-width="8"/>
-          <circle cx="40" cy="40" r="34" fill="none" stroke="#ff3b30" stroke-width="8" stroke-dasharray="180 214" stroke-dashoffset="-53" stroke-linecap="round"/>
-          <circle cx="40" cy="40" r="26" fill="none" stroke="#f2f2f7" stroke-width="7"/>
-          <circle cx="40" cy="40" r="26" fill="none" stroke="#30d158" stroke-width="7" stroke-dasharray="130 163" stroke-dashoffset="-41" stroke-linecap="round"/>
-          <circle cx="40" cy="40" r="19" fill="none" stroke="#f2f2f7" stroke-width="6"/>
-          <circle cx="40" cy="40" r="19" fill="none" stroke="#007aff" stroke-width="6" stroke-dasharray="90 119" stroke-dashoffset="-30" stroke-linecap="round"/>
-        </svg>
-        <div class="health-ring-labels">
-          <div class="health-ring-label"><div class="health-ring-dot" style="background:#ff3b30"></div>ムーブ 480kcal</div>
-          <div class="health-ring-label"><div class="health-ring-dot" style="background:#30d158"></div>エクササイズ 32分</div>
-          <div class="health-ring-label"><div class="health-ring-dot" style="background:#007aff"></div>スタンド 9時間</div>
-        </div>
+      <div style="background:#fff;border-radius:16px;padding:16px;box-shadow:0 1px 3px rgba(0,0,0,0.08)">
+        <div style="font-size:12px;font-weight:600;color:#8e8e93;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px">睡眠 <span>🌙</span></div>
+        <div style="font-size:36px;font-weight:300;color:#000;line-height:1">6.5</div>
+        <div style="font-size:14px;color:#8e8e93;margin-top:4px">時間</div>
       </div>
     </div>
-    <div class="health-card">
-      <div class="health-card-title">体重 <span class="health-card-icon">⚖️</span></div>
-      <div class="health-card-value">58.4</div>
-      <div class="health-card-unit">kg</div>
-      <svg class="health-graph" id="weight-graph" viewBox="0 0 300 60"></svg>
+    <div style="background:#fff;border-radius:16px;padding:16px;box-shadow:0 1px 3px rgba(0,0,0,0.08)">
+      <div style="font-size:12px;font-weight:600;color:#8e8e93;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px">体重 <span style="float:right;font-size:20px">⚖️</span></div>
+      <div style="font-size:36px;font-weight:300;color:#000;line-height:1">58.4</div>
+      <div style="font-size:14px;color:#8e8e93;margin-top:4px">kg</div>
+      <svg id="weight-graph" viewBox="0 0 300 60" style="width:100%;height:60px;margin-top:8px"></svg>
     </div>
-    <div class="health-tap-hint">画面を3回タップで戻る</div>
+    <div style="text-align:center;color:#c7c7cc;font-size:12px;padding:20px 0 40px">画面を3回タップで戻る</div>
   </div>
 </div>
 </body></html>
