@@ -7,6 +7,16 @@
 .theme-winter{background:linear-gradient(160deg,#ffffff 0%,#e3f2fd 25%,#bbdefb 50%,#90caf9 75%,#5c9fd4 100%)}
 .theme-tropical{background:linear-gradient(160deg,#fffde7 0%,#fff59d 20%,#4dd0e1 50%,#00acc1 75%,#006064 100%)}
 .theme-mist{background:linear-gradient(160deg,#fafafa 0%,#eceff1 25%,#cfd8dc 50%,#90a4ae 75%,#546e7a 100%)}
+.theme-aurora{background:linear-gradient(160deg,#0a0a2e 0%,#0d3b4b 20%,#0e6655 40%,#1abc9c 60%,#6c3483 80%,#1a0a3e 100%)}
+.theme-rose{background:linear-gradient(160deg,#fff5f5 0%,#fecdd3 20%,#fda4af 40%,#e11d48 65%,#881337 100%)}
+.theme-lavender{background:linear-gradient(160deg,#faf5ff 0%,#e9d5ff 20%,#c4b5fd 40%,#8b5cf6 65%,#5b21b6 100%)}
+.theme-ocean{background:linear-gradient(160deg,#0c1445 0%,#122a6b 20%,#1e3a8a 40%,#1d4ed8 60%,#06b6d4 85%,#67e8f9 100%)}
+.theme-amber{background:linear-gradient(160deg,#fffbeb 0%,#fde68a 20%,#f59e0b 40%,#d97706 60%,#92400e 85%)}
+.theme-moonlight{background:linear-gradient(160deg,#0f0f23 0%,#1a1a3e 25%,#2d2b55 45%,#4a3f6b 65%,#c9b8db 90%)}
+.theme-coral{background:linear-gradient(160deg,#fff7ed 0%,#fed7aa 20%,#fb923c 40%,#ea580c 60%,#9a3412 85%)}
+.theme-wine{background:linear-gradient(160deg,#fdf2f8 0%,#e8b4cb 20%,#9f1239 45%,#6b0f28 65%,#2a0a1a 90%)}
+.theme-cosmos{background:linear-gradient(160deg,#030014 0%,#0a0028 20%,#1e0050 40%,#4c1d95 55%,#7c3aed 70%,#c084fc 90%)}
+.theme-starlight{background:linear-gradient(160deg,#0c0c1d 0%,#141432 20%,#1e1e4a 40%,#2d2b5e 55%,#f0c27f 85%,#ffecd2 100%)}
 
 /* 海デコ */
 #clock-screen::before{content:'';position:absolute;bottom:0;left:0;right:0;height:45%;background:linear-gradient(180deg,transparent 0%,rgba(26,110,160,0.15) 40%,rgba(10,80,130,0.25) 100%);opacity:0;transition:opacity 0.8s;pointer-events:none;z-index:1}
@@ -47,7 +57,7 @@
 
 /* テーマ選択パネル */
 #theme-overlay{position:fixed;inset:0;z-index:100;display:none;align-items:flex-end;justify-content:center;background:rgba(0,0,0,0.5);backdrop-filter:blur(8px)}
-.theme-panel{background:rgba(255,255,255,0.97);border-radius:24px 24px 0 0;padding:24px 20px 40px;width:100%;max-width:500px}
+.theme-panel{background:rgba(255,255,255,0.97);border-radius:24px 24px 0 0;padding:24px 20px 40px;width:100%;max-width:500px;max-height:75vh;overflow-y:auto;-webkit-overflow-scrolling:touch}
 .theme-panel-title{text-align:center;color:#888;font-size:11px;letter-spacing:3px;text-transform:uppercase;margin-bottom:24px}
 .theme-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:24px}
 .theme-item{display:flex;flex-direction:column;align-items:center;gap:8px;cursor:pointer;padding:10px 4px;border-radius:16px;transition:background 0.15s}
@@ -266,6 +276,126 @@ const THEMES=[
       hourColor:'rgba(55,71,79,0.95)',minuteColor:'rgba(69,90,100,0.85)',secondColor:'#bf360c',
       centerColor:'#455a64',tickColor:'rgba(60,80,90,0.35)',numColor:'rgba(50,70,80,0.7)'
     }
+  },
+  {
+    id:'aurora',label:'Aurora',
+    dateColor:'rgba(100,255,218,0.8)',badgeColor:'rgba(100,255,218,0.7)',
+    icon:`<svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="26" cy="26" r="26" fill="url(#aui)"/><defs><linearGradient id="aui" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0e6655"/><stop offset="50%" stop-color="#1abc9c"/><stop offset="100%" stop-color="#6c3483"/></linearGradient></defs><path d="M10 34 Q18 18 26 28 Q34 14 42 30" stroke="rgba(100,255,218,0.8)" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M12 36 Q20 24 28 32 Q36 20 40 34" stroke="rgba(167,139,250,0.5)" stroke-width="1.5" fill="none" stroke-linecap="round"/><circle cx="36" cy="16" r="1.2" fill="rgba(255,255,255,0.9)"/><circle cx="18" cy="14" r="0.8" fill="rgba(255,255,255,0.7)"/></svg>`,
+    preview:`<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#pa)"/><defs><linearGradient id="pa" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0e6655"/><stop offset="50%" stop-color="#1abc9c"/><stop offset="100%" stop-color="#6c3483"/></linearGradient></defs><path d="M10 34 Q18 18 26 28 Q34 14 42 30" stroke="rgba(100,255,218,0.7)" stroke-width="2" fill="none" stroke-linecap="round"/></svg>`,
+    clock:{
+      type:'minimal',
+      face:'rgba(255,255,255,0.06)',faceStroke:'rgba(100,255,218,0.4)',
+      hourColor:'rgba(100,255,218,0.95)',minuteColor:'rgba(167,139,250,0.85)',secondColor:'#f472b6',
+      centerColor:'#1abc9c',tickColor:'rgba(100,255,218,0.35)',numColor:'rgba(100,255,218,0.7)'
+    }
+  },
+  {
+    id:'rose',label:'Rose',
+    dateColor:'rgba(136,19,55,0.75)',badgeColor:'rgba(136,19,55,0.6)',
+    icon:`<svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="26" cy="26" r="26" fill="url(#roi)"/><defs><radialGradient id="roi" cx="40%" cy="35%"><stop offset="0%" stop-color="#fda4af"/><stop offset="100%" stop-color="#881337"/></radialGradient></defs><g transform="translate(26,24)"><path d="M0,-4 C3,-8 7,-6 5,-2 C8,-5 9,0 6,3 C9,2 8,6 4,6 C7,8 3,10 0,7 C-3,10 -7,8 -4,6 C-8,6 -9,2 -6,3 C-9,0 -8,-5 -5,-2 C-7,-6 -3,-8 0,-4Z" fill="rgba(255,255,255,0.85)"/><circle cx="0" cy="1" r="2.5" fill="rgba(255,180,190,0.9)"/></g><path d="M22 36 Q26 30 30 36" stroke="rgba(255,255,255,0.4)" stroke-width="1" fill="none"/></svg>`,
+    preview:`<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#pr)"/><defs><radialGradient id="pr" cx="40%" cy="35%"><stop offset="0%" stop-color="#fda4af"/><stop offset="100%" stop-color="#881337"/></radialGradient></defs><g transform="translate(26,24)"><path d="M0,-4 C3,-8 7,-6 5,-2 C8,-5 9,0 6,3 C9,2 8,6 4,6 C7,8 3,10 0,7 C-3,10 -7,8 -4,6 C-8,6 -9,2 -6,3 C-9,0 -8,-5 -5,-2 C-7,-6 -3,-8 0,-4Z" fill="rgba(255,255,255,0.8)"/><circle cx="0" cy="1" r="2.5" fill="rgba(255,180,190,0.85)"/></g></svg>`,
+    clock:{
+      type:'luxury',
+      face:'rgba(255,255,255,0.12)',faceStroke:'rgba(253,164,175,0.5)',
+      hourColor:'rgba(136,19,55,0.95)',minuteColor:'rgba(225,29,72,0.85)',secondColor:'#fda4af',
+      centerColor:'#e11d48',tickColor:'rgba(136,19,55,0.4)',numColor:'rgba(136,19,55,0.75)'
+    }
+  },
+  {
+    id:'lavender',label:'Lavender',
+    dateColor:'rgba(91,33,182,0.7)',badgeColor:'rgba(91,33,182,0.55)',
+    icon:`<svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="26" cy="26" r="26" fill="url(#lai)"/><defs><radialGradient id="lai" cx="40%" cy="35%"><stop offset="0%" stop-color="#c4b5fd"/><stop offset="100%" stop-color="#5b21b6"/></radialGradient></defs><g transform="translate(26,20)"><ellipse cx="-3" cy="0" rx="2.5" ry="4" fill="rgba(255,255,255,0.8)" transform="rotate(-15)"/><ellipse cx="3" cy="0" rx="2.5" ry="4" fill="rgba(255,255,255,0.7)" transform="rotate(15)"/><ellipse cx="0" cy="-5" rx="2" ry="3.5" fill="rgba(255,255,255,0.85)"/><ellipse cx="-5" cy="3" rx="2" ry="3" fill="rgba(255,255,255,0.6)" transform="rotate(-25)"/><ellipse cx="5" cy="3" rx="2" ry="3" fill="rgba(255,255,255,0.6)" transform="rotate(25)"/></g><line x1="26" y1="28" x2="26" y2="40" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round"/></svg>`,
+    preview:`<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#pl)"/><defs><radialGradient id="pl" cx="40%" cy="35%"><stop offset="0%" stop-color="#c4b5fd"/><stop offset="100%" stop-color="#5b21b6"/></radialGradient></defs><g transform="translate(26,22)"><ellipse cx="-3" cy="0" rx="2.5" ry="4" fill="rgba(255,255,255,0.75)" transform="rotate(-15)"/><ellipse cx="3" cy="0" rx="2.5" ry="4" fill="rgba(255,255,255,0.65)" transform="rotate(15)"/><ellipse cx="0" cy="-5" rx="2" ry="3.5" fill="rgba(255,255,255,0.8)"/></g></svg>`,
+    clock:{
+      type:'luxury',
+      face:'rgba(255,255,255,0.1)',faceStroke:'rgba(196,181,253,0.5)',
+      hourColor:'rgba(91,33,182,0.95)',minuteColor:'rgba(139,92,246,0.85)',secondColor:'#f472b6',
+      centerColor:'#8b5cf6',tickColor:'rgba(91,33,182,0.35)',numColor:'rgba(91,33,182,0.75)'
+    }
+  },
+  {
+    id:'ocean',label:'Deep Sea',
+    dateColor:'rgba(103,232,249,0.8)',badgeColor:'rgba(103,232,249,0.7)',
+    icon:`<svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="26" cy="26" r="26" fill="url(#oci)"/><defs><linearGradient id="oci" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1e3a8a"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient></defs><path d="M12 30 Q17 26 22 30 Q27 34 32 30 Q37 26 42 30" stroke="rgba(103,232,249,0.7)" stroke-width="1.5" fill="none" stroke-linecap="round"/><path d="M10 35 Q15 31 20 35 Q25 39 30 35 Q35 31 40 35" stroke="rgba(103,232,249,0.4)" stroke-width="1" fill="none" stroke-linecap="round"/><circle cx="20" cy="20" r="3" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1"/><circle cx="34" cy="18" r="2" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="0.8"/></svg>`,
+    preview:`<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#po)"/><defs><linearGradient id="po" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1e3a8a"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient></defs><path d="M12 30 Q17 26 22 30 Q27 34 32 30 Q37 26 42 30" stroke="rgba(103,232,249,0.6)" stroke-width="1.5" fill="none" stroke-linecap="round"/><circle cx="22" cy="20" r="3" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1"/></svg>`,
+    clock:{
+      type:'geometric',
+      face:'rgba(255,255,255,0.06)',faceStroke:'rgba(103,232,249,0.4)',
+      hourColor:'rgba(103,232,249,0.95)',minuteColor:'rgba(56,189,248,0.85)',secondColor:'#fbbf24',
+      centerColor:'#06b6d4',tickColor:'rgba(103,232,249,0.3)',numColor:'rgba(103,232,249,0.75)'
+    }
+  },
+  {
+    id:'amber',label:'Amber',
+    dateColor:'rgba(120,53,15,0.8)',badgeColor:'rgba(120,53,15,0.65)',
+    icon:`<svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="26" cy="26" r="26" fill="url(#ami)"/><defs><radialGradient id="ami" cx="40%" cy="35%"><stop offset="0%" stop-color="#fde68a"/><stop offset="100%" stop-color="#92400e"/></radialGradient></defs><circle cx="26" cy="22" r="8" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"/><circle cx="26" cy="22" r="4" fill="rgba(255,220,100,0.9)"/><path d="M18 34 Q22 30 26 34 Q30 30 34 34" stroke="rgba(255,255,255,0.5)" stroke-width="1" fill="none" stroke-linecap="round"/></svg>`,
+    preview:`<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#pam)"/><defs><radialGradient id="pam" cx="40%" cy="35%"><stop offset="0%" stop-color="#fde68a"/><stop offset="100%" stop-color="#92400e"/></radialGradient></defs><circle cx="26" cy="22" r="8" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"/><circle cx="26" cy="22" r="4" fill="rgba(255,220,100,0.85)"/></svg>`,
+    clock:{
+      type:'luxury',
+      face:'rgba(255,255,255,0.15)',faceStroke:'rgba(253,230,138,0.5)',
+      hourColor:'rgba(120,53,15,0.95)',minuteColor:'rgba(217,119,6,0.88)',secondColor:'#dc2626',
+      centerColor:'#d97706',tickColor:'rgba(146,64,14,0.4)',numColor:'rgba(120,53,15,0.8)'
+    }
+  },
+  {
+    id:'moonlight',label:'Moonlight',
+    dateColor:'rgba(201,184,219,0.85)',badgeColor:'rgba(201,184,219,0.75)',
+    icon:`<svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="26" cy="26" r="26" fill="url(#mli)"/><defs><radialGradient id="mli" cx="50%" cy="40%"><stop offset="0%" stop-color="#4a3f6b"/><stop offset="100%" stop-color="#0f0f23"/></radialGradient></defs><circle cx="26" cy="22" r="10" fill="rgba(201,184,219,0.15)" stroke="rgba(201,184,219,0.6)" stroke-width="1"/><circle cx="26" cy="22" r="6" fill="rgba(255,250,240,0.9)"/><circle cx="24" cy="20" r="1.5" fill="rgba(201,184,219,0.4)"/><circle cx="28" cy="24" r="1" fill="rgba(201,184,219,0.3)"/><circle cx="14" cy="14" r="0.8" fill="rgba(255,255,255,0.7)"/><circle cx="40" cy="16" r="1" fill="rgba(255,255,255,0.6)"/><circle cx="38" cy="34" r="0.6" fill="rgba(255,255,255,0.5)"/></svg>`,
+    preview:`<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#pml)"/><defs><radialGradient id="pml" cx="50%" cy="40%"><stop offset="0%" stop-color="#4a3f6b"/><stop offset="100%" stop-color="#0f0f23"/></radialGradient></defs><circle cx="26" cy="22" r="6" fill="rgba(255,250,240,0.85)"/><circle cx="24" cy="20" r="1.5" fill="rgba(201,184,219,0.35)"/><circle cx="14" cy="14" r="0.8" fill="rgba(255,255,255,0.6)"/><circle cx="40" cy="16" r="1" fill="rgba(255,255,255,0.5)"/></svg>`,
+    clock:{
+      type:'minimal',
+      face:'rgba(255,255,255,0.05)',faceStroke:'rgba(201,184,219,0.35)',
+      hourColor:'rgba(201,184,219,0.95)',minuteColor:'rgba(167,139,250,0.8)',secondColor:'#f9a8d4',
+      centerColor:'#c9b8db',tickColor:'rgba(201,184,219,0.3)',numColor:'rgba(201,184,219,0.7)'
+    }
+  },
+  {
+    id:'coral',label:'Coral',
+    dateColor:'rgba(124,45,18,0.8)',badgeColor:'rgba(124,45,18,0.65)',
+    icon:`<svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="26" cy="26" r="26" fill="url(#coi)"/><defs><radialGradient id="coi" cx="40%" cy="35%"><stop offset="0%" stop-color="#fed7aa"/><stop offset="100%" stop-color="#9a3412"/></radialGradient></defs><path d="M20 36 Q20 26 16 18" stroke="rgba(255,255,255,0.7)" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M26 36 Q26 24 26 16" stroke="rgba(255,255,255,0.8)" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M32 36 Q32 26 36 18" stroke="rgba(255,255,255,0.6)" stroke-width="2" fill="none" stroke-linecap="round"/><circle cx="16" cy="16" r="2.5" fill="rgba(255,255,255,0.7)"/><circle cx="26" cy="14" r="2.5" fill="rgba(255,255,255,0.8)"/><circle cx="36" cy="16" r="2.5" fill="rgba(255,255,255,0.6)"/></svg>`,
+    preview:`<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#pco)"/><defs><radialGradient id="pco" cx="40%" cy="35%"><stop offset="0%" stop-color="#fed7aa"/><stop offset="100%" stop-color="#9a3412"/></radialGradient></defs><path d="M20 38 Q20 26 16 18" stroke="rgba(255,255,255,0.65)" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M26 38 Q26 24 26 16" stroke="rgba(255,255,255,0.75)" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M32 38 Q32 26 36 18" stroke="rgba(255,255,255,0.55)" stroke-width="2" fill="none" stroke-linecap="round"/></svg>`,
+    clock:{
+      type:'geometric',
+      face:'rgba(255,255,255,0.12)',faceStroke:'rgba(251,146,60,0.5)',
+      hourColor:'rgba(154,52,18,0.95)',minuteColor:'rgba(234,88,12,0.85)',secondColor:'#fbbf24',
+      centerColor:'#ea580c',tickColor:'rgba(154,52,18,0.35)',numColor:'rgba(124,45,18,0.8)'
+    }
+  },
+  {
+    id:'wine',label:'Wine',
+    dateColor:'rgba(232,180,203,0.85)',badgeColor:'rgba(232,180,203,0.75)',
+    icon:`<svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="26" cy="26" r="26" fill="url(#wni)"/><defs><linearGradient id="wni" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#e8b4cb"/><stop offset="50%" stop-color="#9f1239"/><stop offset="100%" stop-color="#2a0a1a"/></linearGradient></defs><path d="M20 16 Q20 26 26 28 Q32 26 32 16" stroke="rgba(255,255,255,0.7)" stroke-width="1.5" fill="rgba(255,255,255,0.15)"/><line x1="26" y1="28" x2="26" y2="36" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"/><line x1="20" y1="36" x2="32" y2="36" stroke="rgba(255,255,255,0.6)" stroke-width="1.5" stroke-linecap="round"/></svg>`,
+    preview:`<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#pwn)"/><defs><linearGradient id="pwn" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#e8b4cb"/><stop offset="50%" stop-color="#9f1239"/><stop offset="100%" stop-color="#2a0a1a"/></linearGradient></defs><path d="M20 16 Q20 26 26 28 Q32 26 32 16" stroke="rgba(255,255,255,0.6)" stroke-width="1.5" fill="rgba(255,255,255,0.1)"/><line x1="26" y1="28" x2="26" y2="36" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/></svg>`,
+    clock:{
+      type:'luxury',
+      face:'rgba(255,255,255,0.08)',faceStroke:'rgba(232,180,203,0.4)',
+      hourColor:'rgba(232,180,203,0.95)',minuteColor:'rgba(251,113,133,0.85)',secondColor:'#fde68a',
+      centerColor:'#e8b4cb',tickColor:'rgba(232,180,203,0.3)',numColor:'rgba(232,180,203,0.75)'
+    }
+  },
+  {
+    id:'cosmos',label:'Cosmos',
+    dateColor:'rgba(192,132,252,0.85)',badgeColor:'rgba(192,132,252,0.75)',
+    icon:`<svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="26" cy="26" r="26" fill="url(#csi)"/><defs><radialGradient id="csi" cx="40%" cy="35%"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#030014"/></radialGradient></defs><circle cx="20" cy="18" r="1.5" fill="rgba(255,255,255,0.9)"/><circle cx="36" cy="22" r="1" fill="rgba(255,255,255,0.7)"/><circle cx="28" cy="14" r="0.8" fill="rgba(255,255,255,0.6)"/><circle cx="14" cy="30" r="0.6" fill="rgba(255,255,255,0.5)"/><circle cx="40" cy="34" r="0.8" fill="rgba(255,255,255,0.6)"/><ellipse cx="26" cy="26" rx="14" ry="5" fill="none" stroke="rgba(192,132,252,0.4)" stroke-width="1" transform="rotate(-20,26,26)"/><circle cx="26" cy="26" r="4" fill="rgba(192,132,252,0.6)"/><circle cx="26" cy="26" r="2" fill="rgba(255,240,255,0.9)"/></svg>`,
+    preview:`<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#pcs)"/><defs><radialGradient id="pcs" cx="40%" cy="35%"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#030014"/></radialGradient></defs><circle cx="20" cy="18" r="1.5" fill="rgba(255,255,255,0.8)"/><circle cx="36" cy="22" r="1" fill="rgba(255,255,255,0.6)"/><ellipse cx="26" cy="26" rx="14" ry="5" fill="none" stroke="rgba(192,132,252,0.35)" stroke-width="1" transform="rotate(-20,26,26)"/><circle cx="26" cy="26" r="4" fill="rgba(192,132,252,0.5)"/><circle cx="26" cy="26" r="2" fill="rgba(255,240,255,0.85)"/></svg>`,
+    clock:{
+      type:'geometric',
+      face:'rgba(255,255,255,0.04)',faceStroke:'rgba(192,132,252,0.35)',
+      hourColor:'rgba(192,132,252,0.95)',minuteColor:'rgba(167,139,250,0.85)',secondColor:'#f9a8d4',
+      centerColor:'#c084fc',tickColor:'rgba(192,132,252,0.3)',numColor:'rgba(192,132,252,0.75)'
+    }
+  },
+  {
+    id:'starlight',label:'Starlight',
+    dateColor:'rgba(240,194,127,0.85)',badgeColor:'rgba(240,194,127,0.75)',
+    icon:`<svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="26" cy="26" r="26" fill="url(#sli)"/><defs><linearGradient id="sli" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1e1e4a"/><stop offset="100%" stop-color="#f0c27f"/></linearGradient></defs><path d="M26 14 L27.5 20 L34 20.5 L29 24.5 L30.5 31 L26 27 L21.5 31 L23 24.5 L18 20.5 L24.5 20Z" fill="rgba(255,236,210,0.9)" stroke="rgba(255,255,255,0.5)" stroke-width="0.5"/><circle cx="16" cy="18" r="1" fill="rgba(255,255,255,0.7)"/><circle cx="38" cy="16" r="0.8" fill="rgba(255,255,255,0.6)"/><circle cx="12" cy="30" r="0.6" fill="rgba(255,255,255,0.5)"/></svg>`,
+    preview:`<svg viewBox="0 0 52 52" fill="none"><circle cx="26" cy="26" r="26" fill="url(#psl)"/><defs><linearGradient id="psl" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1e1e4a"/><stop offset="100%" stop-color="#f0c27f"/></linearGradient></defs><path d="M26 14 L27.5 20 L34 20.5 L29 24.5 L30.5 31 L26 27 L21.5 31 L23 24.5 L18 20.5 L24.5 20Z" fill="rgba(255,236,210,0.85)"/><circle cx="16" cy="18" r="1" fill="rgba(255,255,255,0.6)"/><circle cx="38" cy="16" r="0.8" fill="rgba(255,255,255,0.5)"/></svg>`,
+    clock:{
+      type:'luxury',
+      face:'rgba(255,255,255,0.06)',faceStroke:'rgba(240,194,127,0.4)',
+      hourColor:'rgba(240,194,127,0.95)',minuteColor:'rgba(255,236,210,0.85)',secondColor:'#f472b6',
+      centerColor:'#f0c27f',tickColor:'rgba(240,194,127,0.3)',numColor:'rgba(240,194,127,0.75)'
+    }
   }
 ];
 
@@ -431,36 +561,62 @@ async function applyTheme(themeId,save){
 }
 
 function updateDecorations(themeId){
-  document.querySelectorAll('.star').forEach(s=>s.remove());
-  if(themeId==='night'){
-    const cs=document.getElementById('clock-screen');
-    for(let i=0;i<40;i++){
-      const s=document.createElement('div');s.className='star';
-      const sz=Math.random()*3+1;
-      s.style.cssText=`width:${sz}px;height:${sz}px;top:${Math.random()*70}%;left:${Math.random()*100}%;animation:twinkle ${2+Math.random()*3}s ease-in-out infinite;animation-delay:${Math.random()*3}s;position:absolute;border-radius:50%;background:#fff;pointer-events:none`;
+  var darkThemes=['night','aurora','ocean','moonlight','wine','cosmos','starlight'];
+  document.querySelectorAll('.star').forEach(function(s){s.remove()});
+  if(darkThemes.indexOf(themeId)!==-1){
+    var cs=document.getElementById('clock-screen');
+    var starCount=themeId==='cosmos'?55:themeId==='night'?40:25;
+    for(var i=0;i<starCount;i++){
+      var s=document.createElement('div');s.className='star';
+      var sz=Math.random()*3+0.8;
+      s.style.cssText='width:'+sz+'px;height:'+sz+'px;top:'+Math.random()*70+'%;left:'+Math.random()*100+'%;animation:twinkle '+(2+Math.random()*3)+'s ease-in-out infinite;animation-delay:'+Math.random()*3+'s;position:absolute;border-radius:50%;background:#fff;pointer-events:none';
       cs.appendChild(s);
     }
-    if(!document.querySelector('#twinkle-style')){const st=document.createElement('style');st.id='twinkle-style';st.textContent='@keyframes twinkle{0%,100%{opacity:0.3}50%{opacity:1}}';document.head.appendChild(st);}
+    if(!document.querySelector('#twinkle-style')){var st=document.createElement('style');st.id='twinkle-style';st.textContent='@keyframes twinkle{0%,100%{opacity:0.3}50%{opacity:1}}';document.head.appendChild(st);}
   }
-  document.querySelectorAll('.petal').forEach(p=>p.remove());
-  if(themeId==='sakura'){
-    const cs=document.getElementById('clock-screen');
-    for(let i=0;i<12;i++){
-      const p=document.createElement('div');p.className='petal';
-      p.innerHTML=`<svg width="14" height="14" viewBox="0 0 14 14"><ellipse cx="7" cy="7" rx="3" ry="6" fill="rgba(255,180,200,0.8)" transform="rotate(${Math.random()*360},7,7)"/></svg>`;
-      p.style.cssText=`position:absolute;left:${Math.random()*100}%;top:-20px;animation:petalFall ${6+Math.random()*6}s linear infinite;animation-delay:${Math.random()*6}s;pointer-events:none`;
-      cs.appendChild(p);
+  document.querySelectorAll('.petal').forEach(function(p){p.remove()});
+  if(themeId==='sakura'||themeId==='rose'){
+    var cs2=document.getElementById('clock-screen');
+    var petalColor=themeId==='rose'?'rgba(253,164,175,0.75)':'rgba(255,180,200,0.8)';
+    for(var j=0;j<12;j++){
+      var p=document.createElement('div');p.className='petal';
+      p.innerHTML='<svg width="14" height="14" viewBox="0 0 14 14"><ellipse cx="7" cy="7" rx="3" ry="6" fill="'+petalColor+'" transform="rotate('+Math.random()*360+',7,7)"/></svg>';
+      p.style.cssText='position:absolute;left:'+Math.random()*100+'%;top:-20px;animation:petalFall '+(6+Math.random()*6)+'s linear infinite;animation-delay:'+Math.random()*6+'s;pointer-events:none';
+      cs2.appendChild(p);
     }
   }
-  document.querySelectorAll('.snowflake').forEach(s=>s.remove());
+  document.querySelectorAll('.snowflake').forEach(function(s){s.remove()});
   if(themeId==='winter'){
-    const cs=document.getElementById('clock-screen');
-    for(let i=0;i<15;i++){
-      const s=document.createElement('div');s.className='snowflake';
-      const sz=8+Math.random()*8;
-      s.innerHTML=`<svg width="${sz}" height="${sz}" viewBox="0 0 20 20"><line x1="10" y1="2" x2="10" y2="18" stroke="rgba(200,230,255,0.8)" stroke-width="1.5"/><line x1="2" y1="10" x2="18" y2="10" stroke="rgba(200,230,255,0.8)" stroke-width="1.5"/><line x1="4" y1="4" x2="16" y2="16" stroke="rgba(200,230,255,0.6)" stroke-width="1"/><line x1="16" y1="4" x2="4" y2="16" stroke="rgba(200,230,255,0.6)" stroke-width="1"/></svg>`;
-      s.style.cssText=`position:absolute;left:${Math.random()*100}%;top:-20px;animation:snowFall ${8+Math.random()*6}s linear infinite;animation-delay:${Math.random()*8}s;pointer-events:none`;
-      cs.appendChild(s);
+    var cs3=document.getElementById('clock-screen');
+    for(var k=0;k<15;k++){
+      var sn=document.createElement('div');sn.className='snowflake';
+      var snz=8+Math.random()*8;
+      sn.innerHTML='<svg width="'+snz+'" height="'+snz+'" viewBox="0 0 20 20"><line x1="10" y1="2" x2="10" y2="18" stroke="rgba(200,230,255,0.8)" stroke-width="1.5"/><line x1="2" y1="10" x2="18" y2="10" stroke="rgba(200,230,255,0.8)" stroke-width="1.5"/><line x1="4" y1="4" x2="16" y2="16" stroke="rgba(200,230,255,0.6)" stroke-width="1"/><line x1="16" y1="4" x2="4" y2="16" stroke="rgba(200,230,255,0.6)" stroke-width="1"/></svg>';
+      sn.style.cssText='position:absolute;left:'+Math.random()*100+'%;top:-20px;animation:snowFall '+(8+Math.random()*6)+'s linear infinite;animation-delay:'+Math.random()*8+'s;pointer-events:none';
+      cs3.appendChild(sn);
+    }
+  }
+  // Lavenderテーマ: ホタルのような浮遊光
+  document.querySelectorAll('.firefly').forEach(function(f){f.remove()});
+  if(themeId==='lavender'){
+    var cs4=document.getElementById('clock-screen');
+    if(!document.querySelector('#firefly-style')){var fst=document.createElement('style');fst.id='firefly-style';fst.textContent='@keyframes fireflyFloat{0%{transform:translate(0,0) scale(1);opacity:0.2}25%{transform:translate(15px,-20px) scale(1.3);opacity:0.8}50%{transform:translate(-10px,-35px) scale(1);opacity:0.4}75%{transform:translate(20px,-15px) scale(1.2);opacity:0.9}100%{transform:translate(0,0) scale(1);opacity:0.2}}';document.head.appendChild(fst);}
+    for(var fl=0;fl<10;fl++){
+      var f=document.createElement('div');f.className='firefly';
+      f.style.cssText='position:absolute;width:4px;height:4px;border-radius:50%;background:rgba(196,181,253,0.8);box-shadow:0 0 8px rgba(196,181,253,0.6),0 0 16px rgba(196,181,253,0.3);left:'+Math.random()*100+'%;top:'+(20+Math.random()*60)+'%;animation:fireflyFloat '+(4+Math.random()*4)+'s ease-in-out infinite;animation-delay:'+Math.random()*4+'s;pointer-events:none';
+      cs4.appendChild(f);
+    }
+  }
+  // Auroraテーマ: オーロラの光帯
+  document.querySelectorAll('.aurora-band').forEach(function(a){a.remove()});
+  if(themeId==='aurora'){
+    var cs5=document.getElementById('clock-screen');
+    if(!document.querySelector('#aurora-style')){var ast=document.createElement('style');ast.id='aurora-style';ast.textContent='@keyframes auroraSway{0%{transform:translateX(-5%) scaleY(1);opacity:0.3}33%{transform:translateX(3%) scaleY(1.15);opacity:0.6}66%{transform:translateX(-3%) scaleY(0.9);opacity:0.4}100%{transform:translateX(-5%) scaleY(1);opacity:0.3}}';document.head.appendChild(ast);}
+    var colors=['rgba(100,255,218,0.12)','rgba(167,139,250,0.1)','rgba(52,211,153,0.08)'];
+    for(var ab=0;ab<3;ab++){
+      var band=document.createElement('div');band.className='aurora-band';
+      band.style.cssText='position:absolute;top:'+(10+ab*18)+'%;left:-10%;width:120%;height:25%;background:linear-gradient(180deg,transparent,'+colors[ab]+',transparent);border-radius:50%;animation:auroraSway '+(6+ab*2)+'s ease-in-out infinite;animation-delay:'+ab*1.5+'s;pointer-events:none';
+      cs5.appendChild(band);
     }
   }
 }
